@@ -43,13 +43,13 @@ Rawbin is an intelligent, compact, and odor-free home composting system that tra
 │   │   └── page.js
 │   ├── globals.css                 # Global CSS rules
 │   ├── layout.js                   # Root layout with site navbar/footer
-│   └── page.js                     # Main landing page component list
+│   └── page.js                     # master landing page component list
 ├── components/                     # Reusable UI components
 │   ├── AnnouncementBar.jsx         # Rotating top announcement marquee
 │   ├── AskRawbin.jsx               # Floating AI-like query helper component
-│   ├── Footer.jsx                  # Main site footer
+│   ├── Footer.jsx                  # master site footer
 │   ├── MobileCTA.jsx               # Floating mobile-specific action triggers
-│   ├── Navbar.jsx                  # Main navigation header
+│   ├── Navbar.jsx                  # master navigation header
 │   └── sections/                   # Individual landing page sections
 │       ├── CompostOutput.jsx       # Section displaying what to do with compost
 │       ├── EverythingYouNeedToKnow.jsx # Detailed specs center column diagram
@@ -107,7 +107,55 @@ npm start
 
 ---
 
+## 🤝 Collaboration & Git Workflow
+
+This project is built collaboratively by **Mayank** and **Priyansh Mangla**. To keep the production-ready code in the `master` branch stable, we follow a branching and Pull Request (PR) workflow:
+
+### 1. Sync Your master Branch
+Before starting any new features or bug fixes, always ensure your local `master` branch is up to date with the latest code from GitHub:
+```bash
+git checkout master
+git pull origin master
+```
+
+### 2. Create a Feature Branch
+Create a new branch specifically for your changes. Use a descriptive naming convention:
+```bash
+# Priyansh's branches should be prefixed with 'priyansh/'
+git checkout -b priyansh/<feature-name>
+```
+*Example:* `git checkout -b priyansh/roe-calculator-logic`
+
+### 3. Make Changes and Commit
+Work on your code changes, run the local server (`npm run dev`) to test them, and commit them with descriptive messages:
+```bash
+# Stage the modified and new files
+git add .
+
+# Create a clear commit message
+git commit -m "feat: added interactive inputs to the ROE calculator"
+```
+
+### 4. Push Branch to GitHub
+Push your local branch to the remote repository:
+```bash
+git push origin priyansh/<feature-name>
+```
+
+### 5. Open a Pull Request (PR)
+1. Go to the repository page on GitHub.
+2. Click on the green **"Compare & pull request"** button that automatically appears for recently pushed branches.
+3. Write a brief summary of what you implemented or fixed, and click **"Create pull request"**.
+
+### 6. Review & Merge (Mayank's Role)
+* **Code Review:** Mayank will review the submitted PR on GitHub, checking the code diffs for formatting, logic, and compatibility.
+* **Approval/Requests:** Mayank can request revisions/comments or directly approve the changes.
+* **Merging:** Once approved and all checks pass, Mayank will merge the PR into the `master` branch, updating the live code safely.
+
+---
+
 ## 📈 Under Construction / Future Features
 
 * **Return on Environment (ROE) Calculator:** A fully interactive tool to calculate exact carbon dioxide equivalents ($CO_2e$) saved and compost output based on daily kitchen waste inputs.
 * **Technology Deep Dive:** Detailed articles on our aeration systems, thermal sensors, and patented composting technology.
+
