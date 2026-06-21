@@ -1,0 +1,108 @@
+'use client';
+import { motion } from 'framer-motion';
+import { Check, X } from 'lucide-react';
+
+export default function TransformSection() {
+  const yesItems = [
+    { icon: "🍎", label: "Fruits" },
+    { icon: "🥦", label: "Vegetables" },
+    { icon: "🍌", label: "Peels" },
+    { icon: "☕", label: "Coffee Grounds" },
+    { icon: "🍵", label: "Tea Leaves" },
+    { icon: "🥚", label: "Eggshells" },
+    { icon: "🍞", label: "Bread" },
+    { icon: "🍚", label: "Cooked Food Leftovers" },
+    { icon: "🌾", label: "Grains" },
+    { icon: "🌿", label: "Organic Kitchen Leftovers" }
+  ];
+
+  const noItems = [
+    "Plastic",
+    "Metal",
+    "Glass",
+    "Chemical Cleaners",
+    "Large Quantities of Oil",
+    "Non-Organic Materials"
+  ];
+
+  return (
+    <section className="bg-bg-alt py-24 border-b border-black/5">
+      <div className="max-w-[1280px] mx-auto px-5">
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-black mb-4"
+          >
+            What Can Rawbin Transform?
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-text-muted"
+          >
+            Everything organic from your kitchen — nothing that isn't.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* YES Card */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-sm relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-0"></div>
+            
+            <div className="flex items-center gap-4 mb-8 relative z-10">
+              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                <Check size={24} strokeWidth={3} />
+              </div>
+              <h3 className="text-2xl font-black text-nc-text">YES — Goes In Rawbin</h3>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+              {yesItems.map((item, i) => (
+                <div key={i} className="flex items-center gap-3 bg-bg-alt p-3 rounded-xl border border-black/5">
+                  <span className="text-xl">{item.icon}</span>
+                  <span className="font-bold text-sm text-nc-text">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* NO Card */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-sm relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full -z-0"></div>
+            
+            <div className="flex items-center gap-4 mb-8 relative z-10">
+              <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-500">
+                <X size={24} strokeWidth={3} />
+              </div>
+              <h3 className="text-2xl font-black text-nc-text">NO — Keep Out</h3>
+            </div>
+            
+            <div className="flex flex-col gap-3 relative z-10">
+              {noItems.map((item, i) => (
+                <div key={i} className="flex items-center gap-4 bg-bg-alt p-4 rounded-xl border border-black/5">
+                  <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                  <span className="font-bold text-sm text-nc-text">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

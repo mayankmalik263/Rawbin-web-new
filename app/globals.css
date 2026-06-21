@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --bg-alt: #E3E4E8;
+    --primary: #45B900;
+    --text-dark: #1A1A1A;
+    --text-muted: #666666;
+    --text-very-muted: #999999;
+    --border: rgba(0, 0, 0, 0.08);
+    --border-light: rgba(0, 0, 0, 0.06);
+
+    /* Brand variables from feedback */
+    --bgreen: #45B900;
+    --dgreen: #1F5A3F;
+    --text: #002A12;
+    --bg: #E3E4E8;
+    --fg: #17181C;
+    --bs1: #FFFFFF;
+    --bs2: #C1C2C5;
+  }
+
+  body {
+    background-color: #F9F5F3;
+    color: var(--text);
+  }
+}
+
+@layer utilities {
+  .shadow-hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  }
+}
