@@ -1,12 +1,35 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Play } from 'lucide-react';
 
 export default function HeroSection() {
+  const [mousePos1, setMousePos1] = useState({ x: 0, y: 0 });
+  const [isHovered1, setIsHovered1] = useState(false);
+
+  const [mousePos2, setMousePos2] = useState({ x: 0, y: 0 });
+  const [isHovered2, setIsHovered2] = useState(false);
+
+  const handleMouseMove1 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos1({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  };
+
+  const handleMouseMove2 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos2({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  };
+
   return (
     <>
-      <section className="relative bg-bg-secondary w-full pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+      <section className="relative bg-bg-secondary w-full pt-12 pb-12 md:pt-20 md:pb-20 overflow-hidden">
       {/* Background Image - optimized for both mobile and desktop */}
       <div className="absolute inset-0 w-full h-full z-0 opacity-50 md:opacity-100">
         <Image 
@@ -83,23 +106,93 @@ export default function HeroSection() {
     </section>
 
     {/* What is Rawbin Section */}
-    <section className="relative bg-white w-full py-16 md:py-24 border-t border-black/5 z-10">
-      <div className="max-w-[1280px] mx-auto px-5">
+    <section style={{ background: '#FBFAF6', borderTop: '1px solid rgba(0,0,0,.05)' }} className="w-full py-16 md:py-20 relative z-10">
+      <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: '28px' }}>
+        
+        {/* Card 1: What is Rawbin */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="bg-white p-8 md:p-10 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-black/5 max-w-[700px]"
+          transition={{ duration: 0.8, ease: [0.16, 0.8, 0.3, 1] }}
+          onMouseMove={handleMouseMove1}
+          onMouseEnter={() => setIsHovered1(true)}
+          onMouseLeave={() => setIsHovered1(false)}
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            background: '#fff',
+            border: '1px solid rgba(0,0,0,.06)',
+            borderRadius: '24px',
+            padding: '38px',
+            boxShadow: '0 14px 40px rgba(0,0,0,.04)'
+          }}
         >
-          <h3 className="text-2xl md:text-3xl font-black mb-3 text-nc-text">What is Rawbin?</h3>
-          <p className="text-text-muted mb-6 text-base md:text-lg">
-            Rawbin is an intelligent home composting system that transforms kitchen leftovers into nutrient-rich compost with minimal effort. Simply add your leftovers, let Rawbin manage the composting process, and return valuable nutrients back to plants, soil, and nature.
+          <div 
+            style={{
+              position: 'absolute',
+              width: '260px',
+              height: '260px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(31,168,77,0.14), transparent 70%)',
+              transform: 'translate(-50%, -50%)',
+              left: `${mousePos1.x}px`,
+              top: `${mousePos1.y}px`,
+              opacity: isHovered1 ? 1 : 0,
+              transition: 'opacity 0.35s ease',
+              pointerEvents: 'none',
+              zIndex: 0
+            }}
+          />
+          <h3 style={{ fontSize: '24px', fontWeight: 900, marginBottom: '14px', position: 'relative', zIndex: 1 }} className="text-nc-text">What is Rawbin?</h3>
+          <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#5A564E', position: 'relative', zIndex: 1 }}>
+            Rawbin is an intelligent home composting system that transforms kitchen leftovers into nutrient-rich compost with minimal effort. Simply add your leftovers, let Rawbin manage the process, and return valuable nutrients back to plants, soil, and nature.
           </p>
-          <div className="border-t border-black/5 pt-6 italic text-nc-text font-medium text-sm md:text-base">
-            &quot;For generations, nothing from the kitchen was truly discarded. Rawbin brings that circular way of living into modern homes through simple, effortless composting.&quot;
-          </div>
         </motion.div>
+
+        {/* Card 2: The Circular Way */}
+        <motion.div 
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 0.8, 0.3, 1], delay: 0.1 }}
+          onMouseMove={handleMouseMove2}
+          onMouseEnter={() => setIsHovered2(true)}
+          onMouseLeave={() => setIsHovered2(false)}
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            background: 'linear-gradient(135deg,#13241A,#1C3A28)',
+            color: '#EAF3EC',
+            borderRadius: '24px',
+            padding: '38px',
+            boxShadow: '0 14px 40px rgba(19,36,26,.18)'
+          }}
+        >
+          <div 
+            style={{
+              position: 'absolute',
+              width: '260px',
+              height: '260px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(124,232,154,0.16), transparent 70%)',
+              transform: 'translate(-50%, -50%)',
+              left: `${mousePos2.x}px`,
+              top: `${mousePos2.y}px`,
+              opacity: isHovered2 ? 1 : 0,
+              transition: 'opacity 0.35s ease',
+              pointerEvents: 'none',
+              zIndex: 0
+            }}
+          />
+          <div style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#7CE89A', marginBottom: '14px', position: 'relative', zIndex: 1 }}>
+            The circular way
+          </div>
+          <p style={{ fontSize: '21px', lineHeight: 1.5, fontWeight: 500, position: 'relative', zIndex: 1, fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>
+            For generations, nothing from the kitchen was truly discarded. Rawbin brings that circular way of living into modern homes — through simple, effortless composting.
+          </p>
+        </motion.div>
+
       </div>
     </section>
 
