@@ -118,7 +118,8 @@ p {
 .navbar {
     background-color: #FFFFFF;
     padding: 16px 0;
-    position: relative; /* It pushes the hero section down naturally */
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 100;
 }

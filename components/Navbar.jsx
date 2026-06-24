@@ -9,7 +9,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-transparent py-4 absolute top-0 left-0 w-full z-[100] border-none">
+    <header className="bg-white py-4 sticky top-0 w-full z-[100] border-b border-black/5">
       <div className="max-w-[1280px] mx-auto flex justify-between items-center px-5">
         <Link href="/" className="flex flex-col items-center no-underline">
           <Image src="/images/logo.png" alt="Rawbin Logo" width={120} height={38} className="h-[38px] w-auto [image-rendering:-webkit-optimize-contrast]" />
@@ -76,8 +76,8 @@ export default function Navbar() {
             </Menu>
           </nav>
           
-          <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-bold text-sm tracking-wide hover:shadow-hover hover:-translate-y-0.5 transition-all">
-            ORDER NOW
+          <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-sm tracking-wide hover:shadow-hover hover:-translate-y-0.5 transition-all">
+            Order Now
           </Link>
         </div>
 
@@ -95,7 +95,7 @@ export default function Navbar() {
           <Link href="#faqs" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>FAQs</Link>
           <Link href="#how-it-works" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
           <Link href="/roe-calculator" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>ROE Calculator</Link>
-          <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-bold text-center mt-2" onClick={() => setMobileMenuOpen(false)}>ORDER NOW</Link>
+          <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-center mt-2" onClick={() => setMobileMenuOpen(false)}>Order Now</Link>
         </div>
       )}
     </header>
