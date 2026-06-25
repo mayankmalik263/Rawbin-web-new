@@ -1,17 +1,28 @@
 'use client';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import {
+  WindIcon,
+  HomeIcon,
+  RecycleLeafIcon,
+  FourArrowRecycleIcon,
+  IntelligentIcon,
+  GlobeIcon,
+  MaintenanceIcon,
+  BatteryIcon,
+  IndiaIcon
+} from '@/components/icons';
 
 export default function WhyRawbin() {
   const benefits = [
-    { icon: "🌱", title: "Odor-Free", desc: "Advanced carbon filtration eliminates any smell." },
-    { icon: "🏠", title: "Apartment Friendly", desc: "Compact design fits any modern urban home." },
-    { icon: "⚡", title: "Fast Composting", desc: "From leftovers to compost in as little as 7 days." },
-    { icon: "♻️", title: "Circular Living", desc: "Close the loop between kitchen and garden." },
-    { icon: "🔬", title: "Intelligent Composting", desc: "Auto-regulates temperature and moisture." },
-    { icon: "🌍", title: "Real Climate Impact", desc: "1500 kg CO₂e prevented per household per year." },
-    { icon: "🧹", title: "Minimal Maintenance", desc: "Designed to run with near-zero intervention." },
-    { icon: "🔋", title: "Energy Efficient", desc: "Uses less power than a standard LED bulb." }
+    { icon: <WindIcon />, title: "Odor-Free", desc: "Advanced carbon filtration eliminates any smell." },
+    { icon: <HomeIcon />, title: "Apartment Friendly", desc: "Compact design fits any modern urban home." },
+    { icon: <RecycleLeafIcon />, title: "Fast Composting", desc: "From leftovers to compost in as little as 7 days." },
+    { icon: <FourArrowRecycleIcon />, title: "Circular Living", desc: "Close the loop between kitchen and garden." },
+    { icon: <IntelligentIcon />, title: "Intelligent Composting", desc: "Auto-regulates temperature and moisture." },
+    { icon: <GlobeIcon />, title: "Real Climate Impact", desc: "1500 kg CO₂e prevented per household per year." },
+    { icon: <MaintenanceIcon />, title: "Minimal Maintenance", desc: "Designed to run with near-zero intervention." },
+    { icon: <BatteryIcon />, title: "Energy Efficient", desc: "Uses less power than a standard LED bulb." }
   ];
 
   return (
@@ -22,7 +33,7 @@ export default function WhyRawbin() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black mb-4"
+            className="text-4xl md:text-5xl font-black mb-4 text-nc-text"
           >
             Why Thousands Are Choosing<br/>
             <span className="text-primary">Smarter Composting</span>
@@ -39,11 +50,11 @@ export default function WhyRawbin() {
               transition={{ delay: i * 0.05 }}
               className="bg-bg-alt p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform"
             >
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl mb-4 shadow-sm">
+              <div className="w-12 h-12 rounded-full bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-4 shadow-sm border border-black/5">
                 {benefit.icon}
               </div>
-              <h4 className="font-bold text-lg mb-2">{benefit.title}</h4>
-              <p className="text-text-muted text-sm font-medium">{benefit.desc}</p>
+              <h4 className="font-extrabold text-lg mb-2 text-nc-text">{benefit.title}</h4>
+              <p className="text-text-muted text-sm font-medium leading-relaxed">{benefit.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -55,10 +66,12 @@ export default function WhyRawbin() {
           viewport={{ once: true }}
           className="bg-bg-alt rounded-3xl p-8 md:p-12 border border-black/5 flex flex-col md:flex-row items-center gap-8 mb-20"
         >
-          <div className="text-6xl">🇮🇳</div>
+          <div className="w-16 h-16 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5">
+            <IndiaIcon className="w-10 h-10" />
+          </div>
           <div>
-            <h3 className="text-2xl font-black mb-2">Designed & Engineered in India</h3>
-            <p className="text-text-muted font-medium">
+            <h3 className="text-2xl font-black mb-2 text-nc-text">Designed & Engineered in India</h3>
+            <p className="text-text-muted font-medium leading-relaxed">
               Built specifically for Indian homes, lifestyles, climate conditions, and organic waste patterns. 
               A modern composting solution created for the way India lives.
             </p>
@@ -86,7 +99,7 @@ function CommunityImpact() {
   return (
     <div ref={ref}>
       <div className="text-center mb-10">
-        <h3 className="text-3xl font-black mb-2">Rawbin Community Impact</h3>
+        <h3 className="text-3xl font-black mb-2 text-nc-text">Rawbin Community Impact</h3>
         <p className="text-text-muted">Join a movement of modern homes taking real climate action.</p>
       </div>
 

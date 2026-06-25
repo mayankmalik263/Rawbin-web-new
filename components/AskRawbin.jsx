@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SproutIcon } from '@/components/icons';
 
 export default function AskRawbin() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,8 +35,8 @@ export default function AskRawbin() {
           >
             <div className="bg-primary p-4 flex justify-between items-center text-nc-text">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center">
-                  🌱
+                <div className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-nc-text">
+                  <SproutIcon className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="font-bold leading-tight">Ask Rawbin</h3>

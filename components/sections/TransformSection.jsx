@@ -1,19 +1,31 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
+import {
+  AppleIcon,
+  VeggiesIcon,
+  PeelIcon,
+  CoffeeIcon,
+  TeaIcon,
+  EggIcon,
+  BreadIcon,
+  SoupIcon,
+  GrainsIcon,
+  SproutIcon
+} from '@/components/icons';
 
 export default function TransformSection() {
   const yesItems = [
-    { icon: "🍎", label: "Fruits" },
-    { icon: "🥦", label: "Vegetables" },
-    { icon: "🍌", label: "Peels" },
-    { icon: "☕", label: "Coffee Grounds" },
-    { icon: "🍵", label: "Tea Leaves" },
-    { icon: "🥚", label: "Eggshells" },
-    { icon: "🍞", label: "Bread" },
-    { icon: "🍚", label: "Cooked Food Leftovers" },
-    { icon: "🌾", label: "Grains" },
-    { icon: "🌿", label: "Organic Kitchen Leftovers" }
+    { icon: <AppleIcon className="w-5 h-5" />, label: "Fruits" },
+    { icon: <VeggiesIcon className="w-5 h-5" />, label: "Vegetables" },
+    { icon: <PeelIcon className="w-5 h-5" />, label: "Peels" },
+    { icon: <CoffeeIcon className="w-5 h-5" />, label: "Coffee Grounds" },
+    { icon: <TeaIcon className="w-5 h-5" />, label: "Tea Leaves" },
+    { icon: <EggIcon className="w-5 h-5" />, label: "Eggshells" },
+    { icon: <BreadIcon className="w-5 h-5" />, label: "Bread" },
+    { icon: <SoupIcon className="w-5 h-5" />, label: "Cooked Food Leftovers" },
+    { icon: <GrainsIcon className="w-5 h-5" />, label: "Grains" },
+    { icon: <SproutIcon className="w-5 h-5" />, label: "Organic Kitchen Leftovers" }
   ];
 
   const noItems = [
@@ -33,7 +45,7 @@ export default function TransformSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black mb-4"
+            className="text-4xl md:text-5xl font-black mb-4 text-nc-text"
           >
             What Can Rawbin Transform?
           </motion.h2>
@@ -68,7 +80,9 @@ export default function TransformSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
               {yesItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-3 bg-bg-alt p-3 rounded-xl border border-black/5">
-                  <span className="text-xl">{item.icon}</span>
+                  <div className="text-[#1F5A3F] flex items-center justify-center">
+                    {item.icon}
+                  </div>
                   <span className="font-bold text-sm text-nc-text">{item.label}</span>
                 </div>
               ))}

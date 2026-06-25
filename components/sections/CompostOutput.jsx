@@ -1,14 +1,22 @@
 'use client';
 import { motion } from 'framer-motion';
+import {
+  PlantPotIcon,
+  HerbIcon,
+  TreeIcon,
+  CommunityIcon,
+  GiftIcon,
+  TractorIcon
+} from '@/components/icons';
 
 export default function CompostOutput() {
   const cards = [
-    { icon: "🌿", title: "Balcony Plants", desc: "Show urban apartments using compost." },
-    { icon: "🌱", title: "Kitchen Herbs", desc: "Mint. Basil. Coriander. Indoor gardening." },
-    { icon: "🌳", title: "Home Gardens", desc: "Flower beds. Vegetable patches. Trees." },
-    { icon: "🏘️", title: "Community Gardens", desc: "Shared green spaces. Neighborhood initiatives." },
-    { icon: "🎁", title: "Gift It Forward", desc: "Share compost with friends, family, and local communities." },
-    { icon: "🚜", title: "Urban Farming", desc: "Support larger-scale local growing initiatives." }
+    { icon: <PlantPotIcon className="w-8 h-8" />, title: "Balcony Plants", desc: "Show urban apartments using compost." },
+    { icon: <HerbIcon className="w-8 h-8" />, title: "Kitchen Herbs", desc: "Mint. Basil. Coriander. Indoor gardening." },
+    { icon: <TreeIcon className="w-8 h-8" />, title: "Home Gardens", desc: "Flower beds. Vegetable patches. Trees." },
+    { icon: <CommunityIcon className="w-8 h-8" />, title: "Community Gardens", desc: "Shared green spaces. Neighborhood initiatives." },
+    { icon: <GiftIcon className="w-8 h-8" />, title: "Gift It Forward", desc: "Share compost with friends, family, and local communities." },
+    { icon: <TractorIcon className="w-8 h-8" />, title: "Urban Farming", desc: "Support larger-scale local growing initiatives." }
   ];
 
   return (
@@ -44,11 +52,11 @@ export default function CompostOutput() {
               transition={{ delay: i * 0.1 }}
               className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group"
             >
-              <div className="text-4xl mb-6 bg-white/10 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform">
+              <div className="text-white bg-white/10 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform mb-6 border border-white/5">
                 {card.icon}
               </div>
               <h4 className="text-2xl font-bold mb-3">{card.title}</h4>
-              <p className="text-white/60 font-medium leading-relaxed">
+              <p className="text-white/60 font-medium leading-relaxed font-sans">
                 {card.desc}
               </p>
             </motion.div>

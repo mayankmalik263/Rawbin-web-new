@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Play } from 'lucide-react';
+import { IndiaIcon } from '@/components/icons';
 
 export default function HeroSection() {
   const [mousePos1, setMousePos1] = useState({ x: 0, y: 0 });
@@ -47,9 +48,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-[#F0EAE1]/90 backdrop-blur-sm px-4 py-1.5 rounded-full border border-nc-dgreen/30 font-bold text-xs md:text-sm text-nc-text mb-8"
+            className="inline-flex items-center gap-2.5 bg-[#F0EAE1]/90 backdrop-blur-sm px-4 py-1.5 rounded-full border border-nc-dgreen/30 font-bold text-xs md:text-sm text-nc-text mb-8 shadow-xs"
           >
-            <span>🇮🇳</span> India&apos;s First Smart Home Composter
+            <IndiaIcon className="w-4 h-4 text-[#1F5A3F]" />
+            <span>India&apos;s First Smart Home Composter</span>
           </motion.div>
 
           <motion.h1 

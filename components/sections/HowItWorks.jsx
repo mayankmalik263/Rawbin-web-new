@@ -1,5 +1,11 @@
 'use client';
 import { motion } from 'framer-motion';
+import {
+  BoltIcon,
+  SproutIcon,
+  HomeIcon,
+  FourArrowRecycleIcon
+} from '@/components/icons';
 
 export default function HowItWorks() {
   const steps = [
@@ -62,7 +68,7 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black mb-4"
+            className="text-4xl md:text-5xl font-black mb-4 text-nc-text"
           >
             Composting Shouldn&apos;t Feel Like Work
           </motion.h2>
@@ -98,7 +104,7 @@ export default function HowItWorks() {
                   {step.icon}
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
+              <h3 className="text-2xl font-bold mb-4 text-nc-text">{step.title}</h3>
               <p className="text-text-muted font-medium leading-relaxed">
                 {step.desc}
               </p>
@@ -110,16 +116,18 @@ export default function HowItWorks() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 md:gap-8 bg-bg-alt p-6 rounded-2xl"
+          className="flex flex-wrap justify-center gap-4 md:gap-8 bg-bg-alt p-6 rounded-2xl border border-black/5"
         >
           {[
-            { icon: "⚡", text: "Minimal Effort" },
-            { icon: "🌱", text: "Nutrient-Rich Compost" },
-            { icon: "🏠", text: "Designed for Modern Homes" },
-            { icon: "♻️", text: "Circular Living" }
+            { icon: <BoltIcon className="w-5 h-5" />, text: "Minimal Effort" },
+            { icon: <SproutIcon className="w-5 h-5" />, text: "Nutrient-Rich Compost" },
+            { icon: <HomeIcon className="w-5 h-5" />, text: "Designed for Modern Homes" },
+            { icon: <FourArrowRecycleIcon className="w-5 h-5" />, text: "Circular Living" }
           ].map((benefit, i) => (
-            <div key={i} className="flex items-center gap-3 font-bold text-nc-text px-4 py-2 bg-white rounded-xl shadow-sm border border-black/5">
-              <span className="text-xl">{benefit.icon}</span>
+            <div key={i} className="flex items-center gap-3 font-bold text-nc-text px-4 py-2.5 bg-white rounded-xl shadow-sm border border-black/5">
+              <div className="text-[#1F5A3F] flex items-center justify-center">
+                {benefit.icon}
+              </div>
               <span>{benefit.text}</span>
             </div>
           ))}
