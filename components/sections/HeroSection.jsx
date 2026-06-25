@@ -57,11 +57,12 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-nc-text leading-[1.05] tracking-tight mb-6"
+            className="text-4xl md:text-6xl font-black text-nc-text leading-[1.05] tracking-tight mb-6"
           >
-            <span className="block"><span className="text-primary">YOUR</span> KITCHEN.</span>
-            <span className="block"><span className="text-primary">YOUR</span> COMPOST.</span>
-            <span className="block"><span className="text-primary">YOUR</span> GARDEN.</span>
+            <span className="block">YOUR FRIDGE GOT SMART.</span>
+            <span className="block">YOUR OVEN GOT SMART.</span>
+            <span className="block">YOUR BIN DIDN&apos;T.</span>
+            <span className="block text-primary mt-2">UNTIL NOW.</span>
           </motion.h1>
 
           <motion.p 
@@ -69,19 +70,9 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl font-bold text-nc-text mb-4"
+            className="text-lg md:text-xl text-text-muted font-medium mb-10 max-w-[550px]"
           >
-            No smell. No mess. Easy composting.
-          </motion.p>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-lg text-text-muted font-medium mb-10 max-w-[500px]"
-          >
-            Rawbin transforms everyday leftovers into nutrient-rich compost automatically, helping you close the loop between what you consume and what you grow.
+            Transform food scraps into compost, effortlessly using Rawbin.
           </motion.p>
 
           <motion.div 
