@@ -9,8 +9,45 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata = {
-  title: "Rawbin - Modern Composting",
-  description: "Rawbin transforms everyday leftovers into nutrient-rich compost automatically.",
+  title: "Rawbin | Smart Composter for Home India - Odor-Free Kitchen Composter",
+  description: "Transform daily food waste into nutrient-rich organic compost in 7 days. Rawbin is India's first smart electric home composter designed to be odor-free and apartment-friendly.",
+  keywords: [
+    "smart composter",
+    "smart composter in india",
+    "smart composter for home",
+    "home composter",
+    "electric kitchen composter",
+    "odor-free home composter",
+    "food waste recycler india",
+    "indoor compost machine",
+    "organic waste composter"
+  ],
+  metadataBase: new URL("https://www.rawbin.in"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Rawbin | Smart Composter for Home India",
+    description: "Transform daily food waste into nutrient-rich organic compost in 7 days. Rawbin is India's first smart electric home composter designed to be odor-free and apartment-friendly.",
+    url: "https://www.rawbin.in",
+    siteName: "Rawbin",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-bg.png",
+        width: 1200,
+        height: 630,
+        alt: "Rawbin Smart Composter in modern kitchen",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rawbin | Smart Composter for Home India",
+    description: "Transform daily food waste into nutrient-rich organic compost in 7 days. Rawbin is India's first smart electric home composter designed to be odor-free and apartment-friendly.",
+    images: ["/images/hero-bg.png"],
+  }
 };
 
 export default function RootLayout({ children }) {
