@@ -1,6 +1,5 @@
 'use client';
-import { motion, useInView } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   WindIcon,
   HomeIcon,
@@ -64,7 +63,7 @@ export default function WhyRawbin() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-bg-alt rounded-3xl p-8 md:p-12 border border-black/5 flex flex-col md:flex-row items-center gap-8 mb-20"
+          className="bg-bg-alt rounded-3xl p-8 md:p-12 border border-black/5 flex flex-col md:flex-row items-center gap-8"
         >
           <div className="w-16 h-16 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5">
             <IndiaIcon className="w-10 h-10" />
@@ -77,74 +76,7 @@ export default function WhyRawbin() {
             </p>
           </div>
         </motion.div>
-
-        {/* Community Impact Counter */}
-        <CommunityImpact />
       </div>
     </section>
   );
-}
-
-function CommunityImpact() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const stats = [
-    { target: 12400, label: "Organic Matter Processed (kg)", suffix: "+" },
-    { target: 8800, label: "CO₂e Prevented (kg)", suffix: "+" },
-    { target: 3200, label: "Compost Generated (kg)", suffix: "+" },
-    { target: 480, label: "Active Households", suffix: "+" }
-  ];
-
-  return (
-    <div ref={ref}>
-      <div className="text-center mb-10">
-        <h3 className="text-3xl font-black mb-2 text-nc-text">Rawbin Community Impact</h3>
-        <p className="text-text-muted">Join a movement of modern homes taking real climate action.</p>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-        {stats.map((stat, i) => (
-          <div key={i} className="bg-primary/5 p-6 rounded-2xl border border-primary/20 text-center">
-            <div className="text-3xl md:text-4xl font-black text-primary mb-2">
-              <Counter from={0} to={stat.target} inView={isInView} duration={2} />
-              {stat.suffix}
-            </div>
-            <div className="text-sm font-bold text-nc-text uppercase tracking-wider">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function Counter({ from, to, inView, duration }) {
-  const [count, setCount] = useState(from);
-
-  useEffect(() => {
-    if (!inView) return;
-
-    let startTime;
-    let animationFrame;
-
-    const animate = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      
-      // easeOutExpo
-      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      
-      setCount(Math.floor(easeProgress * (to - from) + from));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [inView, from, to, duration]);
-
-  return <span>{count.toLocaleString()}</span>;
 }

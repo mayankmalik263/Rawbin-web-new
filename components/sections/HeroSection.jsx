@@ -188,6 +188,40 @@ export default function HeroSection() {
 
       </div>
     </section>
+
+    {/* Impact Section */}
+    <section className="relative bg-bg-secondary w-full py-16 md:py-24 border-t border-black/5 z-10">
+      <div className="max-w-[1280px] mx-auto px-5">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-black mb-4">One Small Habit. A Lasting Impact.</h2>
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
+            <span className="font-bold text-nc-text">🌱 Up to 1500 kg CO₂e prevented every year.</span><br/>
+            Rawbin helps keep valuable organic matter out of landfills and returns nutrients back to nature through a simple circular process.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {[
+            { value: "1500 kg", label: "CO₂e prevented annually" },
+            { value: "365+", label: "Days of climate action every year" },
+            { value: "100%", label: "Organic matter processed at source" },
+            { value: "7 Days", label: "To nutrient-rich compost" }
+          ].map((stat, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white p-6 rounded-2xl border border-black/5 text-center shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="text-3xl md:text-4xl font-black text-primary mb-2">{stat.value}</div>
+              <div className="text-sm font-semibold text-text-muted">{stat.label}</div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
     </>
   );
 }
