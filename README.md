@@ -197,4 +197,50 @@ This section outlines the upcoming product redesign and feature additions reques
 *   [ ] **High-Fidelity Interactivity:**
     *   Ensure the site is packed with premium, fluid interactions: hover-based radial glow effects, scroll-triggered animations via Framer Motion, and micro-interactions on all primary action buttons.
 
+### 📱 5. Responsive Design & Multi-Platform Compatibility
+*   [ ] **Cross-Device Fluidity:** Ensure all layout grids, typography, and images scale dynamically across standard breakpoints.
+    *   **Mobile (320px - 480px):** Optimized vertical single-column feeds, tap-friendly interaction targets (minimum 48px), and bottom-docked sticky CTA buttons.
+    *   **Tablet (768px - 1024px):** Dual-column grids, readable font sizing, and compact navigation headers.
+    *   **Laptop & Desktop (1200px - 1920px+):** Ultra-premium wide grids, high-definition responsive media (like `hero-bg.png`), hover-based micro-interactions, parallax layouts, and large, immersive storytelling components.
+
+### 🌟 6. Design Reference & Luxury Aesthetics (Eight Sleep Style)
+*   [ ] **Eight Sleep Inspiration:** Draw design principles from the premium, high-tech aesthetic of [Eight Sleep](https://www.eightsleep.com/):
+    *   **Luxury Tech Positioning:** Position Rawbin as a high-end, smart appliance rather than just "another compost bin."
+    *   **High Contrast Dark Theme:** Use rich, deep backgrounds (transitioning to chocolate browns/blacks) paired with subtle, neon-like glowing accents, sharp white sans-serif typography, and sleek borders.
+    *   **Scientific & Feature Deep Dives:** Use comparison tables, exploded/transparent product renders, and metric-focused benefit sections (e.g., carbon credits, composting speed) to justify the premium price tag.
+
+### ✍️ 7. Approved Messaging & Copywriting (Hero Section)
+*   [ ] **Primary Headline Upgrade:** Update the Hero section's copy to match the approved marketing team specifications:
+    *   **Headline:**
+        ```text
+        YOUR FRIDGE GOT SMART.
+        YOUR OVEN GOT SMART.
+        YOUR BIN DIDN'T.
+
+        Until now.
+        ```
+    *   **Sub-headline:**
+        ```text
+        Transform food scraps into compost, effortlessly using Rawbin.
+        ```
+
+### 🔍 8. SEO Optimization & Search Intent Strategy
+*   [ ] **High-Intent Keyword Integration:** Target the search terms users use when they are looking to buy or learn about smart composting appliances.
+    *   **Informational Keywords (Awareness):**
+        *   "How to compost food waste in an apartment"
+        *   "Odorless kitchen composter benefits"
+        *   "Indoor organic waste disposal solutions India"
+    *   **Commercial Keywords (Researching/Comparing):**
+        *   "Best kitchen composters 2026"
+        *   "Smart food recycler reviews"
+        *   "Electric vs manual home compost bin"
+    *   **Transactional Keywords (High Buying Intent):**
+        *   "Buy electric kitchen composter India"
+        *   "Odor-free home composter price"
+        *   "Best smart compost bin for sale"
+    *   **Implementation Plan:** 
+        *   Inject these terms naturally in landing page titles, header tags (`<h1>`, `<h2>`), image alt text, and meta descriptions.
+        *   Optimize the page structure to win "Featured Snippets" (e.g., clear, bulleted answers for questions like "What can you compost in a smart kitchen bin?").
+
+
 
