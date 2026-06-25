@@ -728,3 +728,5 @@ export const NonOrganicIcon = withIcon(({ className, ...props }) => (
     <path d="M12 2v2M12 20v2M4 12h2M20 12h2M6.34 6.34l1.42 1.42M16.24 16.24l1.42 1.42M6.34 17.66l1.42-1.42M16.24 7.76l1.42-1.42" />
   </svg>
 ));
+
+export const GearIcon = NonOrganicIcon;
