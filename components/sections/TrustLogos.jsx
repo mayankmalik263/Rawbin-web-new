@@ -28,9 +28,6 @@ export default function TrustLogos() {
           animation: marquee 30s linear infinite;
           gap: 5rem;
         }
-        .marquee-container:hover {
-          animation-play-state: paused;
-        }
         .mask-gradient {
           mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
           -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
@@ -49,17 +46,17 @@ export default function TrustLogos() {
           {[...logos, ...logos, ...logos].map((logo, i) => (
             <div
               key={i}
-              className="flex items-center justify-center h-12 w-44 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 ease-in-out select-none cursor-default"
+              className="flex items-center justify-center h-20 w-64 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 ease-in-out select-none cursor-default"
             >
               {logo.src ? (
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="max-h-10 max-w-[150px] object-contain"
+                  className="max-h-16 max-w-[200px] object-contain"
                 />
               ) : (
-                <span className="font-sans text-sm md:text-base font-black tracking-tight text-neutral-800 text-center whitespace-nowrap">
-                  QWEIN <span className="text-[10px] font-normal lowercase">by</span> Qualcomm
+                <span className="font-sans text-base md:text-xl font-black tracking-tight text-neutral-800 text-center whitespace-nowrap">
+                  QWEIN <span className="text-[12px] font-normal lowercase">by</span> Qualcomm
                 </span>
               )}
             </div>
