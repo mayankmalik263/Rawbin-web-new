@@ -72,7 +72,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-text-muted font-medium mb-10 max-w-[550px]"
           >
-            Transform food scraps into compost, effortlessly using <span className="text-primary font-bold">Rawbin</span>.
+            Transform food scraps into compost, effortlessly using Rawbin.
           </motion.p>
 
           <motion.div 
