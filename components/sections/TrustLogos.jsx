@@ -2,31 +2,67 @@
 import { motion } from 'framer-motion';
 
 export default function TrustLogos() {
-  const partners = [
-    "AIC Banasthali", "MeitY", "NSRCEL", 
-    "Women Climate Collective", "NIDHI Prayas", 
-    "PIEDS BITS Pilani", "SIDBI", "EarthON", "QWENI by Qualcomm"
+  const logos = [
+    { src: '/images/logos/earthon.webp', name: 'EarthON' },
+    { src: '', name: 'QWEIN by Qualcomm' }, // Fallback text layout if image is missing
+    { src: '/images/logos/aic.png', name: 'AIC Banasthali' },
+    { src: '/images/logos/meity.png', name: 'MeitY' },
+    { src: '/images/logos/nsrcel.png', name: 'NSRCEL' },
+    { src: '/images/logos/wcc.webp', name: 'Women Climate Collective' },
+    { src: '/images/logos/nidhi_prayas.png', name: 'NIDHI Prayas' },
+    { src: '/images/logos/pieds.png', name: 'PIEDS BITS Pilani' },
+    { src: '/images/logos/sidbi.png', name: 'SIDBI' },
   ];
 
   return (
-    <section className="bg-white py-16 border-b border-black/5">
-      <div className="max-w-[1280px] mx-auto px-5 text-center">
-        <h6 className="text-[10px] font-bold text-text-very-muted uppercase tracking-[2px] mb-10">
+    <section className="bg-[#FBFAF6] py-14 border-b border-black/5 overflow-hidden">
+      {/* Self-contained styling for infinite marquee */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.33%); }
+        }
+        .marquee-container {
+          display: flex;
+          width: max-content;
+          animation: marquee 30s linear infinite;
+          gap: 5rem;
+        }
+        .marquee-container:hover {
+          animation-play-state: paused;
+        }
+        .mask-gradient {
+          mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+          -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+        }
+      `}} />
+
+      <div className="max-w-[1280px] mx-auto px-5 text-center mb-10">
+        <h6 className="text-[10px] font-bold text-text-very-muted uppercase tracking-[2px]">
           Trusted by Leading Innovation & Sustainability Ecosystems
         </h6>
-        
-        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-          {partners.map((partner, i) => (
-            <motion.div
+      </div>
+      
+      <div className="relative w-full overflow-hidden mask-gradient py-2">
+        <div className="marquee-container flex items-center">
+          {/* Loop three times to ensure a seamless looping effect */}
+          {[...logos, ...logos, ...logos].map((logo, i) => (
+            <div
               key={i}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="text-[#999] text-sm md:text-base font-black uppercase tracking-wider opacity-60 hover:opacity-100 hover:text-nc-text hover:scale-105 transition-all duration-300 cursor-default select-none"
+              className="flex items-center justify-center h-12 w-44 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 ease-in-out select-none cursor-default"
             >
-              {partner}
-            </motion.div>
+              {logo.src ? (
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="max-h-10 max-w-[150px] object-contain"
+                />
+              ) : (
+                <span className="font-sans text-sm md:text-base font-black tracking-tight text-neutral-800 text-center whitespace-nowrap">
+                  QWEIN <span className="text-[10px] font-normal lowercase">by</span> Qualcomm
+                </span>
+              )}
+            </div>
           ))}
         </div>
       </div>
