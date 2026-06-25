@@ -57,12 +57,12 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black text-nc-text leading-[1.05] tracking-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-nc-text leading-[1.3] tracking-tight mb-6"
           >
             <span className="block">YOUR FRIDGE GOT SMART.</span>
             <span className="block">YOUR OVEN GOT SMART.</span>
             <span className="block">YOUR BIN DIDN&apos;T.</span>
-            <span className="block text-primary mt-2">UNTIL NOW.</span>
+            <span className="block text-primary mt-3">UNTIL NOW.</span>
           </motion.h1>
 
           <motion.p 
@@ -72,7 +72,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-text-muted font-medium mb-10 max-w-[550px]"
           >
-            Transform food scraps into compost, effortlessly using Rawbin.
+            Transform food scraps into compost, effortlessly using <span className="text-primary font-bold">Rawbin</span>.
           </motion.p>
 
           <motion.div 
