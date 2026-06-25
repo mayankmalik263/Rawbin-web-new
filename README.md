@@ -154,8 +154,47 @@ git push origin priyansh/<feature-name>
 
 ---
 
-## 📈 Under Construction / Future Features
+## 📋 Redesign Specification & Project Roadmap (Notebook Checklist)
 
-* **Return on Environment (ROE) Calculator:** A fully interactive tool to calculate exact carbon dioxide equivalents ($CO_2e$) saved and compost output based on daily kitchen waste inputs.
-* **Technology Deep Dive:** Detailed articles on our aeration systems, thermal sensors, and patented composting technology.
+This section outlines the upcoming product redesign and feature additions requested in the project specification roadmap. 
+
+### 🎨 1. Theme, Aesthetics & Brand Direction
+*   [ ] **Theme Swap (Chocolate Brown):** 
+    *   Transition the color palette away from lilac/standard green colors.
+    *   Implement a rich, premium **Chocolate Brown** palette (`#3C2F2F`, `#2B1E1E`, `#D9C3B0`) combined with warm creams and muted organic accents. This establishes a grounded, high-end earthy connection suitable for premium kitchen appliances.
+*   [ ] **Unique Composting Design:**
+    *   Avoid generic, low-effort composting visual patterns (clipart leaves, recycling symbols, flat green).
+    *   Employ ultra-premium Apple-like dark/light glassmorphic blocks, clean layouts, and rich typography (e.g., *Instrument Serif*, *Outfit*).
+*   [ ] **Remove Cartoon Icons:**
+    *   Replace all flat cartoon/vector icons with high-fidelity outline SVG icons (e.g., Lucide/Feather icons), custom interactive dashboard graphics, or clean 3D product renders.
+
+### 🏗️ 2. Section Restructuring & Clean-up
+*   [ ] **Merge "Explore Tech" into "What is Rawbin":**
+    *   Combine the technical specification details (aeration, sensors, heater) directly into the core product introduction page/section. Highlighting the "how it works" and "what it is" in a single fluid storytelling layout.
+*   [ ] **Enhance "Trusted Logos Strip":**
+    *   Re-position and style the partner/trust logo carousel or grid to sit immediately below the Hero section or integrated naturally with a prominent clean style.
+*   [ ] **Remove "Rawbin Community Impact":**
+    *   Strip away the generic community impact stats cards to declutter the user flow and maintain focus on premium product ownership.
+
+### 📸 3. New Content & Community Visuals
+*   [ ] **New Hero Section BG & Photo:**
+    *   Introduce a high-quality product photo of Rawbin placed in a modern kitchen setting.
+    *   Update the background gradients and container alignment to highlight the premium physical design of the device.
+*   [ ] **"Insta Cards" Social Grid:**
+    *   Implement an interactive grid/carousel of Instagram-style social cards displaying actual customers showcasing their Rawbin devices, kitchen setups, and unboxings.
+*   [ ] **"See what community is doing with the compost" Section:**
+    *   A section dedicated to displaying real-world utility of the nutrient-rich output (e.g., backyard organic gardening, nourishing indoor plants, community farm drops, greening balconies).
+
+### ⚡ 4. Copywriting & Interactive Components
+*   [ ] **"Composting shouldn't feel like..." Section:**
+    *   Write and design an empathetic interactive comparison showing the old, messy, smelly way of composting vs. the effortless, clean, 7-day Rawbin experience.
+*   [ ] **Deep-Dive "Learn More" Resource Hub:**
+    *   Develop a clean, accordion-based or multi-tab resource drawer for users wanting to learn the science behind Rawbin's composting process.
+*   [ ] **Dedicated "About Us" Section:**
+    *   Incorporate the Rawbin brand philosophy, founders' vision, and why we are building a circular solution specifically tailored for Indian kitchens.
+*   [ ] **Interactive "Ask Rawbin" AI/Query Component:**
+    *   Expand the floating interactive search assistant (`components/AskRawbin.jsx`) to let users query anything about compostable materials (e.g., "Can I put citrus peels in Rawbin?") with immediate responses.
+*   [ ] **High-Fidelity Interactivity:**
+    *   Ensure the site is packed with premium, fluid interactions: hover-based radial glow effects, scroll-triggered animations via Framer Motion, and micro-interactions on all primary action buttons.
+
 
