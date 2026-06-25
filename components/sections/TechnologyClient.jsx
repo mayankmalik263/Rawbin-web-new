@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Cpu, ShieldCheck, ThermometerSnowflake, RefreshCw } from 'lucide-react';
+import { GearIcon, BoltIcon, WindIcon } from '@/components/icons';
 
 export default function TechnologyClient() {
   const features = [
@@ -41,9 +42,10 @@ export default function TechnologyClient() {
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block bg-[#F0EAE1] text-nc-text font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border border-black/5 mb-6"
+            className="inline-flex items-center gap-1.5 bg-[#F0EAE1] text-nc-text font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border border-black/5 mb-6"
           >
-            ⚙️ Rawbin Intelligence
+            <GearIcon className="w-3.5 h-3.5 text-[#1F5A3F]" />
+            <span>Rawbin Intelligence</span>
           </motion.div>
           
           <motion.h1 
@@ -77,14 +79,18 @@ export default function TechnologyClient() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="bg-[#FBFAF6] p-4 rounded-2xl border border-black/5">
-                <span className="text-2xl mb-2 block">⚡</span>
-                <h4 className="font-bold mb-1">Ultra Efficient</h4>
+              <div className="bg-white p-6 rounded-3xl border border-black/5 flex flex-col items-start shadow-xs">
+                <div className="w-10 h-10 rounded-full bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-3 shadow-xs border border-black/5">
+                  <BoltIcon className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold mb-1 text-nc-text">Ultra Efficient</h4>
                 <p className="text-xs text-text-muted">Consumes less than 4 units of electricity per month.</p>
               </div>
-              <div className="bg-[#FBFAF6] p-4 rounded-2xl border border-black/5">
-                <span className="text-2xl mb-2 block">👃</span>
-                <h4 className="font-bold mb-1">Odor-Free System</h4>
+              <div className="bg-white p-6 rounded-3xl border border-black/5 flex flex-col items-start shadow-xs">
+                <div className="w-10 h-10 rounded-full bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-3 shadow-xs border border-black/5">
+                  <WindIcon className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold mb-1 text-nc-text">Odor-Free System</h4>
                 <p className="text-xs text-text-muted">Advanced carbon filtration neutralizes organic odors.</p>
               </div>
             </div>
