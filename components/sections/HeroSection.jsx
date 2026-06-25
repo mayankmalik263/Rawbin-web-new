@@ -59,9 +59,9 @@ export default function HeroSection() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-black text-nc-text leading-[1.3] tracking-tight mb-6"
           >
-            <span className="block">YOUR FRIDGE GOT SMART.</span>
-            <span className="block">YOUR OVEN GOT SMART.</span>
-            <span className="block">YOUR BIN DIDN&apos;T.</span>
+            <span className="block mb-[2px]">YOUR FRIDGE GOT SMART.</span>
+            <span className="block mb-[2px]">YOUR OVEN GOT SMART.</span>
+            <span className="block mb-[2px]">YOUR BIN DIDN&apos;T.</span>
             <span className="block text-primary mt-3">UNTIL NOW.</span>
           </motion.h1>
 
