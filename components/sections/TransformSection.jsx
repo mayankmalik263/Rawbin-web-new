@@ -11,7 +11,13 @@ import {
   BreadIcon,
   SoupIcon,
   GrainsIcon,
-  SproutIcon
+  SproutIcon,
+  PlasticIcon,
+  MetalIcon,
+  GlassIcon,
+  ChemicalIcon,
+  OilIcon,
+  NonOrganicIcon
 } from '@/components/icons';
 
 export default function TransformSection() {
@@ -29,12 +35,12 @@ export default function TransformSection() {
   ];
 
   const noItems = [
-    "Plastic",
-    "Metal",
-    "Glass",
-    "Chemical Cleaners",
-    "Large Quantities of Oil",
-    "Non-Organic Materials"
+    { icon: <PlasticIcon className="w-5 h-5" />, label: "Plastic" },
+    { icon: <MetalIcon className="w-5 h-5" />, label: "Metal" },
+    { icon: <GlassIcon className="w-5 h-5" />, label: "Glass" },
+    { icon: <ChemicalIcon className="w-5 h-5" />, label: "Chemical Cleaners" },
+    { icon: <OilIcon className="w-5 h-5" />, label: "Large Quantities of Oil" },
+    { icon: <NonOrganicIcon className="w-5 h-5" />, label: "Non-Organic Materials" }
   ];
 
   return (
@@ -109,8 +115,10 @@ export default function TransformSection() {
             <div className="flex flex-col gap-3 relative z-10">
               {noItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-4 bg-bg-alt p-4 rounded-xl border border-black/5">
-                  <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                  <span className="font-bold text-sm text-nc-text">{item}</span>
+                  <div className="text-red-500 flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <span className="font-bold text-sm text-nc-text">{item.label}</span>
                 </div>
               ))}
             </div>

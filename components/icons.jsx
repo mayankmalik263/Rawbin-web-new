@@ -616,3 +616,115 @@ export const GrainsIcon = withIcon(({ className, ...props }) => (
     <path d="M12 16c-1.5-1-3-1-3.5 0s1 2 3.5 1" />
   </svg>
 ));
+
+// 33. Plastic (Bottle Outline)
+export const PlasticIcon = withIcon(({ className, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <path d="M9 3h6v3H9z" />
+    <path d="M10 6L9 9v11a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V9l-1-3" />
+    <path d="M9 13h6" />
+    <path d="M9 17h6" />
+  </svg>
+));
+
+// 34. Metal (Can Outline)
+export const MetalIcon = withIcon(({ className, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <rect x="6" y="4" width="12" height="16" rx="2" />
+    <path d="M8 4h8" />
+    <path d="M8 20h8" />
+    <path d="M12 9v6" />
+    <path d="M10 12h4" />
+  </svg>
+));
+
+// 35. Glass (Bottle/Jar Outline)
+export const GlassIcon = withIcon(({ className, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <path d="M10 2h4v3h-4z" />
+    <path d="M10 5L7 8v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8l-3-3" />
+    <circle cx="12" cy="14" r="2" />
+  </svg>
+));
+
+// 36. Chemical Cleaners (Spray Bottle Outline)
+export const ChemicalIcon = withIcon(({ className, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <path d="M10 2h3v2h-3z" />
+    <path d="M13 4l3 1-1 3h-5l-1-4" />
+    <path d="M11 6a2 2 0 0 0-2 2" />
+    <path d="M11 8v2" />
+    <path d="M13 8v2" />
+    <path d="M8 10h8l2 2v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8l2-2z" />
+  </svg>
+));
+
+// 37. Oil (Droplet Outline)
+export const OilIcon = withIcon(({ className, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <path d="M12 2C12 2 6 10 6 14a6 6 0 0 0 12 0c0-4-6-12-6-12z" />
+    <path d="M12 17a3 3 0 0 0 2.12-5.12" />
+  </svg>
+));
+
+// 38. Non-Organic Materials (Cogwheel Gear Outline)
+export const NonOrganicIcon = withIcon(({ className, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4 12h2M20 12h2M6.34 6.34l1.42 1.42M16.24 16.24l1.42 1.42M6.34 17.66l1.42-1.42M16.24 7.76l1.42-1.42" />
+  </svg>
+));
