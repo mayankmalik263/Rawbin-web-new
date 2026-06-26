@@ -195,8 +195,8 @@ This section outlines the upcoming product redesign and feature additions reques
 ### ⚡ 4. Copywriting & Interactive Components
 *   [ ] **"Composting shouldn't feel like..." Section:**
     *   Write and design an empathetic interactive comparison showing the old, messy, smelly way of composting vs. the effortless, clean, 7-day Rawbin experience.
-*   [ ] **Deep-Dive "Learn More" Resource Hub:**
-    *   Develop a clean, accordion-based or multi-tab resource drawer for users wanting to learn the science behind Rawbin's composting process.
+*   [x] **Deep-Dive "Learn More" Resource Hub (Completed: June 26, 2026):**
+    *   Developed a dedicated `/science` subpage detailing the chemical, biological, and structural science for all 12 FAQs. Added anchor-linked \"Learn More Science →\" buttons inside the expanded FAQ panels on the homepage for seamless direct navigation.
 *   [x] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Completed: June 26, 2026):**
     *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
 *   [x] **High-Fidelity Interactivity (Completed: June 26, 2026):**
