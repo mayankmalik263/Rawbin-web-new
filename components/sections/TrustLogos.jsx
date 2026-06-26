@@ -26,7 +26,7 @@ export default function TrustLogos() {
           display: flex;
           width: max-content;
           animation: marquee 30s linear infinite;
-          gap: 5rem;
+          gap: 3rem;
         }
         .mask-gradient {
           mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
@@ -52,7 +52,7 @@ export default function TrustLogos() {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="max-h-16 max-w-[200px] object-contain"
+                  className="max-h-20 max-w-[240px] object-contain"
                 />
               ) : (
                 <span className="font-sans text-base md:text-xl font-black tracking-tight text-neutral-800 text-center whitespace-nowrap">
