@@ -192,8 +192,8 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Develop a clean, accordion-based or multi-tab resource drawer for users wanting to learn the science behind Rawbin's composting process.
 *   [ ] **Dedicated "About Us" Section:**
     *   Incorporate the Rawbin brand philosophy, founders' vision, and why we are building a circular solution specifically tailored for Indian kitchens.
-*   [ ] **Interactive "Ask Rawbin" AI/Query Component:**
-    *   Expand the floating interactive search assistant (`components/AskRawbin.jsx`) to let users query anything about compostable materials (e.g., "Can I put citrus peels in Rawbin?") with immediate responses.
+*   [ ] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Newcycl Knowledge):**
+    *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
 *   [ ] **High-Fidelity Interactivity:**
     *   Ensure the site is packed with premium, fluid interactions: hover-based radial glow effects, scroll-triggered animations via Framer Motion, and micro-interactions on all primary action buttons.
 
