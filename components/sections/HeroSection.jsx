@@ -30,101 +30,106 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative bg-bg-secondary w-full pt-12 pb-12 md:pt-20 md:pb-20 overflow-hidden">
-      {/* Background Image - optimized for both mobile and desktop */}
-      <div className="absolute inset-0 w-full h-full z-0 opacity-50 md:opacity-100">
-        <Image 
-          src="/images/new_hero_bg.png" 
-          alt="Rawbin in modern kitchen" 
-          fill
-          priority
-          className="object-cover object-right-bottom"
-        />
-      </div>
-
-      <div className="max-w-[1280px] mx-auto px-5 relative z-10">
-        <div className="max-w-[650px]">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2.5 bg-[#F0EAE1]/90 backdrop-blur-sm px-4 py-1.5 rounded-full border border-accent-brown/40 font-bold text-xs md:text-sm text-nc-text mb-8 shadow-xs"
-          >
-            <IndiaIcon className="w-4 h-4 text-[#1F5A3F]" />
-            <span>India&apos;s First Smart Home Composter</span>
-          </motion.div>
-
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-black text-nc-text leading-[1.3] tracking-tight mb-6"
-          >
-            <span className="block mb-[2px]">YOUR FRIDGE GOT SMART.</span>
-            <span className="block mb-[2px]">YOUR OVEN GOT SMART.</span>
-            <span className="block mb-[2px]">YOUR BIN DIDN&apos;T.</span>
-            <span className="block text-primary mt-3">UNTIL NOW.</span>
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-text-muted font-medium mb-10 max-w-[550px]"
-          >
-            Transform food scraps into compost, effortlessly using Rawbin.
-          </motion.p>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <motion.a
-              href="#order"
-              whileHover={{ scale: 1.04, y: -3 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center tracking-wide"
-              style={{ boxShadow: '0 4px 14px rgba(69,185,0,0.35)' }}
-              animate={{
-                boxShadow: [
-                  '0 4px 14px rgba(69,185,0,0.30)',
-                  '0 8px 28px rgba(69,185,0,0.55)',
-                  '0 4px 14px rgba(69,185,0,0.30)',
-                ]
-              }}
-              transition={{
-                boxShadow: {
-                  duration: 2.4,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                },
-                type: 'spring',
-                stiffness: 400,
-                damping: 20
-              }}
+      <section className="relative bg-[#F9F5F3] w-full overflow-hidden">
+        {/* Content Container */}
+        <div className="max-w-[1280px] mx-auto px-5 pt-12 pb-6 md:pt-20 md:pb-10 lg:py-24 relative z-10">
+          <div className="lg:w-[50%]">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2.5 bg-[#F0EAE1]/90 backdrop-blur-sm px-4 py-1.5 rounded-full border border-accent-brown/40 font-bold text-xs md:text-sm text-nc-text mb-8 shadow-xs"
             >
-              I&apos;M READY TO COMPOST
-            </motion.a>
-            <motion.button
-              whileHover={{ scale: 1.04, y: -3 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-              className="flex items-center justify-center gap-3 bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold tracking-wide shadow-[0_4px_14px_rgba(69,185,0,0.3)]"
+              <IndiaIcon className="w-4 h-4 text-[#1F5A3F]" />
+              <span>India&apos;s First Smart Home Composter</span>
+            </motion.div>
+
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-nc-text leading-[1.3] tracking-tight mb-6"
             >
-              <span className="w-8 h-6 bg-[#FF0000] rounded-md flex items-center justify-center text-white">
-                <Play size={12} fill="white" className="ml-[2px]" />
-              </span>
-              WATCH HOW IT WORKS
-            </motion.button>
-          </motion.div>
+              <span className="block mb-[2px]">YOUR FRIDGE GOT SMART.</span>
+              <span className="block mb-[2px]">YOUR OVEN GOT SMART.</span>
+              <span className="block mb-[2px]">YOUR BIN DIDN&apos;T.</span>
+              <span className="block text-primary mt-3">UNTIL NOW.</span>
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg md:text-xl text-text-muted font-medium mb-10 max-w-[550px]"
+            >
+              Transform food scraps into compost, effortlessly using Rawbin.
+            </motion.p>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <motion.a
+                href="#order"
+                whileHover={{ scale: 1.04, y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center tracking-wide"
+                style={{ boxShadow: '0 4px 14px rgba(69,185,0,0.35)' }}
+                animate={{
+                  boxShadow: [
+                    '0 4px 14px rgba(69,185,0,0.30)',
+                    '0 8px 28px rgba(69,185,0,0.55)',
+                    '0 4px 14px rgba(69,185,0,0.30)',
+                  ]
+                }}
+                transition={{
+                  boxShadow: {
+                    duration: 2.4,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  },
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 20
+                }}
+              >
+                I&apos;M READY TO COMPOST
+              </motion.a>
+              <motion.button
+                whileHover={{ scale: 1.04, y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                className="flex items-center justify-center gap-3 bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold tracking-wide shadow-[0_4px_14px_rgba(69,185,0,0.3)]"
+              >
+                <span className="w-8 h-6 bg-[#FF0000] rounded-md flex items-center justify-center text-white">
+                  <Play size={12} fill="white" className="ml-[2px]" />
+                </span>
+                WATCH HOW IT WORKS
+              </motion.button>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+
+        {/* Image Container - absolute full-bleed on desktop, relative card on mobile/tablet */}
+        <div className="relative lg:absolute right-0 top-0 w-full lg:w-[50%] h-[320px] sm:h-[450px] lg:h-full pb-12 lg:pb-0 px-5 lg:px-0 z-0">
+          <div className="relative w-full h-full rounded-3xl lg:rounded-none overflow-hidden shadow-lg lg:shadow-none border border-black/5 lg:border-none">
+            {/* Smooth gradient fade to blend with the beige background on desktop */}
+            <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#F9F5F3] via-[#F9F5F3]/80 to-transparent z-10 pointer-events-none" />
+            <Image 
+              src="/images/new_hero_bg.png" 
+              alt="Rawbin in modern kitchen" 
+              fill
+              priority
+              className="object-cover object-[75%_center] lg:object-[80%_center]"
+            />
+          </div>
+        </div>
+      </section>
 
     {/* What is Rawbin Section */}
     <section style={{ background: '#FBFAF6', borderTop: '1px solid rgba(0,0,0,.05)' }} className="w-full py-16 md:py-20 relative z-10">
