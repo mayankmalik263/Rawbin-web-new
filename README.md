@@ -193,8 +193,8 @@ This section outlines the upcoming product redesign and feature additions reques
     *   A section dedicated to displaying real-world utility of the nutrient-rich output (e.g., backyard organic gardening, nourishing indoor plants, community farm drops, greening balconies).
 
 ### ⚡ 4. Copywriting & Interactive Components
-*   [ ] **"Composting shouldn't feel like..." Section:**
-    *   Write and design an empathetic interactive comparison showing the old, messy, smelly way of composting vs. the effortless, clean, 7-day Rawbin experience.
+*   [x] **"Composting shouldn't feel like..." Section (Completed: June 26, 2026):**
+    *   Implemented on the homepage as the "How It Works" section titled "Composting Shouldn't Feel Like Work", showcasing the 3 simple steps of the Rawbin cycle.
 *   [x] **Deep-Dive "Learn More" Resource Hub (Completed: June 26, 2026):**
     *   Developed a dedicated `/science` subpage detailing the chemical, biological, and structural science for all 12 FAQs. Added anchor-linked \"Learn More Science →\" buttons inside the expanded FAQ panels on the homepage for seamless direct navigation.
 *   [x] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Completed: June 26, 2026):**
