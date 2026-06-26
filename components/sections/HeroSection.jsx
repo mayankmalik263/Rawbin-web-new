@@ -32,7 +32,13 @@ export default function HeroSection() {
     <>
       <section className="relative bg-[#F9F5F3] w-full overflow-hidden">
         {/* Frosted Glass Pane - desktop only */}
-        <div className="hidden lg:block absolute left-0 top-0 w-[55%] h-full bg-white/10 backdrop-blur-[10px] border-r border-white/40 z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)] pointer-events-none" />
+        <div 
+          className="hidden lg:block absolute left-0 top-0 w-[65%] h-full bg-white/10 backdrop-blur-[10px] z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)] pointer-events-none" 
+          style={{
+            maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)'
+          }}
+        />
 
         {/* Content Container */}
         <div className="max-w-[1280px] mx-auto px-5 pt-12 pb-6 md:pt-20 md:pb-10 lg:py-24 relative z-20">
