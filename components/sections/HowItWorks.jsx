@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import {
   BoltIcon,
   SproutIcon,
@@ -18,6 +19,7 @@ export default function HowItWorks() {
           <path d="M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
+      img: "/images/step1-add-leftovers.png",
       title: "Add Your Leftovers",
       desc: "Drop in fruit peels, vegetable scraps, coffee grounds, tea leaves, and everyday kitchen leftovers."
     },
@@ -35,6 +37,7 @@ export default function HowItWorks() {
           <path d="M16.24 7.76L19.07 4.93" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
+      img: "/images/step2-composter-processing.png",
       title: "Rawbin Does The Work",
       desc: "Rawbin intelligently manages the composting process to create ideal conditions for transformation."
     },
@@ -46,6 +49,7 @@ export default function HowItWorks() {
           <path d="M12 10C12.5523 10 13 9.55228 13 9C13 8.44772 12.5523 8 12 8C11.4477 8 11 8.44772 11 9C11 9.55228 11.4477 10 12 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
+      img: "/images/step3-harvest-compost.png",
       title: "Harvest Living Compost",
       desc: "Collect nutrient-rich compost ready to nourish plants, gardens, balconies, community green spaces, and urban greenery."
     }
@@ -84,9 +88,6 @@ export default function HowItWorks() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 relative">
-          {/* Connector line for desktop */}
-          <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[2px] bg-bg-alt -z-10"></div>
-          
           {steps.map((step, i) => (
             <motion.div 
               key={i}
@@ -94,20 +95,34 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-hover transition-shadow group"
+              className="bg-white rounded-3xl border border-black/5 shadow-sm hover:shadow-hover transition-shadow group overflow-hidden flex flex-col h-full"
             >
-              <div className="flex justify-between items-start mb-8">
-                <div className="text-5xl font-black text-black/5 group-hover:text-primary/20 transition-colors">
-                  {step.number}
-                </div>
-                <div className="w-16 h-16 rounded-2xl bg-bg-alt flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                  {step.icon}
+              {/* Image Container */}
+              <div className="relative w-full h-[220px] bg-bg-alt overflow-hidden">
+                <Image 
+                  src={step.img} 
+                  alt={step.title} 
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <div className="p-8 flex-grow flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="text-4xl font-black text-black/5 group-hover:text-primary/20 transition-colors">
+                      {step.number}
+                    </div>
+                    <div className="w-12 h-12 rounded-xl bg-bg-alt flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-nc-text">{step.title}</h3>
+                  <p className="text-text-muted font-medium leading-relaxed text-sm md:text-base">
+                    {step.desc}
+                  </p>
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-nc-text">{step.title}</h3>
-              <p className="text-text-muted font-medium leading-relaxed">
-                {step.desc}
-              </p>
             </motion.div>
           ))}
         </div>
