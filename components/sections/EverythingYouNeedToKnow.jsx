@@ -135,12 +135,7 @@ export default function EverythingYouNeedToKnow() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -6, scale: 1.025, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
-              className={`bg-white p-8 rounded-3xl border border-black/5 border-t-2 cursor-default ${
-                i === 0 ? 'border-t-primary' :
-                i === 1 ? 'border-t-accent-lilac' :
-                i === 2 ? 'border-t-accent-brown' :
-                'border-t-accent-lilac'
-              }`}
+              className="bg-white p-8 rounded-3xl border border-black/5 cursor-default"
             >
               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 border border-black/5 shadow-sm ${
                 i % 2 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'
