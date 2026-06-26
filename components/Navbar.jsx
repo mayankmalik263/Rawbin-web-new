@@ -71,6 +71,13 @@ export default function Navbar() {
                       </Link>
                     )}
                   </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <Link href="/about-us" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
+                        About Us
+                      </Link>
+                    )}
+                  </Menu.Item>
                 </Menu.Items>
               </Transition>
             </Menu>
@@ -95,6 +102,7 @@ export default function Navbar() {
           <Link href="#faqs" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>FAQs</Link>
           <Link href="#how-it-works" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
           <Link href="/roe-calculator" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>ROE Calculator</Link>
+          <Link href="/about-us" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-center mt-2" onClick={() => setMobileMenuOpen(false)}>Order Now</Link>
         </div>
       )}

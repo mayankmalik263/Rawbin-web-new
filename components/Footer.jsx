@@ -20,6 +20,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-text-muted text-sm font-medium">
               <Link href="#why-rawbin" className="hover:text-primary transition-colors">Why Rawbin</Link>
               <Link href="/technology" className="hover:text-primary transition-colors">Technology</Link>
+              <Link href="/about-us" className="hover:text-primary transition-colors">About Us</Link>
               <Link href="#faqs" className="hover:text-primary transition-colors">FAQs</Link>
               <Link href="#" className="hover:text-primary transition-colors">Compost Report</Link>
               <Link href="#contact" className="hover:text-primary transition-colors">Contact Us</Link>

@@ -191,7 +191,7 @@ This section outlines the upcoming product redesign and feature additions reques
 *   [ ] **Deep-Dive "Learn More" Resource Hub:**
     *   Develop a clean, accordion-based or multi-tab resource drawer for users wanting to learn the science behind Rawbin's composting process.
 *   [x] **Dedicated "About Us" Section (Completed: June 26, 2026):**
-    *   Incorporate the Rawbin brand philosophy, founders' vision, and why we are building a circular solution specifically tailored for Indian kitchens.
+    *   Migrated to a dedicated `/about-us` subpage featuring the prototyping timeline, Twilio data scientist founder story, spice engineering, and interactive LinkedIn and Instagram Reel preview cards.
 *   [ ] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Newcycl Knowledge):**
     *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
 *   [ ] **High-Fidelity Interactivity:**
