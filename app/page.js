@@ -7,6 +7,7 @@ import EverythingYouNeedToKnow from '@/components/sections/EverythingYouNeedToKn
 import CompostOutput from '@/components/sections/CompostOutput';
 import FAQSection from '@/components/sections/FAQSection';
 import SocialProof from '@/components/sections/SocialProof';
+import AboutUs from '@/components/sections/AboutUs';
 import FinalCTA from '@/components/sections/FinalCTA';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <CompostOutput />
       <FAQSection />
       <SocialProof />
+      <AboutUs />
       <FinalCTA />
     </>
   );

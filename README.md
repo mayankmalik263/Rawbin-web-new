@@ -190,7 +190,7 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Write and design an empathetic interactive comparison showing the old, messy, smelly way of composting vs. the effortless, clean, 7-day Rawbin experience.
 *   [ ] **Deep-Dive "Learn More" Resource Hub:**
     *   Develop a clean, accordion-based or multi-tab resource drawer for users wanting to learn the science behind Rawbin's composting process.
-*   [ ] **Dedicated "About Us" Section:**
+*   [x] **Dedicated "About Us" Section (Completed: June 26, 2026):**
     *   Incorporate the Rawbin brand philosophy, founders' vision, and why we are building a circular solution specifically tailored for Indian kitchens.
 *   [ ] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Newcycl Knowledge):**
     *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
@@ -241,6 +241,3 @@ This section outlines the upcoming product redesign and feature additions reques
     *   **Implementation Plan:** 
         *   Inject these terms naturally in landing page titles, header tags (`<h1>`, `<h2>`), image alt text, and meta descriptions.
         *   Optimize the page structure to win "Featured Snippets" (e.g., clear, bulleted answers for questions like "What can you compost in a smart kitchen bin?").
-
-
-
