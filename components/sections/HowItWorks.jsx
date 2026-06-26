@@ -110,7 +110,7 @@ export default function HowItWorks() {
               <div className="p-8 flex-grow flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start mb-6">
-                    <div className="text-4xl font-black text-black/5 group-hover:text-primary/20 transition-colors">
+                    <div className="text-4xl font-black text-black/20 group-hover:text-primary/20 transition-colors">
                       {step.number}
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-bg-alt flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
