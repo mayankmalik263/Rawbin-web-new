@@ -1,6 +1,6 @@
 'use client';
 import { motion, useMotionValue } from 'framer-motion';
-import { Star, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Star, ArrowRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 export default function SocialProof() {
@@ -232,30 +232,17 @@ export default function SocialProof() {
                 </div>
 
                 {/* Card Footer */}
-                <div className="flex justify-between items-end mt-4">
-                  <div>
-                    {/* Stars Row */}
-                    <div className="flex gap-0.5 mb-2 text-gray-900">
-                      {[...Array(5)].map((_, j) => (
-                        <Star key={j} size={14} fill="currentColor" className="text-gray-900" />
-                      ))}
-                    </div>
-                    {/* Name */}
-                    <div className="font-extrabold text-sm text-gray-900 tracking-tight">{review.name}</div>
-                    {/* Date */}
-                    <div className="text-xs text-gray-600 font-bold mt-0.5">{review.date}</div>
+                <div className="mt-4">
+                  {/* Stars Row */}
+                  <div className="flex gap-0.5 mb-2 text-gray-900">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} size={14} fill="currentColor" className="text-gray-900" />
+                    ))}
                   </div>
-
-                  {/* Circular Diagonal Arrow Button */}
-                  <motion.div 
-                    animate={{
-                      backgroundColor: isActive ? "#FFFFFF" : "rgba(0,0,0,0.1)",
-                      boxShadow: isActive ? "0px 4px 10px rgba(0, 0, 0, 0.05)" : "none"
-                    }}
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-gray-900"
-                  >
-                    <ArrowUpRight size={18} />
-                  </motion.div>
+                  {/* Name */}
+                  <div className="font-extrabold text-sm text-gray-900 tracking-tight">{review.name}</div>
+                  {/* Date */}
+                  <div className="text-xs text-gray-600 font-bold mt-0.5">{review.date}</div>
                 </div>
               </motion.div>
             );
