@@ -1,6 +1,6 @@
 'use client';
 import { motion, useMotionValue } from 'framer-motion';
-import { Star, ArrowRight } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -309,12 +309,6 @@ export default function SocialProof() {
           </div>
         </div>
 
-        {/* Blogs Link */}
-        <div className="text-center">
-          <button className="flex items-center gap-2 mx-auto text-[#A3B899] font-bold text-sm hover:text-primary transition-all">
-            Read our Composting Guides & Blogs <ArrowRight size={16} />
-          </button>
-        </div>
       </div>
     </section>
   );
