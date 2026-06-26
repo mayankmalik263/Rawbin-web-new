@@ -2,21 +2,70 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Disclosure } from '@headlessui/react';
 import { Plus, Minus } from 'lucide-react';
+import Link from 'next/link';
 
 export default function FAQSection() {
   const faqs = [
-    { q: "What is Rawbin?", a: "Rawbin is an intelligent home composting system that transforms kitchen leftovers into nutrient-rich compost with minimal effort." },
-    { q: "What do I do with the compost?", a: "You can use the compost for your indoor plants, outdoor gardens, community gardens, or even gift it to neighbors." },
-    { q: "Rawbin vs Traditional Composting?", a: "Unlike traditional composting which can take months, attract pests, and produce odors, Rawbin uses smart technology to create compost in just a few days, completely odor-free and mess-free." },
-    { q: "Does Rawbin smell?", a: "No, Rawbin is designed to be 100% odor-free using advanced carbon filtration and bio-transform technology." },
-    { q: "Does Rawbin attract pests?", a: "No, the closed-loop system is completely sealed, preventing any pests or insects from accessing the organic matter." },
-    { q: "How much electricity does Rawbin use?", a: "Rawbin is highly energy efficient, using just ~4 units of electricity per month, which is less power than a standard LED bulb over the same period." },
-    { q: "How do I clean Rawbin?", a: "The inner bucket is easily removable and can be washed with mild soap and water or placed in a dishwasher." },
-    { q: "What is the size and capacity of Rawbin?", a: "Rawbin handles up to 3kg of everyday kitchen leftovers per cycle and features a compact design perfect for modern apartments." },
-    { q: "What is the expected life of Rawbin?", a: "Built with durable, high-quality materials, Rawbin is engineered to last for years of daily use." },
-    { q: "How do I use Rawbin properly?", a: "Simply open the lid, add your organic kitchen leftovers, close it, and let Rawbin's intelligent sensors take over. That's it!" },
-    { q: "What maintenance is required?", a: "Rawbin requires near-zero intervention. The only maintenance needed is occasionally replacing the carbon filter to maintain its odor-free operation." },
-    { q: "What warranty does Rawbin include?", a: "Rawbin comes with a comprehensive 1-year warranty covering any manufacturing defects or operational issues." }
+    { 
+      id: "faq-1",
+      q: "What is Rawbin?", 
+      a: "Rawbin is an intelligent home composting system designed to transform daily kitchen leftovers into nutrient-rich organic compost within 7 days. By combining high-torque grinding with automated heat regulation and active internal aeration, it speeds up natural decomposition, reducing waste volume by up to 90% in a clean, countertop-friendly format." 
+    },
+    { 
+      id: "faq-2",
+      q: "What do I do with the compost?", 
+      a: "The organic output is dry, stable pre-compost loaded with essential plant nutrients (NPK) and beneficial soil microbes. You can mix it directly into the soil of indoor potted plants, balcony flowers, backyard vegetable gardens, or donate it to community green spaces to enrich the soil structure and increase its moisture retention capacity." 
+    },
+    { 
+      id: "faq-3",
+      q: "Rawbin vs Traditional Composting?", 
+      a: "Traditional composting takes 2-3 months, requires manual turning, and creates foul odors and flies due to anaerobic decay. Rawbin operates fully aerobically using motorized mixing blades and temperature sensors to complete the process in 7 days, sanitizing pathogens at thermophilic temperatures (55°C-65°C) without odors or mess." 
+    },
+    { 
+      id: "faq-4",
+      q: "Does Rawbin smell?", 
+      a: "No, Rawbin is engineered to be 100% odor-free. An internal fan maintains continuous airflow to keep decomposition aerobic, which prevents foul-smelling gases like methane or sulfur from forming. Any exhaust air is routed through a high-performance dual-stage activated carbon filter that chemically traps organic compounds." 
+    },
+    { 
+      id: "faq-5",
+      q: "Does Rawbin attract pests?", 
+      a: "No. Rawbin's composting chamber is hermetically sealed with custom food-grade silicone gaskets, and all vents are shielded behind micro-mesh screens. Because no smells escape and there are no entry points, fruit flies, gnats, and rodents are neither attracted to nor able to access the composting scraps." 
+    },
+    { 
+      id: "faq-6",
+      q: "How much electricity does Rawbin use?", 
+      a: "Rawbin is highly energy-efficient, consuming less than 4 units (kWh) of electricity per month—less than a standard LED bulb. Smart temperature sensors monitor the composting process, shutting down the heating coil when the bacteria's own biological activity produces enough heat to sustain composting temperatures." 
+    },
+    { 
+      id: "faq-7",
+      q: "How do I clean Rawbin?", 
+      a: "Cleaning is simple. Rawbin's inner bucket is easily removable, dishwasher-safe, and coated with a premium non-stick ceramic layer. This hydrophobic ceramic surface prevents organic oils, starches, and acidic food residues from sticking to the bucket walls during processing, making cleanup effortless." 
+    },
+    { 
+      id: "faq-8",
+      q: "What is the size and capacity of Rawbin?", 
+      a: "Rawbin fits comfortably on standard kitchen countertops, measuring approximately 35cm x 30cm x 40cm (similar to a bread maker). It has a daily composting capacity of up to 3kg, which is mathematically optimized to manage the average organic food scraps generated by a standard family of 4 to 6 members." 
+    },
+    { 
+      id: "faq-9",
+      q: "What is the expected life of Rawbin?", 
+      a: "Rawbin is built for long-term daily use, featuring high-quality structural components. It is engineered with case-hardened steel gears, double-insulated heating elements, an impact-resistant ABS outer body, and stainless steel sensor probes designed to withstand the acidity and moisture of daily food processing." 
+    },
+    { 
+      id: "faq-10",
+      q: "How do I use Rawbin properly?", 
+      a: "Simply open the lid, drop in your organic kitchen waste, close the lid, and let the system run. For best results, use the 'Sourdough Model': when emptying the bucket, leave about 10% of the compost at the bottom. This acts as a starter (inoculum) pre-populated with active microbes to jumpstart the next batch." 
+    },
+    { 
+      id: "faq-11",
+      q: "What maintenance is required?", 
+      a: "Rawbin requires near-zero intervention. The only maintenance needed is replacing the activated carbon filter cartridge every 3 to 6 months (depending on usage) to ensure 100% odor absorption. The unit features a built-in sensor that will automatically light up an LED indicator to let you know when it is time to replace the filter." 
+    },
+    { 
+      id: "faq-12",
+      q: "What warranty does Rawbin include?", 
+      a: "Rawbin includes a comprehensive 1-year warranty covering all electronic boards, sensors, heating elements, blending blades, and motors. Our local customer support teams are available for troubleshooting or quick component swap-outs to ensure your composting loop remains uninterrupted." 
+    }
   ];
 
   return (
@@ -69,7 +118,15 @@ export default function FAQSection() {
                           className="overflow-hidden"
                         >
                           <div className="p-6 pt-0 text-text-muted font-medium bg-accent-lilac/5 leading-relaxed">
-                            {faq.a}
+                            <p>{faq.a}</p>
+                            <div className="mt-4 pt-4 border-t border-accent-lilac/10 flex justify-end">
+                              <Link 
+                                href={`/science#${faq.id}`}
+                                className="text-xs font-bold text-primary hover:text-accent-lilac flex items-center gap-1 transition-colors uppercase tracking-wider"
+                              >
+                                Learn More Science &rarr;
+                              </Link>
+                            </div>
                           </div>
                         </Disclosure.Panel>
                       )}

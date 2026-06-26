@@ -80,6 +80,13 @@ export default function Navbar() {
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
+                      <Link href="/science" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
+                        Science of Composting
+                      </Link>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
                       <Link href="/about-us" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
                         About Us
                       </Link>
