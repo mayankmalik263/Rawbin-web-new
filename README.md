@@ -168,8 +168,8 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Replace all flat cartoon/vector icons and raw text emojis with custom high-fidelity outline SVG icons across the landing page, technology tab, and YES/NO list cards.
 
 ### 🏗️ 2. Section Restructuring & Clean-up
-*   [ ] **Merge "Explore Tech" into "What is Rawbin":**
-    *   Combine the technical specification details (aeration, sensors, heater) directly into the core product introduction page/section. Highlighting the "how it works" and "what it is" in a single fluid storytelling layout.
+*   [ ] **Merge "Everything You Need To Know" into "What is Rawbin" Section:**
+    *   Combine the "Everything You Need To Know" specification details and the homepage "What is Rawbin" section (currently at the bottom of HeroSection.jsx) into a single, cohesive, premium storytelling layout.
 *   [x] **Enhance "Trusted Logos Strip" (Completed: June 26, 2026):**
     *   Re-positioned and styled the partner/trust logo carousel as a full infinite marquee strip. Increased logo sizes (`max-h-20`, `max-w-[240px]`) and reduced inter-logo gap to `3rem` for a denser, more premium display.
 *   [x] **Remove "Rawbin Community Impact" (Completed: June 26, 2026):**
