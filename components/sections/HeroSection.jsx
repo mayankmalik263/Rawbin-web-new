@@ -84,15 +84,43 @@ export default function HeroSection() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a href="#order" className="bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center tracking-wide hover:shadow-hover hover:-translate-y-1 transition-all shadow-[0_4px_14px_rgba(69,185,0,0.3)]">
+            <motion.a
+              href="#order"
+              whileHover={{ scale: 1.04, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              className="bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center tracking-wide"
+              style={{ boxShadow: '0 4px 14px rgba(69,185,0,0.35)' }}
+              animate={{
+                boxShadow: [
+                  '0 4px 14px rgba(69,185,0,0.30)',
+                  '0 8px 28px rgba(69,185,0,0.55)',
+                  '0 4px 14px rgba(69,185,0,0.30)',
+                ]
+              }}
+              transition={{
+                boxShadow: {
+                  duration: 2.4,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                },
+                type: 'spring',
+                stiffness: 400,
+                damping: 20
+              }}
+            >
               I&apos;M READY TO COMPOST
-            </a>
-            <button className="flex items-center justify-center gap-3 bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold tracking-wide hover:shadow-hover hover:-translate-y-1 transition-all shadow-[0_4px_14px_rgba(69,185,0,0.3)]">
+            </motion.a>
+            <motion.button
+              whileHover={{ scale: 1.04, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              className="flex items-center justify-center gap-3 bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold tracking-wide shadow-[0_4px_14px_rgba(69,185,0,0.3)]"
+            >
               <span className="w-8 h-6 bg-[#FF0000] rounded-md flex items-center justify-center text-white">
                 <Play size={12} fill="white" className="ml-[2px]" />
               </span>
               WATCH HOW IT WORKS
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       </div>

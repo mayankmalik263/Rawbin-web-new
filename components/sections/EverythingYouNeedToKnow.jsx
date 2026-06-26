@@ -134,7 +134,8 @@ export default function EverythingYouNeedToKnow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`bg-white p-8 rounded-3xl border border-black/5 hover:-translate-y-1 transition-transform border-t-2 ${
+              whileHover={{ y: -6, scale: 1.025, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
+              className={`bg-white p-8 rounded-3xl border border-black/5 border-t-2 cursor-default ${
                 i === 0 ? 'border-t-primary' :
                 i === 1 ? 'border-t-accent-lilac' :
                 i === 2 ? 'border-t-accent-brown' :
@@ -169,10 +170,16 @@ export default function EverythingYouNeedToKnow() {
               <p className="text-text-muted text-sm font-medium">Advanced on the inside. Effortless on the outside.</p>
             </div>
           </div>
-          <Link href="/technology" className="group flex items-center gap-2 bg-[#1a4226] text-white px-7 py-3.5 rounded-2xl font-bold tracking-wide hover:bg-black transition-all shadow-sm">
-            Explore Technology
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
+            <Link href="/technology" className="group flex items-center gap-2 bg-[#1a4226] text-white px-7 py-3.5 rounded-2xl font-bold tracking-wide hover:bg-black transition-all shadow-sm">
+              Explore Technology
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </motion.div>
 
       </div>

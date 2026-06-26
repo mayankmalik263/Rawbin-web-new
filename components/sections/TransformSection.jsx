@@ -85,12 +85,16 @@ export default function TransformSection() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
               {yesItems.map((item, i) => (
-                <div key={i} className="flex items-center gap-3 bg-bg-alt p-3 rounded-xl border border-black/5">
+                <motion.div 
+                  key={i} 
+                  whileHover={{ scale: 1.03, y: -1, x: 2, transition: { type: 'spring', stiffness: 450, damping: 15 } }}
+                  className="flex items-center gap-3 bg-bg-alt p-3 rounded-xl border border-black/5 cursor-default"
+                >
                   <div className="text-[#1F5A3F] flex items-center justify-center">
                     {item.icon}
                   </div>
                   <span className="font-bold text-sm text-nc-text">{item.label}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -114,12 +118,16 @@ export default function TransformSection() {
             
             <div className="flex flex-col gap-3 relative z-10">
               {noItems.map((item, i) => (
-                <div key={i} className="flex items-center gap-4 bg-bg-alt p-4 rounded-xl border border-black/5">
+                <motion.div 
+                  key={i} 
+                  whileHover={{ scale: 1.025, y: -1, x: 2, transition: { type: 'spring', stiffness: 450, damping: 15 } }}
+                  className="flex items-center gap-4 bg-bg-alt p-4 rounded-xl border border-black/5 cursor-default"
+                >
                   <div className="text-red-500 flex items-center justify-center">
                     {item.icon}
                   </div>
                   <span className="font-bold text-sm text-nc-text">{item.label}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>

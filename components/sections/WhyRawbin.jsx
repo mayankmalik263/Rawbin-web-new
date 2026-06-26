@@ -13,6 +13,14 @@ import {
 } from '@/components/icons';
 
 export default function WhyRawbin() {
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.07 } }
+  };
+  const cardVariants = {
+    hidden: { opacity: 0, y: 28, scale: 0.97 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 260, damping: 22 } }
+  };
   const benefits = [
     { icon: <WindIcon />, title: "Odor-Free", desc: "Advanced carbon filtration eliminates any smell." },
     { icon: <HomeIcon />, title: "Apartment Friendly", desc: "Compact design fits any modern urban home." },
@@ -39,15 +47,19 @@ export default function WhyRawbin() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+        >
           {benefits.map((benefit, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="bg-bg-alt p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform"
+              variants={cardVariants}
+              whileHover={{ y: -6, scale: 1.03, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
+              className="bg-bg-alt p-6 rounded-2xl border border-black/5 cursor-default"
             >
               <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm border border-black/5 ${i % 2 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'}`}>
                 {benefit.icon}
@@ -56,7 +68,7 @@ export default function WhyRawbin() {
               <p className="text-text-muted text-sm font-medium leading-relaxed">{benefit.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Made In India Block */}
         <motion.div 

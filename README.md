@@ -159,11 +159,8 @@ git push origin priyansh/<feature-name>
 This section outlines the upcoming product redesign and feature additions requested in the project specification roadmap. 
 
 ### 🎨 1. Theme, Aesthetics & Brand Direction
-*   [ ] **Accent Color Expansion — Brown & Lilac (Planned):**
-    *   The existing green-based palette stays as the primary brand color. The task is to **introduce two additional accent colors** from the brand palette selectively across the site:
-        *   **Chocolate Brown** (`#3C2F2F`, `#5C4033`) — for warm earthy highlights, section dividers, card borders, tag badges, and subtle backgrounds in organic/nature-focused sections.
-        *   **Lilac** (`#C8B4D6`, `#A68BBF`) — for soft secondary accents, hover states, gradient overlays, and decorative detail elements.
-    *   These should be sprinkled **here and there** — not a full palette swap. The goal is a richer, more layered color story alongside the primary sage green, without replacing it.
+*   [x] **Accent Color Expansion — Brown & Lilac (Completed: June 26, 2026):**
+    *   Introduced Chocolate Brown and Lilac as secondary accent colors across the UI. Tailwind config tokens added and sprinkled on pill badges, borders, alternating icons, and hover elements.
 *   [ ] **Unique Composting Design:**
     *   Avoid generic, low-effort composting visual patterns (clipart leaves, recycling symbols, flat green).
     *   Employ ultra-premium Apple-like dark/light glassmorphic blocks, clean layouts, and rich typography (e.g., *Instrument Serif*, *Outfit*).
@@ -200,6 +197,10 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Write and design an empathetic interactive comparison showing the old, messy, smelly way of composting vs. the effortless, clean, 7-day Rawbin experience.
 *   [ ] **Deep-Dive "Learn More" Resource Hub:**
     *   Develop a clean, accordion-based or multi-tab resource drawer for users wanting to learn the science behind Rawbin's composting process.
+*   [x] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Completed: June 26, 2026):**
+    *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
+*   [x] **High-Fidelity Interactivity (Completed: June 26, 2026):**
+    *   Integrated smooth Framer Motion interactions across all pages. Includes a solid lilac scroll progress bar, spring-physics-based whileHover and whileTap scaling/lifting on CTA buttons, cards, and checklists, and soft looping breathing glow shadows on primary actions.
 *   [x] **Dedicated "About Us" Page (Completed: June 26, 2026):**
     *   Migrated to a fully dedicated `/about-us` subpage, accessible via the Navbar's "More" dropdown and the Footer.
     *   Page features: founder story (Anu Khandelwal — from Twilio data scientist to sustainability entrepreneur), Rawbin's making journey rooted in Indian kitchens, prototyping timeline, product philosophy, and an interactive LinkedIn timeline showcasing real journey posts.

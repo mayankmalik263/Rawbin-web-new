@@ -117,7 +117,8 @@ export default function TechnologyClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`bg-white p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group border-t-2 ${
+                whileHover={{ y: -6, scale: 1.015, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
+                className={`bg-white p-8 rounded-3xl border border-black/5 shadow-sm relative overflow-hidden group border-t-2 cursor-default ${
                   i === 0 ? 'border-t-primary' :
                   i === 1 ? 'border-t-accent-lilac' :
                   i === 2 ? 'border-t-accent-brown' :
@@ -145,9 +146,15 @@ export default function TechnologyClient() {
         </div>
 
         <div className="text-center">
-          <Link href="/" className="text-sm font-bold text-primary hover:underline">
-            ← Back to Home
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block"
+          >
+            <Link href="/" className="text-sm font-bold text-primary hover:underline">
+              ← Back to Home
+            </Link>
+          </motion.div>
         </div>
 
       </div>

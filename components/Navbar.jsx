@@ -4,12 +4,19 @@ import Link from 'next/link';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDown, Menu as MenuIcon, X } from 'lucide-react';
 import Image from 'next/image';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30, restDelta: 0.001 });
 
   return (
     <header className="bg-white py-4 sticky top-0 w-full z-[100] border-b border-black/5">
+      <motion.div
+        style={{ scaleX, transformOrigin: '0%' }}
+        className="absolute bottom-0 left-0 right-0 h-[3px] bg-accent-lilac z-50 rounded-r-full"
+      />
       <div className="max-w-[1280px] mx-auto flex justify-between items-center px-5">
         <Link href="/" className="flex flex-col items-center no-underline">
           <Image src="/images/logo.png" alt="Rawbin Logo" width={120} height={38} className="h-[38px] w-auto [image-rendering:-webkit-optimize-contrast]" />

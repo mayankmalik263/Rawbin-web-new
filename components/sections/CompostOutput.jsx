@@ -10,6 +10,14 @@ import {
 } from '@/components/icons';
 
 export default function CompostOutput() {
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.08 } }
+  };
+  const cardVariants = {
+    hidden: { opacity: 0, y: 24, scale: 0.97 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 240, damping: 22 } }
+  };
   const cards = [
     { icon: <PlantPotIcon className="w-8 h-8" />, title: "Balcony Plants", desc: "Show urban apartments using compost." },
     { icon: <HerbIcon className="w-8 h-8" />, title: "Kitchen Herbs", desc: "Mint. Basil. Coriander. Indoor gardening." },
@@ -43,15 +51,19 @@ export default function CompostOutput() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {cards.map((card, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group"
+              variants={cardVariants}
+              whileHover={{ y: -6, scale: 1.025, transition: { type: 'spring', stiffness: 380, damping: 18 } }}
+              className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group cursor-default"
             >
               <div className={`w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform mb-6 border ${
                 i % 2 === 0 ? 'bg-white/10 text-white border-white/5' : 'bg-accent-lilac/20 text-accent-lilac-soft border-accent-lilac/20'
@@ -64,7 +76,7 @@ export default function CompostOutput() {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

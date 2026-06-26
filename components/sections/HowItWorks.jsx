@@ -95,7 +95,8 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-3xl border border-black/5 shadow-sm hover:shadow-hover transition-shadow group overflow-hidden flex flex-col h-full"
+              whileHover={{ y: -8, scale: 1.015, transition: { type: 'spring', stiffness: 350, damping: 20 } }}
+              className="bg-white rounded-3xl border border-black/5 shadow-sm hover:shadow-hover transition-shadow group overflow-hidden flex flex-col h-full cursor-default"
             >
               {/* Image Container */}
               <div className="relative w-full h-[260px] bg-bg-alt overflow-hidden">
@@ -139,12 +140,16 @@ export default function HowItWorks() {
             { icon: <HomeIcon className="w-5 h-5" />, text: "Designed for Modern Homes" },
             { icon: <FourArrowRecycleIcon className="w-5 h-5" />, text: "Circular Living" }
           ].map((benefit, i) => (
-            <div key={i} className="flex items-center gap-3 font-bold text-nc-text px-4 py-2.5 bg-white rounded-xl shadow-sm border border-black/5 border-l-2 border-l-accent-brown/40">
+            <motion.div 
+              key={i} 
+              whileHover={{ scale: 1.04, y: -2, transition: { type: 'spring', stiffness: 400, damping: 15 } }}
+              className="flex items-center gap-3 font-bold text-nc-text px-4 py-2.5 bg-white rounded-xl shadow-sm border border-black/5 border-l-2 border-l-accent-brown/40 cursor-default"
+            >
               <div className="text-[#1F5A3F] flex items-center justify-center">
                 {benefit.icon}
               </div>
               <span>{benefit.text}</span>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

@@ -111,7 +111,10 @@ export default function AboutUsPage() {
 
           {/* Right Column: Profile testimonial card */}
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md flex flex-col items-center text-center">
+            <motion.div 
+              whileHover={{ y: -6, scale: 1.015, transition: { type: 'spring', stiffness: 350, damping: 20 } }}
+              className="bg-white rounded-3xl p-8 border border-black/5 shadow-md flex flex-col items-center text-center cursor-default"
+            >
               <div className="relative w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-accent-lilac/30 shadow-inner">
                 <Image 
                   src="/images/AnuMamLinkedinPfp.jpg" 
@@ -126,16 +129,18 @@ export default function AboutUsPage() {
                 Nominated for the global Food Planet Prize and recognized as one of India&apos;s leading women climate innovators.
               </p>
               <div className="flex gap-4">
-                <a 
+                <motion.a 
                   href="https://www.linkedin.com/in/akhandelwal25/" 
                   target="_blank" 
                   rel="noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
                   className="inline-flex items-center gap-2 bg-[#EAF3EC] text-[#1F5A3F] px-4 py-2.5 rounded-full font-bold text-xs hover:bg-[#1F5A3F] hover:text-white transition-all shadow-xs border border-black/5"
                 >
                   Connect on LinkedIn <ExternalLink size={12} />
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           </div>
 
         </div>
@@ -154,7 +159,10 @@ export default function AboutUsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Indian Scraps */}
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border-t-2 border-t-primary">
+          <motion.div 
+            whileHover={{ y: -6, scale: 1.02, transition: { type: 'spring', stiffness: 380, damping: 18 } }}
+            className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm flex flex-col justify-between border-t-2 border-t-primary cursor-default"
+          >
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-6 border border-black/5">
                 <ThreeLeavesIcon className="w-6 h-6" />
@@ -165,10 +173,13 @@ export default function AboutUsPage() {
               </p>
             </div>
             <div className="text-xs font-bold text-primary uppercase tracking-wider">Engineered for India</div>
-          </div>
+          </motion.div>
 
           {/* Card 2: Prototyping Failures */}
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border-t-2 border-t-accent-lilac">
+          <motion.div 
+            whileHover={{ y: -6, scale: 1.02, transition: { type: 'spring', stiffness: 380, damping: 18 } }}
+            className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm flex flex-col justify-between border-t-2 border-t-accent-lilac cursor-default"
+          >
             <div>
               <div className="w-12 h-12 rounded-2xl bg-accent-lilac-soft/25 text-accent-lilac flex items-center justify-center mb-6 border border-black/5">
                 <IntelligentIcon className="w-6 h-6" />
@@ -179,10 +190,13 @@ export default function AboutUsPage() {
               </p>
             </div>
             <div className="text-xs font-bold text-accent-lilac uppercase tracking-wider">Convenience-Driven UX</div>
-          </div>
+          </motion.div>
 
           {/* Card 3: Odorless countertop */}
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border-t-2 border-t-accent-brown">
+          <motion.div 
+            whileHover={{ y: -6, scale: 1.02, transition: { type: 'spring', stiffness: 380, damping: 18 } }}
+            className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm flex flex-col justify-between border-t-2 border-t-accent-brown cursor-default"
+          >
             <div>
               <div className="w-12 h-12 rounded-2xl bg-accent-brown/10 text-accent-brown flex items-center justify-center mb-6 border border-black/5">
                 <WindIcon className="w-6 h-6" />
@@ -193,7 +207,7 @@ export default function AboutUsPage() {
               </p>
             </div>
             <div className="text-xs font-bold text-accent-brown uppercase tracking-wider">Countertop-Ready</div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -215,7 +229,8 @@ export default function AboutUsPage() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-6 md:p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all"
+              whileHover={{ y: -4, scale: 1.01, transition: { type: 'spring', stiffness: 400, damping: 20 } }}
+              className="bg-white p-6 md:p-8 rounded-3xl border border-black/5 shadow-sm cursor-default"
             >
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
@@ -227,14 +242,16 @@ export default function AboutUsPage() {
                     <p className="text-xs text-text-very-muted font-bold uppercase">{post.date}</p>
                   </div>
                 </div>
-                <a 
+                <motion.a 
                   href={post.link} 
                   target="_blank" 
                   rel="noreferrer" 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   className="text-[#1F5A3F] hover:text-primary transition-colors flex items-center gap-1.5 text-xs font-bold bg-[#EAF3EC] px-3 py-1.5 rounded-full border border-[#1F5A3F]/10"
                 >
                   View Post <ExternalLink size={12} />
-                </a>
+                </motion.a>
               </div>
               <div className="text-text-muted text-sm md:text-base font-medium whitespace-pre-wrap leading-relaxed mb-6">
                 {post.text}
@@ -263,12 +280,24 @@ export default function AboutUsPage() {
               Decentralize food waste, eliminate odors, and nourish the soil. Rawbin is built for the way you live.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/#order" className="bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold hover:shadow-hover hover:-translate-y-0.5 transition-all text-center">
-                Pre-order Now
-              </Link>
-              <Link href="/" className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-bold border border-white/20 transition-all text-center">
-                Back to Home
-              </Link>
+              <motion.div
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              >
+                <Link href="/#order" className="block bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center">
+                  Pre-order Now
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.03, y: -1 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              >
+                <Link href="/" className="block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-bold border border-white/20 text-center">
+                  Back to Home
+                </Link>
+              </motion.div>
             </div>
           </div>
         </motion.div>

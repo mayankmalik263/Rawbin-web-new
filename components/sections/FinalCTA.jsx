@@ -43,12 +43,39 @@ export default function FinalCTA() {
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row justify-center gap-4 mb-10"
         >
-          <button className="bg-primary text-nc-text px-10 py-5 rounded-full font-black text-lg tracking-wide shadow-[0_15px_30px_rgba(93,234,93,0.3)] hover:shadow-[0_20px_40px_rgba(93,234,93,0.4)] hover:-translate-y-1 transition-all">
+          <motion.button
+            whileHover={{ scale: 1.04, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-primary text-nc-text px-10 py-5 rounded-full font-black text-lg tracking-wide"
+            animate={{
+              boxShadow: [
+                '0 10px 24px rgba(69,185,0,0.28)',
+                '0 18px 40px rgba(69,185,0,0.52)',
+                '0 10px 24px rgba(69,185,0,0.28)',
+              ]
+            }}
+            transition={{
+              boxShadow: {
+                duration: 2.4,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              },
+              type: 'spring',
+              stiffness: 400,
+              damping: 20
+            }}
+          >
             ORDER NOW
-          </button>
-          <Link href="#contact" className="bg-bg-alt text-nc-text border border-accent-brown/30 px-10 py-5 rounded-full font-bold text-lg tracking-wide hover:bg-black/5 hover:border-accent-brown/60 transition-all">
-            CONTACT US
-          </Link>
+          </motion.button>
+          <motion.div
+            whileHover={{ scale: 1.03, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
+            <Link href="#contact" className="block bg-bg-alt text-nc-text border border-accent-brown/30 px-10 py-5 rounded-full font-bold text-lg tracking-wide hover:bg-black/5 hover:border-accent-brown/60 transition-all">
+              CONTACT US
+            </Link>
+          </motion.div>
         </motion.div>
 
         <motion.div 
