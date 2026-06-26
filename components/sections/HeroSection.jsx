@@ -31,8 +31,11 @@ export default function HeroSection() {
   return (
     <>
       <section className="relative bg-[#F9F5F3] w-full overflow-hidden">
+        {/* Frosted Glass Pane - desktop only */}
+        <div className="hidden lg:block absolute left-0 top-0 w-[55%] h-full bg-[#F9F5F3]/65 backdrop-blur-xl border-r border-white/20 z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)] pointer-events-none" />
+
         {/* Content Container */}
-        <div className="max-w-[1280px] mx-auto px-5 pt-12 pb-6 md:pt-20 md:pb-10 lg:py-24 relative z-10">
+        <div className="max-w-[1280px] mx-auto px-5 pt-12 pb-6 md:pt-20 md:pb-10 lg:py-24 relative z-20">
           <div className="lg:w-[50%]">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -115,11 +118,9 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Image Container - absolute full-bleed on desktop, relative card on mobile/tablet */}
-        <div className="relative lg:absolute right-0 top-0 w-full lg:w-[50%] h-[320px] sm:h-[450px] lg:h-full pb-12 lg:pb-0 px-5 lg:px-0 z-0">
+        {/* Background Image Container - absolute full-bleed on desktop, relative card on mobile/tablet */}
+        <div className="relative lg:absolute inset-0 w-full h-[320px] sm:h-[450px] lg:h-full pb-12 lg:pb-0 px-5 lg:px-0 z-0">
           <div className="relative w-full h-full rounded-3xl lg:rounded-none overflow-hidden shadow-lg lg:shadow-none border border-black/5 lg:border-none">
-            {/* Smooth gradient fade to blend with the beige background on desktop */}
-            <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#F9F5F3] via-[#F9F5F3]/80 to-transparent z-10 pointer-events-none" />
             <Image 
               src="/images/new_hero_bg.png" 
               alt="Rawbin in modern kitchen" 
