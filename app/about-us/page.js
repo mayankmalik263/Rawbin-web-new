@@ -1,21 +1,17 @@
 'use client';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Play, ExternalLink, MessageCircle, Heart, Share2 } from 'lucide-react';
+import { ExternalLink, MessageCircle, Heart, Share2 } from 'lucide-react';
 import { 
   WindIcon, 
   ThreeLeavesIcon, 
   IndiaIcon, 
-  GlobeIcon, 
   IntelligentIcon,
   SproutIcon
 } from '@/components/icons';
 
 export default function AboutUsPage() {
-  const [activeTab, setActiveTab] = useState('linkedin');
-
   const linkedInPosts = [
     {
       id: 1,
@@ -46,49 +42,6 @@ export default function AboutUsPage() {
       shares: 1,
       link: 'https://www.linkedin.com/posts/akhandelwal25_household-food-waste-is-the-most-expensive-activity-7467209774154162176-mXsx',
       text: 'Household food waste is the most expensive organic waste stream to collect.\n\nIndia doesn\'t have a waste technology problem, we rather have feedstock quality issues due to poor segregation at source, and logistics challenges due to distributed homes. That\'s why Rawbin is focused entirely on distributed, at-source household composting. We process waste where it is generated, keeping the feedstock quality high and municipal transport costs near zero.'
-    }
-  ];
-
-  const instagramReels = [
-    {
-      id: 'DXRmiHnDl97',
-      title: 'Meeting Our First Rawbinhoods',
-      desc: 'Welcoming our first 100 early supporters. Order fulfillment starting and June shipments going out!',
-      likes: '1.2k',
-      comments: 48,
-      link: 'https://www.instagram.com/reel/DXRmiHnDl97/'
-    },
-    {
-      id: 'DX60vemoTSt',
-      title: 'Composting Spice-Rich leftovers',
-      desc: 'Testing Rawbin with oil-heavy, spice-filled Indian food waste. Watch the thermal cycle do its magic.',
-      likes: '2.8k',
-      comments: 112,
-      link: 'https://www.instagram.com/reel/DX60vemoTSt/'
-    },
-    {
-      id: 'DYPasc0PWwX',
-      title: 'The Countertop Odor Test',
-      desc: 'Putting our dual-stage activated carbon filters to the ultimate test next to everyday kitchen appliances.',
-      likes: '950',
-      comments: 34,
-      link: 'https://www.instagram.com/reel/DYPasc0PWwX/'
-    },
-    {
-      id: 'DYZua7shjNJ',
-      title: 'Why segregate waste?',
-      desc: 'Why centralized composting fails due to lack of immediate outcomes. Composting at source brings immediate rewards.',
-      likes: '1.6k',
-      comments: 72,
-      link: 'https://www.instagram.com/reel/DYZua7shjNJ/'
-    },
-    {
-      id: 'DZFYb2AM6gK',
-      title: 'New York Times Features Rawbin',
-      desc: 'Pioneering decentralized waste solutions on the global stage. Profiling our 2024 Climate Week NYC print feature.',
-      likes: '4.2k',
-      comments: 204,
-      link: 'https://www.instagram.com/reel/DZFYb2AM6gK/'
     }
   ];
 
@@ -244,124 +197,55 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* 4. Journey & Community Media Hub */}
+      {/* 4. Founder's Journey Updates */}
       <section className="max-w-[1080px] mx-auto px-5 py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black text-nc-text mb-4">
-            Journey & Community Media Hub
+            Founder&apos;s Journey Updates
           </h2>
           <p className="text-text-muted font-medium text-lg max-w-2xl mx-auto">
-            Trace the Rawbin milestone timeline through our updates on LinkedIn and Instagram Reels.
+            Trace the Rawbin milestone timeline through our founder&apos;s updates on LinkedIn.
           </p>
         </div>
 
-        {/* Tab Selector */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-[#EAF3EC]/60 border border-black/5 p-1.5 rounded-full flex gap-2">
-            <button 
-              onClick={() => setActiveTab('linkedin')}
-              className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${activeTab === 'linkedin' ? 'bg-[#1F5A3F] text-white shadow-sm' : 'text-[#1F5A3F] hover:bg-[#EAF3EC]'}`}
+        <div className="space-y-6">
+          {linkedInPosts.map((post) => (
+            <motion.div 
+              key={post.id} 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 md:p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all"
             >
-              LinkedIn Posts
-            </button>
-            <button 
-              onClick={() => setActiveTab('instagram')}
-              className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${activeTab === 'instagram' ? 'bg-[#1F5A3F] text-white shadow-sm' : 'text-[#1F5A3F] hover:bg-[#EAF3EC]'}`}
-            >
-              Instagram Reels
-            </button>
-          </div>
-        </div>
-
-        {/* Tab Content Panels */}
-        <div className="relative min-h-[400px]">
-          <AnimatePresence mode="wait">
-            {activeTab === 'linkedin' ? (
-              <motion.div 
-                key="linkedin-panel"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-6"
-              >
-                {linkedInPosts.map((post) => (
-                  <div key={post.id} className="bg-white p-6 md:p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all">
-                    <div className="flex justify-between items-center mb-6">
-                      <div className="flex items-center gap-3">
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden border border-black/5">
-                          <Image src="/images/AnuMamLinkedinPfp.jpg" alt="Anu Khandelwal Profile" fill />
-                        </div>
-                        <div>
-                          <h5 className="font-extrabold text-nc-text text-base">Anu Khandelwal</h5>
-                          <p className="text-xs text-text-very-muted font-bold uppercase">{post.date}</p>
-                        </div>
-                      </div>
-                      <a 
-                        href={post.link} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="text-[#1F5A3F] hover:text-primary transition-colors flex items-center gap-1.5 text-xs font-bold bg-[#EAF3EC] px-3 py-1.5 rounded-full border border-[#1F5A3F]/10"
-                      >
-                        View Post <ExternalLink size={12} />
-                      </a>
-                    </div>
-                    <div className="text-text-muted text-sm md:text-base font-medium whitespace-pre-wrap leading-relaxed mb-6">
-                      {post.text}
-                    </div>
-                    <div className="flex gap-6 border-t border-black/5 pt-4 text-xs font-bold text-text-muted">
-                      <span className="flex items-center gap-1.5"><Heart size={14} className="text-[#1F5A3F]" /> {post.likes} Likes</span>
-                      <span className="flex items-center gap-1.5"><MessageCircle size={14} className="text-[#1F5A3F]" /> {post.comments} Comments</span>
-                      <span className="flex items-center gap-1.5"><Share2 size={14} className="text-[#1F5A3F]" /> {post.shares} Shares</span>
-                    </div>
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden border border-black/5">
+                    <Image src="/images/AnuMamLinkedinPfp.jpg" alt="Anu Khandelwal Profile" fill />
                   </div>
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div 
-                key="instagram-panel"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-              >
-                {instagramReels.map((reel) => (
-                  <div key={reel.id} className="bg-white rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between">
-                    
-                    {/* Reel Cover Graphic Representation */}
-                    <div className="relative h-48 w-full bg-gradient-to-br from-[#1C3A28] to-[#12241A] flex flex-col justify-center items-center p-6 text-center text-white border-b border-black/5">
-                      <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center mb-4 border border-white/30 shadow-md">
-                        <Play size={20} fill="white" className="ml-1" />
-                      </div>
-                      <span className="font-bold text-xs uppercase tracking-widest text-[#7CE89A] mb-1">Instagram Reel</span>
-                      <h4 className="font-extrabold text-sm tracking-tight leading-snug line-clamp-2 max-w-[200px]">{reel.title}</h4>
-                    </div>
-
-                    {/* Reel Description */}
-                    <div className="p-6 flex-grow flex flex-col justify-between">
-                      <p className="text-text-muted text-xs md:text-sm font-medium leading-relaxed mb-6">
-                        {reel.desc}
-                      </p>
-                      
-                      <div className="flex justify-between items-center border-t border-black/5 pt-4">
-                        <span className="text-xs font-extrabold text-text-very-muted">💚 {reel.likes} likes</span>
-                        <a 
-                          href={reel.link} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline"
-                        >
-                          Play Reel ↗
-                        </a>
-                      </div>
-                    </div>
-
+                  <div>
+                    <h5 className="font-extrabold text-nc-text text-base">Anu Khandelwal</h5>
+                    <p className="text-xs text-text-very-muted font-bold uppercase">{post.date}</p>
                   </div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
+                </div>
+                <a 
+                  href={post.link} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="text-[#1F5A3F] hover:text-primary transition-colors flex items-center gap-1.5 text-xs font-bold bg-[#EAF3EC] px-3 py-1.5 rounded-full border border-[#1F5A3F]/10"
+                >
+                  View Post <ExternalLink size={12} />
+                </a>
+              </div>
+              <div className="text-text-muted text-sm md:text-base font-medium whitespace-pre-wrap leading-relaxed mb-6">
+                {post.text}
+              </div>
+              <div className="flex gap-6 border-t border-black/5 pt-4 text-xs font-bold text-text-muted">
+                <span className="flex items-center gap-1.5"><Heart size={14} className="text-[#1F5A3F]" /> {post.likes} Likes</span>
+                <span className="flex items-center gap-1.5"><MessageCircle size={14} className="text-[#1F5A3F]" /> {post.comments} Comments</span>
+                <span className="flex items-center gap-1.5"><Share2 size={14} className="text-[#1F5A3F]" /> {post.shares} Shares</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
