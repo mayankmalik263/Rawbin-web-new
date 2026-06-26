@@ -64,13 +64,7 @@ export default function Navbar() {
                       </Link>
                     )}
                   </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <Link href="#contact" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
-                        Contact Us
-                      </Link>
-                    )}
-                  </Menu.Item>
+
                   <Menu.Item>
                     {({ active }) => (
                       <Link href="/roe-calculator" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
