@@ -34,7 +34,7 @@ export default function HeroSection() {
       {/* Background Image - optimized for both mobile and desktop */}
       <div className="absolute inset-0 w-full h-full z-0 opacity-50 md:opacity-100">
         <Image 
-          src="/images/hero-bg.png" 
+          src="/images/new_hero_bg.png" 
           alt="Rawbin in modern kitchen" 
           fill
           priority

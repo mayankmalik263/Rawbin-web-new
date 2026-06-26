@@ -178,9 +178,8 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Removed the non-functional "Read our Composting Guides & Blogs →" button from the bottom of `SocialProof.jsx` — it had no `href`/`onClick` and was already duplicated in the Footer's Quick Links section. Cleaned up the unused `ArrowRight` import as well.
 
 ### 📸 3. New Content & Community Visuals
-*   [ ] **New Hero Section BG & Photo:**
-    *   Introduce a high-quality product photo of Rawbin placed in a modern kitchen setting.
-    *   Update the background gradients and container alignment to highlight the premium physical design of the device.
+*   [x] **New Hero Section BG & Photo (Completed: June 26, 2026):**
+    *   Replaced the background image with a high-quality photo of Rawbin (`new_hero_bg.png`) set in a modern Indian kitchen, optimized for responsive layouts and overlays.
 *   [x] **Custom AI-Generated Step Illustrations (Completed: June 26, 2026):**
     *   Replaced the three generic placeholder images in the **"How It Works"** section with custom AI-generated illustrations accurately depicting the Rawbin device:
         *   **Step 1 (`image1.png`):** Indian woman in a kurti adding kitchen scraps to the Rawbin in a warm, modern Indian kitchen.
