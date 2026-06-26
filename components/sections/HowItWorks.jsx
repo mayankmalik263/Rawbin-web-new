@@ -19,7 +19,7 @@ export default function HowItWorks() {
           <path d="M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      img: "/images/step1-add-leftovers.png",
+      img: "/images/image1.png",
       title: "Add Your Leftovers",
       desc: "Drop in fruit peels, vegetable scraps, coffee grounds, tea leaves, and everyday kitchen leftovers."
     },
@@ -37,7 +37,7 @@ export default function HowItWorks() {
           <path d="M16.24 7.76L19.07 4.93" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      img: "/images/step2-composter-processing.png",
+      img: "/images/image2.png",
       title: "Rawbin Does The Work",
       desc: "Rawbin intelligently manages the composting process to create ideal conditions for transformation."
     },
@@ -49,7 +49,7 @@ export default function HowItWorks() {
           <path d="M12 10C12.5523 10 13 9.55228 13 9C13 8.44772 12.5523 8 12 8C11.4477 8 11 8.44772 11 9C11 9.55228 11.4477 10 12 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      img: "/images/step3-harvest-compost.png",
+      img: "/images/image3.png",
       title: "Harvest Living Compost",
       desc: "Collect nutrient-rich compost ready to nourish plants, gardens, balconies, community green spaces, and urban greenery."
     }
@@ -98,7 +98,7 @@ export default function HowItWorks() {
               className="bg-white rounded-3xl border border-black/5 shadow-sm hover:shadow-hover transition-shadow group overflow-hidden flex flex-col h-full"
             >
               {/* Image Container */}
-              <div className="relative w-full h-[220px] bg-bg-alt overflow-hidden">
+              <div className="relative w-full h-[260px] bg-bg-alt overflow-hidden">
                 <Image 
                   src={step.img} 
                   alt={step.title} 
