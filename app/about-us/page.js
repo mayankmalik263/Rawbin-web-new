@@ -96,26 +96,18 @@ export default function AboutUsPage() {
     <main className="bg-body-bg min-h-screen pb-20 font-sans">
       
       {/* 1. Hero Header Section */}
-      <section className="relative h-[60vh] min-h-[400px] w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/rawbin-main-normal-bg.jpeg" 
-            alt="Rawbin composter countertop placement" 
-            fill
-            priority
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-secondary/75 to-black/40 z-10" />
-        </div>
-
-        <div className="max-w-[1280px] w-full mx-auto px-5 relative z-20 text-center mt-20">
+      <section className="relative w-full bg-gradient-to-br from-[#12241A] to-[#1C3A28] pt-28 pb-20 flex items-center justify-center border-b border-black/10 overflow-hidden">
+        {/* Subtle decorative radial glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent pointer-events-none" />
+        
+        <div className="max-w-[1280px] w-full mx-auto px-5 relative z-10 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[#1F5A3F]/10 border border-[#1F5A3F]/20 px-4 py-1.5 rounded-full font-bold text-xs md:text-sm text-[#1F5A3F] mb-6"
+            className="inline-flex items-center gap-2 bg-white/5 border border-white/15 px-4 py-1.5 rounded-full font-bold text-xs md:text-sm text-[#7CE89A] mb-6 shadow-xs"
           >
-            <SproutIcon className="w-4 h-4" />
+            <SproutIcon className="w-4 h-4 text-[#7CE89A]" />
             <span>The Making of Rawbin</span>
           </motion.div>
 
@@ -123,16 +115,16 @@ export default function AboutUsPage() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black text-nc-text leading-tight max-w-4xl mx-auto"
+            className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight max-w-4xl mx-auto tracking-tight"
           >
-            Reimagining Waste at <span className="font-serif italic text-primary">Its Origin</span>
+            Reimagining Waste at <span className="font-serif italic text-[#7CE89A] block sm:inline">Its Origin</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-text-muted font-medium mt-6 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-[#A3B899] font-medium mt-6 max-w-2xl mx-auto leading-relaxed"
           >
             How a Data Scientist turned a messy daily chore into an elegant smart kitchen habit.
           </motion.p>
