@@ -45,7 +45,7 @@ export default function EverythingYouNeedToKnow() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block border border-black/20 text-nc-text font-bold px-4 py-1.5 rounded-full text-xs tracking-widest uppercase mb-6"
+            className="inline-block border border-accent-brown/40 text-nc-text font-bold px-4 py-1.5 rounded-full text-xs tracking-widest uppercase mb-6"
           >
             Smart. Simple. Sustainable.
           </motion.div>
@@ -78,7 +78,7 @@ export default function EverythingYouNeedToKnow() {
                   <h4 className="font-extrabold text-lg mb-1.5 text-nc-text">{feature.title}</h4>
                   <p className="text-text-muted text-sm font-medium leading-relaxed">{feature.desc}</p>
                 </div>
-                <div className="w-14 h-14 rounded-full bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5">
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${i === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'}`}>
                   {feature.icon}
                 </div>
               </motion.div>
@@ -112,7 +112,7 @@ export default function EverythingYouNeedToKnow() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`flex items-center gap-4 text-left justify-between ${i === 1 ? 'lg:translate-x-8' : ''}`}
               >
-                <div className="w-14 h-14 rounded-full bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5">
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${i === 0 || i === 2 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'}`}>
                   {feature.icon}
                 </div>
                 <div className="flex-1">
@@ -134,9 +134,16 @@ export default function EverythingYouNeedToKnow() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white p-8 rounded-3xl border border-black/5 hover:-translate-y-1 transition-transform"
+              className={`bg-white p-8 rounded-3xl border border-black/5 hover:-translate-y-1 transition-transform border-t-2 ${
+                i === 0 ? 'border-t-primary' :
+                i === 1 ? 'border-t-accent-lilac' :
+                i === 2 ? 'border-t-accent-brown' :
+                'border-t-accent-lilac'
+              }`}
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-6 border border-black/5 shadow-sm">
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 border border-black/5 shadow-sm ${
+                i % 2 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'
+              }`}>
                 {item.icon}
               </div>
               <h4 className="font-extrabold text-lg leading-tight mb-3 text-nc-text">{item.title}</h4>

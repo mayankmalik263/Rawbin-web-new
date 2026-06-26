@@ -49,7 +49,7 @@ export default function WhyRawbin() {
               transition={{ delay: i * 0.05 }}
               className="bg-bg-alt p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform"
             >
-              <div className="w-12 h-12 rounded-full bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-4 shadow-sm border border-black/5">
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm border border-black/5 ${i % 2 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'}`}>
                 {benefit.icon}
               </div>
               <h4 className="font-extrabold text-lg mb-2 text-nc-text">{benefit.title}</h4>
@@ -65,7 +65,7 @@ export default function WhyRawbin() {
           viewport={{ once: true }}
           className="bg-bg-alt rounded-3xl p-8 md:p-12 border border-black/5 flex flex-col md:flex-row items-center gap-8"
         >
-          <div className="w-16 h-16 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5">
+          <div className="w-16 h-16 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center flex-shrink-0 shadow-sm border border-accent-brown/30">
             <IndiaIcon className="w-10 h-10" />
           </div>
           <div>

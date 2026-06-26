@@ -27,10 +27,11 @@ export default function CompostOutput() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black mb-4 text-white"
+            className="text-4xl md:text-5xl font-black mb-2 text-white"
           >
             Where Does The Compost Go Next?
           </motion.h2>
+          <div className="w-12 h-1 rounded-full bg-accent-brown mx-auto mb-4" />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +53,9 @@ export default function CompostOutput() {
               transition={{ delay: i * 0.1 }}
               className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group"
             >
-              <div className="text-white bg-white/10 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform mb-6 border border-white/5">
+              <div className={`w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform mb-6 border ${
+                i % 2 === 0 ? 'bg-white/10 text-white border-white/5' : 'bg-accent-lilac/20 text-accent-lilac-soft border-accent-lilac/20'
+              }`}>
                 {card.icon}
               </div>
               <h4 className="text-2xl font-bold mb-3">{card.title}</h4>

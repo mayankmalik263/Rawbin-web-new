@@ -171,10 +171,11 @@ export default function SocialProof() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black mb-4 text-white"
+            className="text-4xl md:text-5xl font-black mb-2 text-white"
           >
             Wall of 💚
           </motion.h2>
+          <div className="w-12 h-1 rounded-full bg-accent-brown mx-auto mb-4" />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -244,7 +245,7 @@ export default function SocialProof() {
                   {/* Name */}
                   <div className="font-extrabold text-sm text-gray-900 tracking-tight">{review.name}</div>
                   {/* Date */}
-                  <div className="text-xs text-gray-600 font-bold mt-0.5">{review.date}</div>
+                  <div className="text-xs text-accent-brown-soft font-bold mt-0.5">{review.date}</div>
                 </div>
               </motion.div>
             );

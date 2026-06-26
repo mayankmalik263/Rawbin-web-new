@@ -103,7 +103,7 @@ export default function AboutUsPage() {
               <p>
                 When the 2021 lockdowns hit Bengaluru, municipal wet waste collection collapsed. Bags of leftovers sat rotting on balconies, causing foul odors and fruit flies. Anu realized that waiting for centralized systems to fix waste is futile. Composting had to be decentralized, clean, and processed at source: inside our kitchens.
               </p>
-              <p className="border-l-4 border-primary pl-4 text-nc-text font-bold font-serif italic text-lg md:text-xl">
+              <p className="border-l-4 border-accent-brown pl-4 text-nc-text font-bold font-serif italic text-lg md:text-xl">
                 &ldquo;If we can make throwing scraps in a composter as satisfying and convenient as throwing them in a bin, we solve 60% of municipal landfill growth.&rdquo;
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function AboutUsPage() {
           {/* Right Column: Profile testimonial card */}
           <div className="lg:col-span-5">
             <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md flex flex-col items-center text-center">
-              <div className="relative w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-primary/20 shadow-inner">
+              <div className="relative w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-accent-lilac/30 shadow-inner">
                 <Image 
                   src="/images/AnuMamLinkedinPfp.jpg" 
                   alt="Anu Khandelwal - Founder & CEO" 
@@ -154,7 +154,7 @@ export default function AboutUsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Indian Scraps */}
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border-t-2 border-t-primary">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-6 border border-black/5">
                 <ThreeLeavesIcon className="w-6 h-6" />
@@ -168,9 +168,9 @@ export default function AboutUsPage() {
           </div>
 
           {/* Card 2: Prototyping Failures */}
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border-t-2 border-t-accent-lilac">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-6 border border-black/5">
+              <div className="w-12 h-12 rounded-2xl bg-accent-lilac-soft/25 text-accent-lilac flex items-center justify-center mb-6 border border-black/5">
                 <IntelligentIcon className="w-6 h-6" />
               </div>
               <h4 className="font-extrabold text-xl text-nc-text mb-3">TechShlok R&D Partnership</h4>
@@ -178,13 +178,13 @@ export default function AboutUsPage() {
                 Hardware is hard. Partnering with TechShlok (Electronics Design House), we built and failed at prototype after prototype. We deployed early models in Jaipur and Bengaluru—testing with bachelors, elderly residents, and busy parents to perfect a composting process as simple as throwing waste in a bin.
               </p>
             </div>
-            <div className="text-xs font-bold text-primary uppercase tracking-wider">Convenience-Driven UX</div>
+            <div className="text-xs font-bold text-accent-lilac uppercase tracking-wider">Convenience-Driven UX</div>
           </div>
 
           {/* Card 3: Odorless countertop */}
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between border-t-2 border-t-accent-brown">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-6 border border-black/5">
+              <div className="w-12 h-12 rounded-2xl bg-accent-brown/10 text-accent-brown flex items-center justify-center mb-6 border border-black/5">
                 <WindIcon className="w-6 h-6" />
               </div>
               <h4 className="font-extrabold text-xl text-nc-text mb-3">Dual-Stage Carbon Filtration</h4>
@@ -192,7 +192,7 @@ export default function AboutUsPage() {
                 To fit inside compact urban apartments next to microwaves, Rawbin had to run completely odor-free. We engineered a sealed dual-stage activated carbon filter layout that traps volatile organic compounds (VOCs) and sulfur particles. Operates whisper-quietly under 40dB.
               </p>
             </div>
-            <div className="text-xs font-bold text-primary uppercase tracking-wider">Countertop-Ready</div>
+            <div className="text-xs font-bold text-accent-brown uppercase tracking-wider">Countertop-Ready</div>
           </div>
         </div>
       </section>

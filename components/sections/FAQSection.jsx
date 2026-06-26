@@ -53,10 +53,10 @@ export default function FAQSection() {
             >
               <Disclosure>
                 {({ open }) => (
-                  <div className={`border ${open ? 'border-primary' : 'border-black/10'} rounded-2xl overflow-hidden transition-colors`}>
-                    <Disclosure.Button className={`w-full flex justify-between items-center p-6 text-left ${open ? 'bg-primary/5' : 'bg-white hover:bg-bg-alt'} transition-colors`}>
+                  <div className={`border ${open ? 'border-accent-lilac' : 'border-black/10'} rounded-2xl overflow-hidden transition-colors`}>
+                    <Disclosure.Button className={`w-full flex justify-between items-center p-6 text-left ${open ? 'bg-accent-lilac/5' : 'bg-white hover:bg-bg-alt'} transition-colors`}>
                       <span className="font-bold text-lg text-nc-text pr-8">{faq.q}</span>
-                      <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${open ? 'bg-primary text-nc-text' : 'bg-bg-alt text-nc-text'}`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${open ? 'bg-accent-lilac text-white' : 'bg-bg-alt text-nc-text'}`}>
                         {open ? <Minus size={16} /> : <Plus size={16} />}
                       </span>
                     </Disclosure.Button>
@@ -68,7 +68,7 @@ export default function FAQSection() {
                           exit={{ height: 0, opacity: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="p-6 pt-0 text-text-muted font-medium bg-primary/5 leading-relaxed">
+                          <div className="p-6 pt-0 text-text-muted font-medium bg-accent-lilac/5 leading-relaxed">
                             {faq.a}
                           </div>
                         </Disclosure.Panel>

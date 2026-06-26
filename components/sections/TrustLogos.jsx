@@ -35,7 +35,7 @@ export default function TrustLogos() {
       `}} />
 
       <div className="max-w-[1280px] mx-auto px-5 text-center mb-10">
-        <h6 className="text-[10px] font-bold text-text-very-muted uppercase tracking-[2px]">
+        <h6 className="text-[10px] font-bold text-accent-brown/60 uppercase tracking-[2px]">
           Trusted by Leading Innovation & Sustainability Ecosystems
         </h6>
       </div>

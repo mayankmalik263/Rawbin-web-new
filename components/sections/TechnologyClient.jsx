@@ -42,7 +42,7 @@ export default function TechnologyClient() {
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-1.5 bg-[#F0EAE1] text-nc-text font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border border-black/5 mb-6"
+            className="inline-flex items-center gap-1.5 bg-[#F0EAE1] text-nc-text font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full border border-accent-brown/35 mb-6"
           >
             <GearIcon className="w-3.5 h-3.5 text-[#1F5A3F]" />
             <span>Rawbin Intelligence</span>
@@ -87,7 +87,7 @@ export default function TechnologyClient() {
                 <p className="text-xs text-text-muted">Consumes less than 4 units of electricity per month.</p>
               </div>
               <div className="bg-white p-6 rounded-3xl border border-black/5 flex flex-col items-start shadow-xs">
-                <div className="w-10 h-10 rounded-full bg-[#EAF3EC] text-[#1F5A3F] flex items-center justify-center mb-3 shadow-xs border border-black/5">
+                <div className="w-10 h-10 rounded-full bg-accent-lilac-soft/25 text-accent-lilac flex items-center justify-center mb-3 shadow-xs border border-black/5">
                   <WindIcon className="w-5 h-5" />
                 </div>
                 <h4 className="font-bold mb-1 text-nc-text">Odor-Free System</h4>
@@ -117,10 +117,17 @@ export default function TechnologyClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
+                className={`bg-white p-8 rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group border-t-2 ${
+                  i === 0 ? 'border-t-primary' :
+                  i === 1 ? 'border-t-accent-lilac' :
+                  i === 2 ? 'border-t-accent-brown' :
+                  'border-t-accent-lilac'
+                }`}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
+                    i % 2 === 1 ? 'bg-accent-lilac/15 text-accent-lilac' : 'bg-primary/10 text-primary'
+                  }`}>
                     <IconComponent size={24} />
                   </div>
                   <div>

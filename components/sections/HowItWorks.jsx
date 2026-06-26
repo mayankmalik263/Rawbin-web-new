@@ -63,7 +63,7 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-primary/10 text-primary font-bold px-4 py-1.5 rounded-full text-sm mb-6"
+            className="inline-block bg-accent-lilac/15 text-accent-lilac font-bold px-4 py-1.5 rounded-full text-sm mb-6"
           >
             How It Works
           </motion.div>
@@ -139,7 +139,7 @@ export default function HowItWorks() {
             { icon: <HomeIcon className="w-5 h-5" />, text: "Designed for Modern Homes" },
             { icon: <FourArrowRecycleIcon className="w-5 h-5" />, text: "Circular Living" }
           ].map((benefit, i) => (
-            <div key={i} className="flex items-center gap-3 font-bold text-nc-text px-4 py-2.5 bg-white rounded-xl shadow-sm border border-black/5">
+            <div key={i} className="flex items-center gap-3 font-bold text-nc-text px-4 py-2.5 bg-white rounded-xl shadow-sm border border-black/5 border-l-2 border-l-accent-brown/40">
               <div className="text-[#1F5A3F] flex items-center justify-center">
                 {benefit.icon}
               </div>

@@ -25,6 +25,11 @@ module.exports = {
         'bg-main': '#FFFFFF',
         'bg-secondary': '#F9F5F3',
         'text-muted': '#666666',
+        // Accent color expansion — Brown & Lilac
+        'accent-brown':      '#5C4033',   // warm chocolate brown — borders, badges, earthy highlights
+        'accent-brown-soft': '#8B6355',   // lighter brown — hover states, subtle backgrounds
+        'accent-lilac':      '#A68BBF',   // medium lilac — decorative accents, section badges
+        'accent-lilac-soft': '#C8B4D6',   // pale lilac — icon tints, tag borders
       },
       fontFamily: {
         sans: ['var(--font-outfit)', 'sans-serif'],
