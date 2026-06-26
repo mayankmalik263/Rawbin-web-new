@@ -159,9 +159,11 @@ git push origin priyansh/<feature-name>
 This section outlines the upcoming product redesign and feature additions requested in the project specification roadmap. 
 
 ### 🎨 1. Theme, Aesthetics & Brand Direction
-*   [ ] **Theme Swap (Chocolate Brown):** 
-    *   Transition the color palette away from lilac/standard green colors.
-    *   Implement a rich, premium **Chocolate Brown** palette (`#3C2F2F`, `#2B1E1E`, `#D9C3B0`) combined with warm creams and muted organic accents. This establishes a grounded, high-end earthy connection suitable for premium kitchen appliances.
+*   [ ] **Accent Color Expansion — Brown & Lilac (Planned):**
+    *   The existing green-based palette stays as the primary brand color. The task is to **introduce two additional accent colors** from the brand palette selectively across the site:
+        *   **Chocolate Brown** (`#3C2F2F`, `#5C4033`) — for warm earthy highlights, section dividers, card borders, tag badges, and subtle backgrounds in organic/nature-focused sections.
+        *   **Lilac** (`#C8B4D6`, `#A68BBF`) — for soft secondary accents, hover states, gradient overlays, and decorative detail elements.
+    *   These should be sprinkled **here and there** — not a full palette swap. The goal is a richer, more layered color story alongside the primary sage green, without replacing it.
 *   [ ] **Unique Composting Design:**
     *   Avoid generic, low-effort composting visual patterns (clipart leaves, recycling symbols, flat green).
     *   Employ ultra-premium Apple-like dark/light glassmorphic blocks, clean layouts, and rich typography (e.g., *Instrument Serif*, *Outfit*).
