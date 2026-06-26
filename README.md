@@ -172,14 +172,22 @@ This section outlines the upcoming product redesign and feature additions reques
 *   [ ] **Merge "Explore Tech" into "What is Rawbin":**
     *   Combine the technical specification details (aeration, sensors, heater) directly into the core product introduction page/section. Highlighting the "how it works" and "what it is" in a single fluid storytelling layout.
 *   [x] **Enhance "Trusted Logos Strip" (Completed: June 26, 2026):**
-    *   Re-position and style the partner/trust logo carousel or grid to sit immediately below the Hero section or integrated naturally with a prominent clean style.
+    *   Re-positioned and styled the partner/trust logo carousel as a full infinite marquee strip. Increased logo sizes (`max-h-20`, `max-w-[240px]`) and reduced inter-logo gap to `3rem` for a denser, more premium display.
 *   [x] **Remove "Rawbin Community Impact" (Completed: June 26, 2026):**
-    *   Strip away the generic community impact stats cards to declutter the user flow and maintain focus on premium product ownership.
+    *   Stripped away the generic community impact stats cards to declutter the user flow and maintain focus on premium product ownership.
+*   [x] **Remove Redundant Dead UI Elements (Completed: June 26, 2026):**
+    *   Removed the non-functional "Read our Composting Guides & Blogs →" button from the bottom of `SocialProof.jsx` — it had no `href`/`onClick` and was already duplicated in the Footer's Quick Links section. Cleaned up the unused `ArrowRight` import as well.
 
 ### 📸 3. New Content & Community Visuals
 *   [ ] **New Hero Section BG & Photo:**
     *   Introduce a high-quality product photo of Rawbin placed in a modern kitchen setting.
     *   Update the background gradients and container alignment to highlight the premium physical design of the device.
+*   [x] **Custom AI-Generated Step Illustrations (Completed: June 26, 2026):**
+    *   Replaced the three generic placeholder images in the **"How It Works"** section with custom AI-generated illustrations accurately depicting the Rawbin device:
+        *   **Step 1 (`image1.png`):** Indian woman in a kurti adding kitchen scraps to the Rawbin in a warm, modern Indian kitchen.
+        *   **Step 2 (`image2.png`):** Rawbin composting automatically with leaf/swirl motion graphics showing silent, effortless processing.
+        *   **Step 3 (`image3.png`):** Harvesting rich compost on an Indian apartment balcony with the Rawbin visible in the background.
+    *   Card image container height increased from `220px` to `260px` to better showcase the wider illustrations.
 *   [ ] **"Insta Cards" Social Grid:**
     *   Implement an interactive grid/carousel of Instagram-style social cards displaying actual customers showcasing their Rawbin devices, kitchen setups, and unboxings.
 *   [ ] **"See what community is doing with the compost" Section:**
@@ -190,8 +198,20 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Write and design an empathetic interactive comparison showing the old, messy, smelly way of composting vs. the effortless, clean, 7-day Rawbin experience.
 *   [ ] **Deep-Dive "Learn More" Resource Hub:**
     *   Develop a clean, accordion-based or multi-tab resource drawer for users wanting to learn the science behind Rawbin's composting process.
-*   [x] **Dedicated "About Us" Section (Completed: June 26, 2026):**
-    *   Migrated to a dedicated `/about-us` subpage featuring the prototyping timeline, Twilio data scientist founder story, spice engineering, and interactive LinkedIn and Instagram Reel preview cards.
+*   [x] **Dedicated "About Us" Page (Completed: June 26, 2026):**
+    *   Migrated to a fully dedicated `/about-us` subpage, accessible via the Navbar's "More" dropdown and the Footer.
+    *   Page features: founder story (Anu Khandelwal — from Twilio data scientist to sustainability entrepreneur), Rawbin's making journey rooted in Indian kitchens, prototyping timeline, product philosophy, and an interactive LinkedIn timeline showcasing real journey posts.
+    *   Instagram Reels section removed from this page (scope moved to a future dedicated social section).
+    *   Hero section background replaced with a premium dark solid color, removing the previous visually poor gradient.
+*   [x] **"Wall of 💚" Testimonials Redesign (Completed: June 26, 2026):**
+    *   Replaced the old static testimonial layout in `SocialProof.jsx` with a **premium dark-themed draggable infinite carousel**.
+    *   Integrated all **17 real customer testimonials** migrated from the legacy `WallOfLove.js` component of the previous codebase.
+    *   Features: star ratings, reviewer name & date, drag-to-scroll on desktop, smooth infinite auto-scroll. Non-functional navigation arrows were removed.
+*   [x] **Press Mentions Section — Real Logos (Completed: June 26, 2026):**
+    *   Replaced the placeholder "As Seen In" text block (which listed fictitious media names) with an authentic **"Press Mentions"** section.
+    *   Three real press logo images (`NYTimes.png`, `redfm.png`, `ground-report.webp`) imported from the legacy codebase into `public/images/`.
+    *   Each logo is a clickable `<Link>` pointing to the actual article or LinkedIn post for that press coverage.
+    *   Card uses a warm cream background (`#F7F3EF`) so logos render in their original brand colors (black NY Times wordmark, red Red FM, green Ground Report) without inversion filters.
 *   [ ] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Newcycl Knowledge):**
     *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
 *   [ ] **High-Fidelity Interactivity:**
@@ -210,7 +230,7 @@ This section outlines the upcoming product redesign and feature additions reques
     *   **Scientific & Feature Deep Dives:** Use comparison tables, exploded/transparent product renders, and metric-focused benefit sections (e.g., carbon credits, composting speed) to justify the premium price tag.
 
 ### ✍️ 7. Approved Messaging & Copywriting (Hero Section)
-*   [x] **Primary Headline Upgrade (Completed: June 26, 2026):** Update the Hero section's copy to match the approved marketing team specifications:
+*   [x] **Primary Headline Upgrade (Completed: June 26, 2026):** Updated the Hero section's copy to match the approved marketing team specifications:
     *   **Headline:**
         ```text
         YOUR FRIDGE GOT SMART.
@@ -225,7 +245,7 @@ This section outlines the upcoming product redesign and feature additions reques
         ```
 
 ### 🔍 8. SEO Optimization & Search Intent Strategy
-*   [x] **High-Intent Keyword Integration (Completed: June 26, 2026):** Target the search terms users use when they are looking to buy or learn about smart composting appliances.
+*   [x] **High-Intent Keyword Integration (Completed: June 26, 2026):** Targeted search terms used when looking to buy or learn about smart composting appliances.
     *   **Informational Keywords (Awareness):**
         *   "How to compost food waste in an apartment"
         *   "Odorless kitchen composter benefits"
@@ -239,5 +259,5 @@ This section outlines the upcoming product redesign and feature additions reques
         *   "Odor-free home composter price"
         *   "Best smart compost bin for sale"
     *   **Implementation Plan:** 
-        *   Inject these terms naturally in landing page titles, header tags (`<h1>`, `<h2>`), image alt text, and meta descriptions.
-        *   Optimize the page structure to win "Featured Snippets" (e.g., clear, bulleted answers for questions like "What can you compost in a smart kitchen bin?").
+        *   Injected these terms naturally in landing page titles, header tags (`<h1>`, `<h2>`), image alt text, and meta descriptions.
+        *   Page structure optimized to win "Featured Snippets" (e.g., clear, bulleted answers for questions like "What can you compost in a smart kitchen bin?").
