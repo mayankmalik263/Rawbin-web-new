@@ -187,10 +187,8 @@ This section outlines the upcoming product redesign and feature additions reques
         *   **Step 2 (`image2.png`):** Rawbin composting automatically with leaf/swirl motion graphics showing silent, effortless processing.
         *   **Step 3 (`image3.png`):** Harvesting rich compost on an Indian apartment balcony with the Rawbin visible in the background.
     *   Card image container height increased from `220px` to `260px` to better showcase the wider illustrations.
-*   [ ] **"Insta Cards" Social Grid:**
-    *   Implement an interactive grid/carousel of Instagram-style social cards displaying actual customers showcasing their Rawbin devices, kitchen setups, and unboxings.
-*   [ ] **"See what community is doing with the compost" Section:**
-    *   A section dedicated to displaying real-world utility of the nutrient-rich output (e.g., backyard organic gardening, nourishing indoor plants, community farm drops, greening balconies).
+*   [ ] **"Insta Grid: See what community is doing with the compost" Section:**
+    *   Implement an interactive, premium Instagram-style social grid displaying posts from the Rawbin community showing customer unboxings, kitchen setups, and real-world utility of the compost (backyard organic gardening, indoor plants, balconing, community farm drops).
 
 ### ⚡ 4. Copywriting & Interactive Components
 *   [x] **"Composting shouldn't feel like..." Section (Completed: June 26, 2026):**
