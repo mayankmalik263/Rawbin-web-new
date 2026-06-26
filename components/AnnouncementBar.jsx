@@ -4,7 +4,7 @@ import { SproutIcon, BoltIcon } from '@/components/icons';
 
 export default function AnnouncementBar() {
   return (
-    <div className="bg-[#FAF4E8] text-nc-text py-2.5 overflow-hidden relative border-b border-black/5 text-[13px] font-semibold">
+    <div className="bg-[#F0EAE1] text-nc-text py-2.5 overflow-hidden relative border-b border-black/5 text-[13px] font-semibold">
       <div className="flex whitespace-nowrap overflow-hidden">
         <motion.div 
           className="flex gap-10 min-w-full items-center"
