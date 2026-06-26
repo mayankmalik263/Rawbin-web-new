@@ -176,10 +176,15 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Stripped away the generic community impact stats cards to declutter the user flow and maintain focus on premium product ownership.
 *   [x] **Remove Redundant Dead UI Elements (Completed: June 26, 2026):**
     *   Removed the non-functional "Read our Composting Guides & Blogs →" button from the bottom of `SocialProof.jsx` — it had no `href`/`onClick` and was already duplicated in the Footer's Quick Links section. Cleaned up the unused `ArrowRight` import as well.
+*   [x] **Highlight Cards Styling Clean-up (Completed: June 27, 2026):**
+    *   Removed the colored top border lines (green, purple, brown) from the Innovation Highlights cards in the "Everything You Need To Know" section for a cleaner, uniform, and minimalist look.
 
 ### 📸 3. New Content & Community Visuals
-*   [x] **New Hero Section BG & Photo (Completed: June 26, 2026):**
-    *   Replaced the background image with a high-quality photo of Rawbin (`new_hero_bg.png`) set in a modern Indian kitchen, optimized for responsive layouts and overlays.
+*   [x] **New Hero Section BG & Photo (Completed: June 26, 2026 / Updated: June 27, 2026):**
+    *   Replaced the background image with a high-quality photo of Rawbin (`new_hero_bg.png`) set in a modern Indian kitchen.
+    *   Refined the desktop layout with a premium seamless glassmorphic frosted pane (`backdrop-blur-[10px] bg-white/10` with custom linear-gradient mask) on the left side to show the blurred kitchen details behind the text.
+    *   Implemented a stacked card layout for mobile and tablet viewports to prevent device clipping and text overlap.
+    *   Aligned the top announcement bar background color to `#F0EAE1` to match the brand sand-beige color palette.
 *   [x] **Custom AI-Generated Step Illustrations (Completed: June 26, 2026):**
     *   Replaced the three generic placeholder images in the **"How It Works"** section with custom AI-generated illustrations accurately depicting the Rawbin device:
         *   **Step 1 (`image1.png`):** Indian woman in a kurti adding kitchen scraps to the Rawbin in a warm, modern Indian kitchen.
