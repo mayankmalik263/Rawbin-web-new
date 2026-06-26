@@ -254,23 +254,23 @@ export default function SocialProof() {
 
       <div className="max-w-[1280px] mx-auto px-5 mt-16 relative z-10">
         {/* Press Mentions */}
-        <div className="bg-[#1C2025]/50 rounded-3xl p-10 md:p-14 border border-white/5 text-center mb-16">
-          <h6 className="text-xs font-bold text-[#A3B899] uppercase tracking-[4px] mb-12">Press Mentions</h6>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-16">
+        <div className="bg-[#F7F3EF] rounded-3xl p-10 md:p-14 border border-black/5 text-center mb-16">
+          <h6 className="text-xs font-bold text-[#6B7280] uppercase tracking-[4px] mb-12">Press Mentions</h6>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-20">
 
             {/* New York Times */}
             <Link
               href="https://www.linkedin.com/posts/akhandelwal25_womenclimatecollective-wcc2024-climateweeknyc-activity-7245372779309457408-uz19"
               target="_blank"
               rel="noreferrer"
-              className="opacity-75 hover:opacity-100 transition-opacity duration-300"
+              className="opacity-85 hover:opacity-100 transition-opacity duration-300"
             >
               <Image
                 src="/images/NYTimes.png"
                 alt="The New York Times"
-                width={200}
-                height={40}
-                className="object-contain brightness-0 invert"
+                width={220}
+                height={45}
+                className="object-contain"
               />
             </Link>
 
@@ -279,14 +279,14 @@ export default function SocialProof() {
               href="https://www.linkedin.com/posts/akhandelwal25_i-had-the-incredible-opportunity-to-record-activity-7245724368272547840-XvF-"
               target="_blank"
               rel="noreferrer"
-              className="opacity-75 hover:opacity-100 transition-opacity duration-300"
+              className="opacity-85 hover:opacity-100 transition-opacity duration-300"
             >
               <Image
                 src="/images/redfm.png"
                 alt="Red FM 93.5"
-                width={120}
-                height={60}
-                className="object-contain brightness-0 invert"
+                width={130}
+                height={70}
+                className="object-contain"
               />
             </Link>
 
@@ -295,14 +295,14 @@ export default function SocialProof() {
               href="https://groundreport.in/top-story/anu-khandelwal-from-bangalore-made-rawbin-composter-to-recycle-food-waste-7067551"
               target="_blank"
               rel="noreferrer"
-              className="opacity-75 hover:opacity-100 transition-opacity duration-300"
+              className="opacity-85 hover:opacity-100 transition-opacity duration-300"
             >
               <Image
                 src="/images/ground-report.webp"
                 alt="Ground Report"
-                width={200}
-                height={50}
-                className="object-contain brightness-0 invert"
+                width={210}
+                height={55}
+                className="object-contain"
               />
             </Link>
 
