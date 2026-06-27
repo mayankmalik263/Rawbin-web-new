@@ -247,6 +247,8 @@ This section outlines the upcoming product redesign and feature additions reques
 
 The following issues have been identified and are tracked for future resolution:
 
+### 🔴 Unresolved Issues (Pending)
+
 1. **AI Chatbot Modal Cannot Be Closed:**
    - **Symptom:** Once the Rawbin AI Chatbot is opened, clicking the floating trigger button again, clicking outside the chatbot window, or clicking an overlay does not close the chat modal.
 2. **Broken Hash Navigation from Subpages:**
@@ -270,25 +272,35 @@ The following issues have been identified and are tracked for future resolution:
    - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
 9. **"Ask Rawbin" Text Links Do Not Trigger Chatbot:**
    - **Symptom:** Text links or navigation items labeled "Ask Rawbin" (e.g., in the Navbar or Footer) do not trigger the floating chatbot drawer to open.
-10. **Hero Image Responsiveness on Mobile/Tablet (Resolved):**
+10. **Remaining Image Optimization Console Warnings (SEO Issue):**
+    - **Symptom:** Development console shows warnings for missing `sizes` prop on step illustrations (`image1.png`, `image2.png`, `image3.png`) and product assets (`compost-gift.png`, `compost-balcony.png`, `compost-garden.png`). Also shows missing `height: auto` or `width: auto` style warnings for media partner logos (`redfm.png`, `ground-report.webp`, `NYTimes.png`).
+11. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
+    - **Symptom:** Local audits run in development mode (`npm run dev`) show a very high Largest Contentful Paint (LCP) score (~19.8s).
+    - **Action Plan:** Run production build (`npm run build` and `npm run start`) and test in Incognito mode to bypass compiler cold start overhead.
+
+---
+
+### 🟢 Resolved Issues (Completed)
+
+12. **Hero Image Responsiveness on Mobile/Tablet:**
     - **Symptom:** On mobile/tablet viewports, the main hero image displayed in a large stacked block below the CTA buttons, breaking the premium storytelling flow.
     - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, displaying the kitchen scene clearly behind the hero text.
-11. **Merge Storytelling & Specifications Sections (Resolved):**
+13. **Merge Storytelling & Specifications Sections:**
     - **Symptom:** Homepage felt fragmented with specs and storytelling split across the page, causing visual disconnect.
     - **Resolution:** Combined the "What is Rawbin?" storytelling narrative and "Everything You Need To Know" specifications slider/details side-by-side into a premium layout inside `EverythingYouNeedToKnow.jsx`. Extracted the results dashboard to a dedicated `ImpactSection` component placed directly below.
-12. **Missing Navigation Links in Mobile Hamburger Menu (Resolved):**
+14. **Missing Navigation Links in Mobile Hamburger Menu:**
     - **Symptom:** Mobile navbar drawer was missing links like "Science of Composting", "Compost Report", and "Why Should You Compost?".
     - **Resolution:** Updated `Navbar.jsx` to render all missing desktop links inside the mobile hamburger menu drawer.
-13. **Next.js Logo and Slider Image Optimization Warnings (Resolved):**
+15. **Next.js Logo and Slider Image Optimization Warnings:**
     - **Symptom:** Console warnings on load regarding preloading (LCP) the logo and slider images, and missing `sizes` attribute on the product view image container.
     - **Resolution:** Configured `priority` attributes and optimized `sizes` definitions in `Navbar.jsx` and `EverythingYouNeedToKnow.jsx`.
-14. **Fix Client-Side Page Titles (Resolved):**
+16. **Fix Client-Side Page Titles:**
     - **Symptom:** `/science` and `/about-us` routes are client-side components and inherit duplicate home page metadata.
     - **Resolution:** Separated pages into server components (`page.js`) that export page-specific metadata blocks, and client components (`SciencePageClient` / `AboutUsPageClient`) that manage dynamic UI/animations.
-15. **Generate Dynamic Sitemap & Robots Configuration (Resolved):**
+17. **Generate Dynamic Sitemap & Robots Configuration:**
     - **Symptom:** Missing `sitemap.xml` and `robots.txt` for crawlers.
     - **Resolution:** Implemented Next.js route generators (`sitemap.js` and `robots.js`) to dynamically serve sitemaps and configure crawler boundaries.
-16. **Inject JSON-LD Product & FAQ Schemas (Resolved):**
+18. **Inject JSON-LD Product & FAQ Schemas:**
     - **Symptom:** Missing structured metadata markup for search engine rich results.
     - **Resolution:** Injected custom JSON-LD schema blocks (Organization, Product, and FAQPage) directly into the root layout head for rich search snippet indexing.
 
