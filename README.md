@@ -282,12 +282,15 @@ The following issues have been identified and are tracked for future resolution:
 13. **Next.js Logo and Slider Image Optimization Warnings (Resolved):**
     - **Symptom:** Console warnings on load regarding preloading (LCP) the logo and slider images, and missing `sizes` attribute on the product view image container.
     - **Resolution:** Configured `priority` attributes and optimized `sizes` definitions in `Navbar.jsx` and `EverythingYouNeedToKnow.jsx`.
-14. **Fix Client-Side Page Titles (SEO Issue):**
+14. **Fix Client-Side Page Titles (Resolved):**
     - **Symptom:** `/science` and `/about-us` routes are client-side components and inherit duplicate home page metadata.
-15. **Generate Dynamic Sitemap & Robots Configuration (SEO Issue):**
+    - **Resolution:** Separated pages into server components (`page.js`) that export page-specific metadata blocks, and client components (`SciencePageClient` / `AboutUsPageClient`) that manage dynamic UI/animations.
+15. **Generate Dynamic Sitemap & Robots Configuration (Resolved):**
     - **Symptom:** Missing `sitemap.xml` and `robots.txt` for crawlers.
-16. **Inject JSON-LD Product & FAQ Schemas (SEO Issue):**
+    - **Resolution:** Implemented Next.js route generators (`sitemap.js` and `robots.js`) to dynamically serve sitemaps and configure crawler boundaries.
+16. **Inject JSON-LD Product & FAQ Schemas (Resolved):**
     - **Symptom:** Missing structured metadata markup for search engine rich results.
+    - **Resolution:** Injected custom JSON-LD schema blocks (Organization, Product, and FAQPage) directly into the root layout head for rich search snippet indexing.
 
 
 
