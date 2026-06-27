@@ -47,7 +47,7 @@ export default function CompostOutput() {
       views: "1,130",
       likes: "51",
       comments: "0",
-      img: "/images/compost-balcony.png",
+      img: "/images/reel1_image.png",
       gradient: "from-purple-900/40 via-indigo-950/30 to-slate-900/40"
     },
     {
@@ -58,7 +58,7 @@ export default function CompostOutput() {
       views: "2,435",
       likes: "74",
       comments: "9",
-      img: "/images/compost-garden.png",
+      img: "/images/reel2_image.png",
       gradient: "from-emerald-950/40 via-teal-900/30 to-zinc-900/40"
     },
     {
@@ -69,7 +69,7 @@ export default function CompostOutput() {
       views: "1,121",
       likes: "32",
       comments: "6",
-      img: "/images/compost-gift.png",
+      img: "/images/reel3_image.png",
       gradient: "from-amber-950/40 via-stone-900/30 to-neutral-900/40"
     }
   ];
