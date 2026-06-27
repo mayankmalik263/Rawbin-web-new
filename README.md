@@ -161,9 +161,6 @@ This section outlines the upcoming product redesign and feature additions reques
 ### 🎨 1. Theme, Aesthetics & Brand Direction
 *   [x] **Accent Color Expansion — Brown & Lilac (Completed: June 26, 2026):**
     *   Introduced Chocolate Brown and Lilac as secondary accent colors across the UI. Tailwind config tokens added and sprinkled on pill badges, borders, alternating icons, and hover elements.
-*   [ ] **Unique Composting Design:**
-    *   Avoid generic, low-effort composting visual patterns (clipart leaves, recycling symbols, flat green).
-    *   Employ ultra-premium Apple-like dark/light glassmorphic blocks, clean layouts, and rich typography (e.g., *Instrument Serif*, *Outfit*).
 *   [x] **Remove Cartoon Icons (Completed: June 26, 2026):**
     *   Replace all flat cartoon/vector icons and raw text emojis with custom high-fidelity outline SVG icons across the landing page, technology tab, and YES/NO list cards.
 
