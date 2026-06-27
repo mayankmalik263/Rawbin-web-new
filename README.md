@@ -159,10 +159,14 @@ git push origin priyansh/<feature-name>
 This section outlines the upcoming product redesign and feature additions requested in the project specification roadmap. 
 
 ### 🎨 1. Theme, Aesthetics & Brand Direction
-*   [x] **Accent Color Expansion — Brown & Lilac (Completed: June 26, 2026):**
-    *   Introduced Chocolate Brown and Lilac as secondary accent colors across the UI. Tailwind config tokens added and sprinkled on pill badges, borders, alternating icons, and hover elements.
+*   [x] **Accent Color Expansion — Brown & Lilac (Completed: June 26, 2026 / Updated: June 27, 2026):**
+    *   Introduced Chocolate Brown and Lilac as secondary accent colors across the UI. Tailwind config tokens added and sprinkled on pill badges, borders, alternating icons, and hover elements across the `WhyRawbin`, `HowItWorks`, `EverythingYouNeedToKnow`, `CompostOutput`, and `AnnouncementBar` sections.
 *   [x] **Remove Cartoon Icons (Completed: June 26, 2026):**
     *   Replace all flat cartoon/vector icons and raw text emojis with custom high-fidelity outline SVG icons across the landing page, technology tab, and YES/NO list cards.
+*   [x] **CSS Variable-Driven Theme Engine (Completed: June 27, 2026):**
+    *   Mapped Tailwind configuration colors to dynamic CSS variables and defined Light/Dark mode classes in global styles.
+    *   Injected a theme restoration head script in the layout root to prevent light-mode flashes by reading from localStorage before render.
+    *   Swapped container background elements to use theme-aware colors (e.g. `bg-bg-main`, `text-nc-text`) so that pages transition cleanly.
 
 ### 🏗️ 2. Section Restructuring & Clean-up
 *   [ ] **Merge "Everything You Need To Know" into "What is Rawbin" Section:**
@@ -188,12 +192,17 @@ This section outlines the upcoming product redesign and feature additions reques
         *   **Step 2 (`image2.png`):** Rawbin composting automatically with leaf/swirl motion graphics showing silent, effortless processing.
         *   **Step 3 (`image3.png`):** Harvesting rich compost on an Indian apartment balcony with the Rawbin visible in the background.
     *   Card image container height increased from `220px` to `260px` to better showcase the wider illustrations.
-*   [ ] **"Insta Grid: See what community is doing with the compost" Section:**
-    *   Implement an interactive, premium Instagram-style social grid displaying posts from the Rawbin community showing customer unboxings, kitchen setups, and real-world utility of the compost (backyard organic gardening, indoor plants, balconing, community farm drops).
+*   [x] **"Insta Grid: See what community is doing with the compost" Section (Completed: June 27, 2026):**
+    *   Implemented an interactive, premium 3-column Instagram Reels Grid ("What's Going On in the Rawbin Community") directly below the Compost Use Cases on the landing page.
+    *   Displays 3 real-world Reels (`DX60vemoTSt`, `DYZua7shjNJ`, `DZFYb2AM6gK`) with their actual video cover thumbnails (`reel1_image.png`, `reel2_image.png`, `reel3_image.png`), custom-themed gradients, play overlays, and official profile logo (`rawbin-instagram-pfp.jpg`) headers.
+    *   Includes verified live metrics (likes, views, and comments) and real captions for each post.
+    *   Added a prominent bottom CTA button ("Follow @rawbin.in on Instagram") redirecting to the official Rawbin Instagram handle.
 
 ### ⚡ 4. Copywriting & Interactive Components
 *   [x] **"Composting shouldn't feel like..." Section (Completed: June 26, 2026):**
     *   Implemented on the homepage as the "How It Works" section titled "Composting Shouldn't Feel Like Work", showcasing the 3 simple steps of the Rawbin cycle.
+*   [x] **Compost Report PDF Integration (Completed: June 27, 2026):**
+    *   Copied `PL.M.25-26.00078.pdf` to the static public folder and wired up the "Compost Report" buttons in the Footer and Navbar dropdown to open the document statically in a new tab.
 *   [x] **Deep-Dive "Learn More" Resource Hub (Completed: June 26, 2026):**
     *   Developed a dedicated `/science` subpage detailing the chemical, biological, and structural science for all 12 FAQs. Added anchor-linked \"Learn More Science →\" buttons inside the expanded FAQ panels on the homepage for seamless direct navigation.
 *   [x] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Completed: June 26, 2026):**
