@@ -22,11 +22,64 @@
     --fg: #17181C;
     --bs1: #FFFFFF;
     --bs2: #C1C2C5;
+    
+    --bg-secondary: #F9F5F3;
+  }
+
+  .dark {
+    --bg-main: #121318;
+    --bg-secondary: #0D0E12;
+    --bg-alt: #1C1E24;
+    --text: #E5E7EB;
+    --text-muted: #9CA3AF;
+    --text-very-muted: #6B7280;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.06);
+    
+    --bgreen: #45B900;
+    --dgreen: #45B900;
+    --text-dark: #FFFFFF;
+    --bg: #1C1E24;
+    --fg: #E5E7EB;
+    --bs1: #121318;
+    --bs2: #1C1E24;
   }
 
   body {
-    background-color: #F9F5F3;
+    background-color: var(--bg-secondary);
     color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Border overrides for dark mode to keep borders clean and visible */
+  .dark .border-black\/5 {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  .dark .border-black\/10 {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  .dark .border-black\/20 {
+    border-color: rgba(255, 255, 255, 0.20);
+  }
+  .dark .border-accent-brown\/40 {
+    border-color: rgba(200, 180, 214, 0.3); /* Muted lilac border in dark mode */
+  }
+  .dark .border-accent-brown\/30 {
+    border-color: rgba(200, 180, 214, 0.25);
+  }
+  
+  /* Text and background overrides for specific elements in dark mode */
+  .dark .text-nc-text {
+    color: var(--text);
+  }
+  .dark .text-text-muted {
+    color: var(--text-muted);
+  }
+  .dark .bg-bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+  .dark .bg-bg-alt {
+    background-color: var(--bg-alt);
   }
 }
 
