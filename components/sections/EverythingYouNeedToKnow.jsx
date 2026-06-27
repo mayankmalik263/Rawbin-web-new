@@ -221,6 +221,7 @@ export default function EverythingYouNeedToKnow() {
                         src={productImages[activeImageIndex].src} 
                         alt={productImages[activeImageIndex].alt} 
                         fill
+                        sizes="(max-width: 1024px) 280px, 320px"
                         priority
                         className="object-contain rounded-2xl"
                       />
