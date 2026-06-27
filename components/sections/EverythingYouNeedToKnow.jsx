@@ -143,7 +143,7 @@ export default function EverythingYouNeedToKnow() {
               
               {/* Image Transition Slider */}
               <div 
-                className="relative w-full h-full p-6 flex items-center justify-center bg-bg-main z-10 rounded-[2rem] overflow-hidden"
+                className="relative w-full h-full flex items-center justify-center bg-bg-main z-10 rounded-[2rem] overflow-hidden"
                 style={{ transform: 'translateZ(0)' }}
               >
                 <AnimatePresence mode="wait">
@@ -153,7 +153,7 @@ export default function EverythingYouNeedToKnow() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="relative w-full h-full flex items-center justify-center rounded-[1.5rem] overflow-hidden"
+                    className="relative w-full h-full flex items-center justify-center rounded-[2rem] overflow-hidden"
                     style={{ transform: 'translateZ(0)' }}
                   >
                     <Image 
@@ -161,7 +161,11 @@ export default function EverythingYouNeedToKnow() {
                       alt={productImages[activeImageIndex].alt} 
                       fill
                       priority
-                      className="object-contain rounded-[1.5rem]"
+                      className={`rounded-[2rem] ${
+                        productImages[activeImageIndex].src.endsWith('.png') 
+                          ? 'object-contain p-8' 
+                          : 'object-cover'
+                      }`}
                     />
                   </motion.div>
                 </AnimatePresence>
