@@ -134,18 +134,12 @@ export default function EverythingYouNeedToKnow() {
             {/* Circular Green Ring */}
             <div className="absolute w-[340px] h-[340px] lg:w-[440px] lg:h-[440px] border border-primary/20 rounded-full z-0 pointer-events-none top-[12px] lg:top-[38px]"></div>
             
-            <div 
-              className="relative w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-bg-main rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden z-10 flex items-center justify-center"
-              style={{ transform: 'translateZ(0)' }}
-            >
+            <div className="relative w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-bg-main rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden z-10 flex items-center justify-center">
               {/* Outer glassmorphic frame */}
               <div className="absolute inset-0 border-[12px] border-white/40 rounded-[2rem] pointer-events-none z-30"></div>
               
               {/* Image Transition Slider */}
-              <div 
-                className="relative w-full h-full flex items-center justify-center bg-bg-main z-10 rounded-[2rem] overflow-hidden"
-                style={{ transform: 'translateZ(0)' }}
-              >
+              <div className="relative w-full h-full p-6 flex items-center justify-center bg-bg-main z-10">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeImageIndex}
@@ -153,19 +147,14 @@ export default function EverythingYouNeedToKnow() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="relative w-full h-full flex items-center justify-center rounded-[2rem] overflow-hidden"
-                    style={{ transform: 'translateZ(0)' }}
+                    className="relative w-full h-full flex items-center justify-center rounded-2xl overflow-hidden"
                   >
                     <Image 
                       src={productImages[activeImageIndex].src} 
                       alt={productImages[activeImageIndex].alt} 
                       fill
                       priority
-                      className={`rounded-[2rem] ${
-                        productImages[activeImageIndex].src.endsWith('.png') 
-                          ? 'object-contain p-8' 
-                          : 'object-cover'
-                      }`}
+                      className="object-contain rounded-2xl"
                     />
                   </motion.div>
                 </AnimatePresence>
