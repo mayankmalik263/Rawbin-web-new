@@ -19,7 +19,7 @@ export default function HeroSection() {
         />
 
         {/* Content Container */}
-        <div className="max-w-[1280px] mx-auto px-5 pt-12 pb-6 md:pt-20 md:pb-10 lg:py-24 relative z-20">
+        <div className="max-w-[1280px] mx-auto px-5 py-20 md:py-32 lg:py-24 relative z-20">
           <div className="lg:w-[50%]">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -102,17 +102,17 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Background Image Container - absolute full-bleed on desktop, relative card on mobile/tablet */}
-        <div className="relative lg:absolute inset-0 w-full h-[320px] sm:h-[450px] lg:h-full pb-12 lg:pb-0 px-5 lg:px-0 z-0">
-          <div className="relative w-full h-full rounded-3xl lg:rounded-none overflow-hidden shadow-lg lg:shadow-none border border-black/5 lg:border-none">
-            <Image 
-              src="/images/new_hero_bg.png" 
-              alt="Rawbin in modern kitchen" 
-              fill
-              priority
-              className="object-cover object-[75%_center] lg:object-[80%_center]"
-            />
-          </div>
+        {/* Background Image Container - absolute full-bleed on all viewport sizes */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image 
+            src="/images/new_hero_bg.png" 
+            alt="Rawbin in modern kitchen" 
+            fill
+            priority
+            className="object-cover object-[75%_center] lg:object-[80%_center]"
+          />
+          {/* Translucent overlay to blend the background image on mobile/tablet */}
+          <div className="absolute inset-0 bg-[#F9F5F3]/85 md:bg-[#F9F5F3]/75 lg:bg-transparent pointer-events-none" />
         </div>
       </section>
 

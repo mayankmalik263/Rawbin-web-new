@@ -270,5 +270,9 @@ The following issues have been identified and are tracked for future resolution:
    - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
 9. **"Ask Rawbin" Text Links Do Not Trigger Chatbot:**
    - **Symptom:** Text links or navigation items labeled "Ask Rawbin" (e.g., in the Navbar or Footer) do not trigger the floating chatbot drawer to open.
+10. **Hero Image Responsiveness on Mobile/Tablet (Resolved):**
+    - **Symptom:** On mobile/tablet viewports, the main hero image displayed in a large stacked block below the CTA buttons, breaking the premium storytelling flow.
+    - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, paired with a translucent light blend overlay (`bg-[#F9F5F3]/85 md:bg-[#F9F5F3]/75 lg:bg-transparent`) to blend the kitchen details softly behind the hero text and maintain high contrast readability.
+
 
 
