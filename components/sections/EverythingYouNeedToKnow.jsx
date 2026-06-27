@@ -1,7 +1,9 @@
 'use client';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   ContainerIcon,
   RecycleLeafIcon,
@@ -17,6 +19,44 @@ import {
 } from '@/components/icons';
 
 export default function EverythingYouNeedToKnow() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const productImages = [
+    {
+      src: '/images/rawbin-main-white-bg.jpeg',
+      alt: 'Rawbin Smart Composter - Front View',
+      label: 'Front View'
+    },
+    {
+      src: '/images/rawbin-main-normal-bg.jpeg',
+      alt: 'Rawbin Smart Composter - Home Setting',
+      label: 'Home Setting'
+    },
+    {
+      src: '/images/side-view.png',
+      alt: 'Rawbin Smart Composter - Side View',
+      label: 'Side View'
+    },
+    {
+      src: '/images/back-view.png',
+      alt: 'Rawbin Smart Composter - Back View',
+      label: 'Back View'
+    },
+    {
+      src: '/images/Top-Down-view.png',
+      alt: 'Rawbin Smart Composter - Top-Down View',
+      label: 'Top-Down View'
+    }
+  ];
+
+  const handlePrev = () => {
+    setActiveImageIndex((prev) => (prev === 0 ? productImages.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveImageIndex((prev) => (prev === productImages.length - 1 ? 0 : prev + 1));
+  };
+
   const featuresLeft = [
     { icon: <ContainerIcon />, title: "Capacity", desc: "Up to 3kg of everyday kitchen leftovers per cycle." },
     { icon: <RecycleLeafIcon />, title: "Cycle Time", desc: "Complete compost in as fast as 7 days." },
@@ -86,19 +126,78 @@ export default function EverythingYouNeedToKnow() {
           </div>
 
           {/* Center Product Image Wrapper */}
-          <div className="relative w-[320px] h-[400px] lg:w-[420px] lg:h-[520px] flex items-center justify-center order-1 lg:order-2">
+          <div className="relative w-[320px] h-[450px] lg:w-[420px] lg:h-[540px] flex flex-col items-center justify-center order-1 lg:order-2">
             {/* Circular Green Ring */}
-            <div className="absolute w-[340px] h-[340px] lg:w-[440px] lg:h-[440px] border border-primary/20 rounded-full z-0 pointer-events-none"></div>
+            <div className="absolute w-[340px] h-[340px] lg:w-[440px] lg:h-[440px] border border-primary/20 rounded-full z-0 pointer-events-none top-[12px] lg:top-[38px]"></div>
             
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-gradient-to-b from-[#dbe0d8] to-[#bdc4b8] rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] flex items-center justify-center relative z-10"
-            >
-              <div className="absolute inset-0 border-[16px] border-white/20 rounded-[2rem]"></div>
-              <div className="text-text-muted font-bold text-sm uppercase tracking-wider relative z-20">Product View</div>
-            </motion.div>
+            <div className="relative w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-white rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden z-10 flex items-center justify-center">
+              {/* Outer glassmorphic frame */}
+              <div className="absolute inset-0 border-[12px] border-white/40 rounded-[2rem] pointer-events-none z-30"></div>
+              
+              {/* Image Transition Slider */}
+              <div className="relative w-full h-full p-6 flex items-center justify-center bg-white z-10">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeImageIndex}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative w-full h-full flex items-center justify-center"
+                  >
+                    <Image 
+                      src={productImages[activeImageIndex].src} 
+                      alt={productImages[activeImageIndex].alt} 
+                      fill
+                      priority
+                      className="object-contain p-2 rounded-2xl"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Angle Label Overlay */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-md px-3.5 py-1 rounded-full text-[10px] font-bold tracking-widest text-white uppercase z-30 pointer-events-none">
+                {productImages[activeImageIndex].label}
+              </div>
+
+              {/* Navigation Arrows */}
+              <button 
+                onClick={handlePrev}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/10 hover:bg-black/20 text-nc-text flex items-center justify-center z-30 transition-colors"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button 
+                onClick={handleNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/10 hover:bg-black/20 text-nc-text flex items-center justify-center z-30 transition-colors"
+                aria-label="Next image"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+
+            {/* Thumbnail selector like Amazon */}
+            <div className="flex gap-2.5 mt-5 z-20">
+              {productImages.map((image, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveImageIndex(idx)}
+                  className={`relative w-12 h-14 rounded-lg overflow-hidden border-2 transition-all bg-white ${
+                    activeImageIndex === idx ? 'border-primary shadow-xs scale-105' : 'border-black/5 hover:border-black/20 opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <Image 
+                    src={image.src} 
+                    alt={`Thumbnail ${idx}`} 
+                    fill
+                    sizes="48px"
+                    className="object-contain p-1"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Right Features */}
