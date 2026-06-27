@@ -110,7 +110,10 @@ export default function Navbar() {
           <Link href="/technology" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Technology</Link>
           <Link href="#faqs" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>FAQs</Link>
           <Link href="#how-it-works" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
+          <Link href="#why-compost" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Why Should You Compost?</Link>
+          <a href="/PL.M.25-26.00078.pdf" target="_blank" rel="noopener noreferrer" className="font-semibold text-lg py-2 border-b border-black/5 block" onClick={() => setMobileMenuOpen(false)}>Compost Report</a>
           <Link href="/roe-calculator" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>ROE Calculator</Link>
+          <Link href="/science" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Science of Composting</Link>
           <Link href="/about-us" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-center mt-2" onClick={() => setMobileMenuOpen(false)}>Order Now</Link>
         </div>
