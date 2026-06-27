@@ -273,6 +273,22 @@ The following issues have been identified and are tracked for future resolution:
 10. **Hero Image Responsiveness on Mobile/Tablet (Resolved):**
     - **Symptom:** On mobile/tablet viewports, the main hero image displayed in a large stacked block below the CTA buttons, breaking the premium storytelling flow.
     - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, displaying the kitchen scene clearly behind the hero text.
+11. **Merge Storytelling & Specifications Sections (Resolved):**
+    - **Symptom:** Homepage felt fragmented with specs and storytelling split across the page, causing visual disconnect.
+    - **Resolution:** Combined the "What is Rawbin?" storytelling narrative and "Everything You Need To Know" specifications slider/details side-by-side into a premium layout inside `EverythingYouNeedToKnow.jsx`. Extracted the results dashboard to a dedicated `ImpactSection` component placed directly below.
+12. **Missing Navigation Links in Mobile Hamburger Menu (Resolved):**
+    - **Symptom:** Mobile navbar drawer was missing links like "Science of Composting", "Compost Report", and "Why Should You Compost?".
+    - **Resolution:** Updated `Navbar.jsx` to render all missing desktop links inside the mobile hamburger menu drawer.
+13. **Next.js Logo and Slider Image Optimization Warnings (Resolved):**
+    - **Symptom:** Console warnings on load regarding preloading (LCP) the logo and slider images, and missing `sizes` attribute on the product view image container.
+    - **Resolution:** Configured `priority` attributes and optimized `sizes` definitions in `Navbar.jsx` and `EverythingYouNeedToKnow.jsx`.
+14. **Fix Client-Side Page Titles (SEO Issue):**
+    - **Symptom:** `/science` and `/about-us` routes are client-side components and inherit duplicate home page metadata.
+15. **Generate Dynamic Sitemap & Robots Configuration (SEO Issue):**
+    - **Symptom:** Missing `sitemap.xml` and `robots.txt` for crawlers.
+16. **Inject JSON-LD Product & FAQ Schemas (SEO Issue):**
+    - **Symptom:** Missing structured metadata markup for search engine rich results.
+
 
 
 
