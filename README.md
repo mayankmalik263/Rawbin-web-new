@@ -288,3 +288,34 @@ This section outlines the upcoming product redesign and feature additions reques
         *   Injected these terms naturally in landing page titles, header tags (`<h1>`, `<h2>`), image alt text, and meta descriptions.
         *   Page structure optimized to win "Featured Snippets" (e.g., clear, bulleted answers for questions like "What can you compost in a smart kitchen bin?").
 
+---
+
+## 🐛 Known Issues & Product Backlog (Bugs)
+
+The following issues have been identified and are tracked for future resolution:
+
+1. **AI Chatbot Modal Cannot Be Closed:**
+   - **Symptom:** Once the Rawbin AI Chatbot is opened, clicking the floating trigger button again, clicking outside the chatbot window, or clicking an overlay does not close the chat modal.
+2. **Broken Hash Navigation from Subpages:**
+   - **Symptom:** When on a subpage (e.g., `/technology` or `/about-us`), clicking hash links meant for the home page (e.g., `#why-rawbin`, `#how-it-works`) tries to navigate relative to the subpage (e.g., `http://localhost:3000/technology#why-rawbin`) instead of redirecting back to the home page with the hash (e.g., `/#why-rawbin`).
+   - **Scope:** Applies to header navbar and dropdown links. Note that `/roe-calculator` and `/science` are separate pages and work correctly.
+3. **"Why Should You Compost?" Button Inactive:**
+   - **Symptom:** The "Why Should You Compost?" CTA does not perform any action when clicked.
+   - **Suggested Connections:**
+     - Link to the `/science` subpage (Science of Composting) for deep educational value.
+     - Smooth-scroll to the newly extracted `ImpactSection` (One Small Habit. A Lasting Impact) or the `TransformSection` (YES/NO list) to show the direct benefits.
+     - Automatically open the Ask Rawbin AI Chatbot with a pre-filled prompt like *"Why should I compost?"*.
+4. **SVG Icon Enhancements:**
+   - **Request:** Investigate higher quality or simpler, cleaner outline SVG icons that present a premium look.
+5. **"Watch How It Works" Button Inactive:**
+   - **Symptom:** The watch video play button in the Hero section is not functional.
+6. **Inactive Purchasing CTAs:**
+   - **Symptom:** Purchase triggers such as "I'm Ready to Compost" or "Order Now" are static and do not trigger any checkout/contact flows.
+7. **"Contact Us" Button Inactive:**
+   - **Symptom:** The "Contact Us" trigger button in the footer or final sections does not open a contact form or email handler.
+8. **Missing Blog Links:**
+   - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
+9. **"Ask Rawbin" Text Links Do Not Trigger Chatbot:**
+   - **Symptom:** Text links or navigation items labeled "Ask Rawbin" (e.g., in the Navbar or Footer) do not trigger the floating chatbot drawer to open.
+
+
