@@ -5,6 +5,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.5.0-black?style=flat-square&logo=framer)](https://www.framer.com/motion/)
 [![Groq API](https://img.shields.io/badge/Groq_API-Llama_3.1_8B-orange?style=flat-square&logo=groq)](https://groq.com/)
+[![Lucide Icons](https://img.shields.io/badge/Lucide_Icons-0.475.0-blue?style=flat-square&logo=lucide)](https://lucide.dev/)
+[![Sharp](https://img.shields.io/badge/Sharp_Image-0.33.5-green?style=flat-square&logo=sharp)](https://sharp.pixelplumbing.com/)
+[![RAG Knowledge](https://img.shields.io/badge/RAG_Knowledge-Markdown-blue?style=flat-square&logo=markdown)](https://daringfireball.net/projects/markdown/)
+[![Git](https://img.shields.io/badge/Git-91_Commits-F05032?style=flat-square&logo=git)](https://git-scm.com/)
 
 Rawbin is India's first smart home composter engineered specifically for urban Indian households. This project contains the official promotional and interactive website for Rawbin, showcasing the device's key value propositions, technological specs, environmental impacts, and more.
 
