@@ -178,8 +178,12 @@ export default function CompostOutput() {
               {/* Top Header Mockup */}
               <div className="flex justify-between items-center z-10">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-[10px] font-bold text-white/80">
-                    R
+                  <div className="w-8 h-8 rounded-full border border-white/20 bg-white/10 overflow-hidden flex items-center justify-center relative">
+                    <img 
+                      src="/images/rawbin-instagram-pfp.jpg" 
+                      alt="Rawbin Instagram Profile"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <span className="text-xs font-semibold text-white/80">@rawbin.in</span>
                 </div>
