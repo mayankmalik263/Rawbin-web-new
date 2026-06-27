@@ -175,7 +175,7 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Swapped container background elements to use theme-aware colors (e.g. `bg-bg-main`, `text-nc-text`) so that pages transition cleanly.
 
 ### 🏗️ 2. Section Restructuring & Clean-up
-*   [ ] **Merge "Everything You Need To Know" into "What is Rawbin" Section:**
+*   [x] **Merge "Everything You Need To Know" into "What is Rawbin" Section (Completed: June 28, 2026):**
     *   Combine the "Everything You Need To Know" specification details and the homepage "What is Rawbin" section (currently at the bottom of HeroSection.jsx) into a single, cohesive, premium storytelling layout.
 *   [x] **Premium Results Panel Dashboard (Completed: June 26, 2026):**
     *   Refactored the old 4-column Impact Section in `HeroSection.jsx` into a premium 3-column dashboard highlighting the core metrics: **1,500kg** CO2 saved a year (Status Green), **90%** less waste by volume (Chocolate Brown), and **7 days** start-to-finished compost (Sterilising Lilac) with spring hover and custom glow shadows.

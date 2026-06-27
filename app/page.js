@@ -5,6 +5,7 @@ import TransformSection from '@/components/sections/TransformSection';
 import WhyRawbin from '@/components/sections/WhyRawbin';
 import ComparisonSection from '@/components/sections/ComparisonSection';
 import EverythingYouNeedToKnow from '@/components/sections/EverythingYouNeedToKnow';
+import ImpactSection from '@/components/sections/ImpactSection';
 import CompostOutput from '@/components/sections/CompostOutput';
 import FAQSection from '@/components/sections/FAQSection';
 import SocialProof from '@/components/sections/SocialProof';
@@ -14,12 +15,13 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <EverythingYouNeedToKnow />
+      <ImpactSection />
       <TrustLogos />
       <HowItWorks />
       <TransformSection />
       <WhyRawbin />
       <ComparisonSection />
-      <EverythingYouNeedToKnow />
       <CompostOutput />
       <FAQSection />
       <SocialProof />

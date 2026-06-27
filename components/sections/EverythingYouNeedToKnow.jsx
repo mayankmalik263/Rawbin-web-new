@@ -21,6 +21,29 @@ import {
 export default function EverythingYouNeedToKnow() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  // States for Card Hover Effects
+  const [mousePos1, setMousePos1] = useState({ x: 0, y: 0 });
+  const [isHovered1, setIsHovered1] = useState(false);
+
+  const [mousePos2, setMousePos2] = useState({ x: 0, y: 0 });
+  const [isHovered2, setIsHovered2] = useState(false);
+
+  const handleMouseMove1 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos1({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  };
+
+  const handleMouseMove2 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos2({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  };
+
   const productImages = [
     {
       src: '/images/rawbin-main-white-bg.jpeg',
@@ -57,13 +80,10 @@ export default function EverythingYouNeedToKnow() {
     setActiveImageIndex((prev) => (prev === productImages.length - 1 ? 0 : prev + 1));
   };
 
-  const featuresLeft = [
+  const features = [
     { icon: <ContainerIcon />, title: "Capacity", desc: "Up to 3kg of everyday kitchen leftovers per cycle." },
     { icon: <RecycleLeafIcon />, title: "Cycle Time", desc: "Complete compost in as fast as 7 days." },
-    { icon: <MuteIcon />, title: "Noise", desc: "Whisper-quiet operation (less than 35 dB)." }
-  ];
-
-  const featuresRight = [
+    { icon: <MuteIcon />, title: "Noise", desc: "Whisper-quiet operation (less than 35 dB)." },
     { icon: <BoltIcon />, title: "Power", desc: "Low energy consumption - just ~4 units per month." },
     { icon: <WindIcon />, title: "Odour", desc: "100% odour-free with advanced filtration." },
     { icon: <CpuIcon />, title: "Technology", desc: "Patented smart composting technology." }
@@ -80,156 +100,227 @@ export default function EverythingYouNeedToKnow() {
     <section className="bg-bg-alt py-24 border-b border-black/5 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5">
         
-        <div className="text-center mb-20">
+        {/* Top Storytelling Row: What is Rawbin (Left) & Gallery (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24">
+          
+          {/* Left Column: What is Rawbin Editorial Intro */}
+          <div className="lg:col-span-6 flex flex-col gap-6 w-full order-2 lg:order-1">
+            <div className="mb-2">
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-block border border-accent-brown/40 text-nc-text font-bold px-4 py-1.5 rounded-full text-xs tracking-widest uppercase mb-4"
+              >
+                Meet Rawbin
+              </motion.div>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl md:text-5xl font-black mb-2 text-nc-text"
+              >
+                What is Rawbin?
+              </motion.h2>
+            </div>
+
+            {/* Editorial Card 1: Description */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 0.8, 0.3, 1] }}
+              onMouseMove={handleMouseMove1}
+              onMouseEnter={() => setIsHovered1(true)}
+              onMouseLeave={() => setIsHovered1(false)}
+              className="relative overflow-hidden bg-bg-main border border-black/5 rounded-3xl p-8 shadow-xs hover:border-black/10 transition-all cursor-default"
+            >
+              <div 
+                style={{
+                  position: 'absolute',
+                  width: '260px',
+                  height: '260px',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(31,168,77,0.08), transparent 70%)',
+                  transform: 'translate(-50%, -50%)',
+                  left: `${mousePos1.x}px`,
+                  top: `${mousePos1.y}px`,
+                  opacity: isHovered1 ? 1 : 0,
+                  transition: 'opacity 0.35s ease',
+                  pointerEvents: 'none',
+                  zIndex: 0
+                }}
+              />
+              <p className="text-text-muted text-base md:text-lg font-medium leading-relaxed relative z-10">
+                Rawbin is an intelligent home composting system that transforms kitchen leftovers into nutrient-rich compost with minimal effort. Simply add your leftovers, let Rawbin manage the process, and return valuable nutrients back to plants, soil, and nature.
+              </p>
+            </motion.div>
+
+            {/* Editorial Card 2: The Circular Way */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 0.8, 0.3, 1], delay: 0.1 }}
+              onMouseMove={handleMouseMove2}
+              onMouseEnter={() => setIsHovered2(true)}
+              onMouseLeave={() => setIsHovered2(false)}
+              className="relative overflow-hidden bg-gradient-to-br from-[#13241A] to-[#1C3A28] text-[#EAF3EC] rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all cursor-default"
+            >
+              <div 
+                style={{
+                  position: 'absolute',
+                  width: '260px',
+                  height: '260px',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(124,232,154,0.12), transparent 70%)',
+                  transform: 'translate(-50%, -50%)',
+                  left: `${mousePos2.x}px`,
+                  top: `${mousePos2.y}px`,
+                  opacity: isHovered2 ? 1 : 0,
+                  transition: 'opacity 0.35s ease',
+                  pointerEvents: 'none',
+                  zIndex: 0
+                }}
+              />
+              <div className="text-[11px] md:text-xs font-bold letter-spacing-[2px] tracking-widest text-[#7CE89A] uppercase mb-4 relative z-10">
+                The circular way
+              </div>
+              <p 
+                className="text-lg md:text-2xl font-medium relative z-10 leading-relaxed italic"
+                style={{ fontFamily: "'Instrument Serif', serif" }}
+              >
+                &ldquo;For generations, nothing from the kitchen was truly discarded. Rawbin brings that circular way of living into modern homes — through simple, effortless composting.&rdquo;
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Interactive Gallery */}
+          <div className="lg:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2 w-full">
+            <div className="relative w-[320px] h-[450px] lg:w-[420px] lg:h-[540px] flex flex-col items-center justify-center">
+              {/* Circular Green Ring */}
+              <div className="absolute w-[340px] h-[340px] lg:w-[440px] lg:h-[440px] border border-primary/20 rounded-full z-0 pointer-events-none top-[12px] lg:top-[38px]"></div>
+              
+              <div className="relative w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-bg-main rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden z-10 flex items-center justify-center">
+                {/* Outer glassmorphic frame */}
+                <div className="absolute inset-0 border-[12px] border-white/40 rounded-[2rem] pointer-events-none z-30"></div>
+                
+                {/* Image Transition Slider */}
+                <div className="relative w-full h-full p-6 flex items-center justify-center bg-bg-main z-10">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeImageIndex}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative w-full h-full flex items-center justify-center rounded-2xl overflow-hidden"
+                    >
+                      <Image 
+                        src={productImages[activeImageIndex].src} 
+                        alt={productImages[activeImageIndex].alt} 
+                        fill
+                        priority
+                        className="object-contain rounded-2xl"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                {/* Angle Label Overlay */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-md px-3.5 py-1 rounded-full text-[10px] font-bold tracking-widest text-white uppercase z-30 pointer-events-none">
+                  {productImages[activeImageIndex].label}
+                </div>
+
+                {/* Navigation Arrows */}
+                <button 
+                  onClick={handlePrev}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/10 hover:bg-black/20 text-nc-text flex items-center justify-center z-30 transition-colors"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <button 
+                  onClick={handleNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/10 hover:bg-black/20 text-nc-text flex items-center justify-center z-30 transition-colors"
+                  aria-label="Next image"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+
+              {/* Thumbnail selector */}
+              <div className="flex gap-2.5 mt-5 z-20">
+                {productImages.map((image, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`relative w-12 h-14 rounded-lg overflow-hidden border-2 transition-all bg-bg-main ${
+                      activeImageIndex === idx ? 'border-primary shadow-xs scale-105' : 'border-black/5 hover:border-black/20 opacity-70 hover:opacity-100'
+                    }`}
+                  >
+                    <Image 
+                      src={image.src} 
+                      alt={`Thumbnail ${idx}`} 
+                      fill
+                      sizes="48px"
+                      className="object-contain p-1"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Technical Specifications Section */}
+        <div className="text-center mb-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block border border-accent-brown/40 text-nc-text font-bold px-4 py-1.5 rounded-full text-xs tracking-widest uppercase mb-6"
+            className="inline-block border border-accent-brown/40 text-nc-text font-bold px-4 py-1.5 rounded-full text-xs tracking-widest uppercase mb-4"
           >
-            Smart. Simple. Sustainable.
+            Technical Specifications
           </motion.div>
-          <motion.h2 
+          <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black mb-4 text-nc-text"
+            className="text-3xl md:text-4xl font-black mb-4 text-nc-text"
           >
-            Everything You Need To Know
-          </motion.h2>
+            Engineered to Perfection
+          </motion.h3>
         </div>
 
-        {/* Product Layout */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8 mb-24">
-          
-          {/* Left Features */}
-          <div className="flex flex-col gap-10 w-full lg:w-[350px] order-2 lg:order-1">
-            {featuresLeft.map((feature, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, x: -25 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`flex items-center gap-4 text-right justify-between ${i === 1 ? 'lg:-translate-x-8' : ''}`}
-              >
-                <div className="flex-1">
-                  <h4 className="font-extrabold text-lg mb-1.5 text-nc-text">{feature.title}</h4>
-                  <p className="text-text-muted text-sm font-medium leading-relaxed">{feature.desc}</p>
-                </div>
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${
-                  i === 0 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
-                  i === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
-                  'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
-                }`}>
-                  {feature.icon}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Center Product Image Wrapper */}
-          <div className="relative w-[320px] h-[450px] lg:w-[420px] lg:h-[540px] flex flex-col items-center justify-center order-1 lg:order-2">
-            {/* Circular Green Ring */}
-            <div className="absolute w-[340px] h-[340px] lg:w-[440px] lg:h-[440px] border border-primary/20 rounded-full z-0 pointer-events-none top-[12px] lg:top-[38px]"></div>
-            
-            <div className="relative w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-bg-main rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden z-10 flex items-center justify-center">
-              {/* Outer glassmorphic frame */}
-              <div className="absolute inset-0 border-[12px] border-white/40 rounded-[2rem] pointer-events-none z-30"></div>
-              
-              {/* Image Transition Slider */}
-              <div className="relative w-full h-full p-6 flex items-center justify-center bg-bg-main z-10">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeImageIndex}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative w-full h-full flex items-center justify-center rounded-2xl overflow-hidden"
-                  >
-                    <Image 
-                      src={productImages[activeImageIndex].src} 
-                      alt={productImages[activeImageIndex].alt} 
-                      fill
-                      priority
-                      className="object-contain rounded-2xl"
-                    />
-                  </motion.div>
-                </AnimatePresence>
+        {/* Specs Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+          {features.map((feature, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              whileHover={{ y: -6, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
+              className="bg-bg-main p-6 rounded-3xl border border-black/5 hover:border-black/10 hover:shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all flex items-start gap-4 cursor-default"
+            >
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${
+                i % 3 === 0 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
+                i % 3 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
+                'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
+              }`}>
+                {feature.icon}
               </div>
-
-              {/* Angle Label Overlay */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-md px-3.5 py-1 rounded-full text-[10px] font-bold tracking-widest text-white uppercase z-30 pointer-events-none">
-                {productImages[activeImageIndex].label}
+              <div className="flex-1">
+                <h4 className="font-extrabold text-lg mb-1.5 text-nc-text">{feature.title}</h4>
+                <p className="text-text-muted text-sm font-medium leading-relaxed">{feature.desc}</p>
               </div>
-
-              {/* Navigation Arrows */}
-              <button 
-                onClick={handlePrev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/10 hover:bg-black/20 text-nc-text flex items-center justify-center z-30 transition-colors"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button 
-                onClick={handleNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/10 hover:bg-black/20 text-nc-text flex items-center justify-center z-30 transition-colors"
-                aria-label="Next image"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-
-            {/* Thumbnail selector like Amazon */}
-            <div className="flex gap-2.5 mt-5 z-20">
-              {productImages.map((image, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveImageIndex(idx)}
-                  className={`relative w-12 h-14 rounded-lg overflow-hidden border-2 transition-all bg-bg-main ${
-                    activeImageIndex === idx ? 'border-primary shadow-xs scale-105' : 'border-black/5 hover:border-black/20 opacity-70 hover:opacity-100'
-                  }`}
-                >
-                  <Image 
-                    src={image.src} 
-                    alt={`Thumbnail ${idx}`} 
-                    fill
-                    sizes="48px"
-                    className="object-contain p-1"
-                  />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Features */}
-          <div className="flex flex-col gap-10 w-full lg:w-[350px] order-3 lg:order-3">
-            {featuresRight.map((feature, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, x: 25 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`flex items-center gap-4 text-left justify-between ${i === 1 ? 'lg:translate-x-8' : ''}`}
-              >
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${
-                  i === 0 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
-                  i === 1 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
-                  'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
-                }`}>
-                  {feature.icon}
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-extrabold text-lg mb-1.5 text-nc-text">{feature.title}</h4>
-                  <p className="text-text-muted text-sm font-medium leading-relaxed">{feature.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
+            </motion.div>
+          ))}
         </div>
 
         {/* Innovation Highlights */}
