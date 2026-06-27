@@ -70,6 +70,91 @@ export default function RootLayout({ children }) {
             `
           }}
         />
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Rawbin",
+              "url": "https://www.rawbin.in",
+              "logo": "https://www.rawbin.in/images/logo.png",
+              "sameAs": [
+                "https://www.instagram.com/rawbin.in",
+                "https://www.linkedin.com/company/rawbin"
+              ]
+            })
+          }}
+        />
+        {/* Product Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": "Rawbin Smart Composter",
+              "image": [
+                "https://www.rawbin.in/images/rawbin-main-white-bg.jpeg",
+                "https://www.rawbin.in/images/rawbin-main-normal-bg.jpeg"
+              ],
+              "description": "Rawbin is an intelligent, compact, and odor-free home composting system that transforms everyday kitchen leftovers into nutrient-rich organic compost in just 7 days.",
+              "brand": {
+                "@type": "Brand",
+                "name": "Rawbin"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.rawbin.in/#order",
+                "priceCurrency": "INR",
+                "price": "19999",
+                "itemCondition": "https://schema.org/NewCondition",
+                "availability": "https://schema.org/PreOrder",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "Rawbin"
+                }
+              }
+            })
+          }}
+        />
+        {/* FAQ Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is Rawbin?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rawbin is an intelligent home composting system that transforms kitchen leftovers into nutrient-rich compost with minimal effort. Simply add your leftovers, let Rawbin manage the process, and return valuable nutrients back to plants, soil, and nature."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does Rawbin smell?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, Rawbin is designed to be 100% odor-free using advanced carbon filtration and bio-transform technology."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much electricity does Rawbin use?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rawbin is highly energy efficient, using just ~4 units of electricity per month, which is less power than a standard LED bulb over the same period."
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${outfit.variable} font-sans antialiased bg-body-bg`}>
         <AnnouncementBar />
