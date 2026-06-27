@@ -10,89 +10,68 @@ export default function AskRawbin() {
     {
       id: 'init',
       sender: 'bot',
-      text: "Hi there! I'm here to help you learn about Rawbin, composting, or assist with your order. How can I help today?"
+      text: "Hi there! 🌱 I'm here to help you learn about Rawbin, composting, or assist with your order. How can I help today?"
     }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  
+  // Conversation history for multi-turn chat (Groq API format)
+  const [chatHistory, setChatHistory] = useState([]);
   
   const messagesEndRef = useRef(null);
 
   const suggestedPrompts = [
     "What can I compost?",
     "Will Rawbin smell?",
-    "How much compost will I get?",
+    "How much does Rawbin cost?",
     "Is Rawbin right for my home?",
     "How much electricity does it use?"
   ];
 
-  const qaDatabase = {
-    "what can i compost?": "Rawbin can process almost all organic kitchen leftovers! This includes fruits, vegetables, food peels, coffee grounds, tea leaves, eggshells, bread, cooked leftovers, and grains. Keep out plastic, metal, glass, chemicals, large quantities of oil, and non-organic materials.",
-    "will rawbin smell?": "Not at all! Rawbin is designed with an advanced carbon filtration system that neutralizes organic odors completely, making it 100% odor-free and perfect for indoor use.",
-    "how much compost will i get?": "Rawbin reduces the volume of food waste by up to 90%! From 3kg of leftovers, you will harvest about 300g of nutrient-rich, dry organic compost that is ready to use for your garden or balcony plants.",
-    "is rawbin right for my home?": "Yes! Rawbin is compact, apartment-friendly, and runs whisper-quietly. It's designed to fit beautifully on modern Indian kitchen counters or balconies.",
-    "how much electricity does it use?": "Rawbin is highly energy efficient. It consumes less than 4 units of electricity per month under normal operation — which costs less than a standard LED bulb!"
-  };
-
-  const getBotResponse = (userText) => {
-    const text = userText.toLowerCase().trim();
-    
-    // Check direct matches first
-    if (qaDatabase[text]) {
-      return qaDatabase[text];
-    }
-    
-    // Keyword match logic
-    if (text.includes("citrus") || text.includes("peel") || text.includes("orange") || text.includes("lemon")) {
-      return "Yes! Rawbin can easily process fruit peels, including citrus and banana peels, turning them into high-quality compost.";
-    }
-    if (text.includes("bone") || text.includes("meat") || text.includes("chicken") || text.includes("fish")) {
-      return "Rawbin can compost cooked meat and small/soft food leftovers. However, please avoid adding large, hard bones (like beef or large mutton bones) as they can stress the stirring mechanism.";
-    }
-    if (text.includes("egg") || text.includes("eggshell")) {
-      return "Yes! Eggshells are excellent for composting with Rawbin. They break down easily and add valuable calcium to your final compost output.";
-    }
-    if (text.includes("smell") || text.includes("odor") || text.includes("stink") || text.includes("scent")) {
-      return "Rawbin uses an active carbon filtration system that neutralizes all composting smells. Your kitchen remains completely clean and odor-free.";
-    }
-    if (text.includes("electricity") || text.includes("power") || text.includes("energy") || text.includes("bill") || text.includes("watt")) {
-      return "Rawbin is extremely energy-efficient, consuming less than 4 units of electricity per month. This is comparable to running a small LED bulb.";
-    }
-    if (text.includes("price") || text.includes("cost") || text.includes("buy") || text.includes("order") || text.includes("purchase")) {
-      return "You can buy Rawbin directly from our website! Simply scroll down to the checkout section and click 'I'M READY TO COMPOST' to place your order.";
-    }
-    if (text.includes("how long") || text.includes("days") || text.includes("time") || text.includes("fast") || text.includes("speed")) {
-      return "Rawbin accelerates the natural composting cycle. It transforms kitchen leftovers into dry, nutrient-rich compost in just 7 days!";
-    }
-    if (text.includes("capacity") || text.includes("how much") || text.includes("size") || text.includes("kg")) {
-      return "Rawbin is designed with a 3kg capacity, which comfortably handles the daily organic kitchen waste of a standard family of 4 to 6 members.";
-    }
-    if (text.includes("plastic") || text.includes("metal") || text.includes("glass") || text.includes("chemical") || text.includes("oil")) {
-      return "These items must be kept out of Rawbin! Plastics, metals, glass, chemical cleaners, and large quantities of liquid oil cannot be composted and may damage the unit.";
-    }
-    if (text.includes("hi") || text.includes("hello") || text.includes("hey")) {
-      return "Hello! How can I help you today? Ask me about compostable items, power usage, or how Rawbin works!";
-    }
-    
-    return "That's a great question! Rawbin is built to handle everyday organic kitchen leftovers. You can see the full list of YES/NO items under the 'What Can Rawbin Transform?' section, or check the 'Technology' page for engineering details.";
-  };
-
-  const handleSend = (text) => {
+  const handleSend = async (text) => {
     if (!text.trim()) return;
 
-    // Add user message
+    // Add user message to UI
     const userMsg = { id: Date.now() + '-user', sender: 'user', text };
     setMessages((prev) => [...prev, userMsg]);
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate typing and reply
-    setTimeout(() => {
-      const replyText = getBotResponse(text);
+    // Update conversation history
+    const updatedHistory = [...chatHistory, { role: 'user', content: text }];
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: text,
+          history: chatHistory,
+        }),
+      });
+
+      const data = await response.json();
+      const replyText = data.reply || "I'm having trouble responding right now. Please try again!";
+
+      // Add bot response to UI
       const botMsg = { id: Date.now() + '-bot', sender: 'bot', text: replyText };
       setMessages((prev) => [...prev, botMsg]);
+
+      // Update conversation history with assistant response
+      setChatHistory([...updatedHistory, { role: 'assistant', content: replyText }]);
+
+    } catch (error) {
+      console.error('Chat error:', error);
+      const errorMsg = {
+        id: Date.now() + '-bot',
+        sender: 'bot',
+        text: "I'm having trouble connecting right now. Please try again or email compost@rawbin.in for help! 💚"
+      };
+      setMessages((prev) => [...prev, errorMsg]);
+    } finally {
       setIsTyping(false);
-    }, 1000);
+    }
   };
 
   const scrollToBottom = () => {
@@ -131,7 +110,7 @@ export default function AskRawbin() {
                 </div>
                 <div>
                   <h3 className="font-bold leading-tight">Ask Rawbin</h3>
-                  <p className="text-xs opacity-80 font-medium">Product Information & Support</p>
+                  <p className="text-xs opacity-80 font-medium">AI-Powered Product Support</p>
                 </div>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-1 hover:bg-black/10 rounded-full transition-colors">
@@ -193,11 +172,13 @@ export default function AskRawbin() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Type your question..." 
-                className="flex-1 bg-bg-alt rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/50 text-nc-text font-medium"
+                disabled={isTyping}
+                className="flex-1 bg-bg-alt rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/50 text-nc-text font-medium disabled:opacity-50"
               />
               <button 
                 type="submit"
-                className="w-10 h-10 bg-primary text-nc-text rounded-full flex items-center justify-center flex-shrink-0 hover:bg-primary/90 transition-colors"
+                disabled={isTyping || !inputValue.trim()}
+                className="w-10 h-10 bg-primary text-nc-text rounded-full flex items-center justify-center flex-shrink-0 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send size={16} />
               </button>
