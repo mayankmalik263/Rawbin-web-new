@@ -4,6 +4,7 @@
 [![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.5.0-black?style=flat-square&logo=framer)](https://www.framer.com/motion/)
+[![Groq API](https://img.shields.io/badge/Groq_API-Llama_3.1_8B-orange?style=flat-square&logo=groq)](https://groq.com/)
 
 Rawbin is India's first smart home composter engineered specifically for urban Indian households. This project contains the official promotional and interactive website for Rawbin, showcasing the device's key value propositions, technological specs, environmental impacts, and more.
 
@@ -29,6 +30,7 @@ Rawbin is an intelligent, compact, and odor-free home composting system that tra
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 * **Animations:** [Framer Motion](https://www.framer.com/motion/) & [React Awesome Reveal](https://github.com/moezbhatti/react-awesome-reveal)
 * **Icons:** [Lucide React](https://lucide.dev/) & [React Feather](https://feathericons.com/)
+* **AI Chatbot & RAG:** [Groq Cloud API](https://groq.com/) using [Meta Llama 3.1 8B](https://meta.ai/) and local knowledge base
 * **Static Prototype:** Legacy/static HTML & CSS fallback files (`index.html`, `styles.css`, `script.js`) are also included in the root directory.
 
 ---
