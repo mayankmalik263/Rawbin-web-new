@@ -42,31 +42,34 @@ export default function CompostOutput() {
     {
       code: "DX60vemoTSt",
       link: "https://www.instagram.com/reel/DX60vemoTSt/",
-      title: "Clean Kitchen Setup",
-      caption: "See how Rawbin fits beautifully into modern Indian kitchens.",
+      title: "What took us so long?",
+      caption: "Rebuilding Rawbin meant going back and rethinking a lot of decisions, not just how it works but how it fits into your home. From performance to usability, every detail had to be looked at again.",
       views: "1,130",
       likes: "51",
       comments: "0",
+      img: "/images/compost-balcony.png",
       gradient: "from-purple-900/40 via-indigo-950/30 to-slate-900/40"
     },
     {
       code: "DYZua7shjNJ",
       link: "https://www.instagram.com/reel/DYZua7shjNJ/",
-      title: "Balcony Herb Harvesting",
-      caption: "Real-world utility: Feeding organic balcony tomato & mint plants.",
+      title: "The Response We Hoped For",
+      caption: "Something that makes managing kitchen waste feel simpler and more convenient, while also showing people the kind of compost everyday waste can actually turn into. 🌱",
       views: "2,435",
       likes: "74",
       comments: "9",
+      img: "/images/compost-garden.png",
       gradient: "from-emerald-950/40 via-teal-900/30 to-zinc-900/40"
     },
     {
       code: "DZFYb2AM6gK",
       link: "https://www.instagram.com/reel/DZFYb2AM6gK/",
-      title: "Unboxing & First Scrap",
-      caption: "Unboxing the premium appliance and starting the first 7-day batch.",
+      title: "Not Just Fruit Peels!",
+      caption: "Yes, you heard that right. Not just fruit peels! From expired cheese to used cotton pads, Rawbin can handle more than you think. 😁🫰",
       views: "1,121",
       likes: "32",
       comments: "6",
+      img: "/images/compost-gift.png",
       gradient: "from-amber-950/40 via-stone-900/30 to-neutral-900/40"
     }
   ];
@@ -162,7 +165,7 @@ export default function CompostOutput() {
             >
               {/* Instagram video thumbnail preview image */}
               <img 
-                src={`https://www.instagram.com/p/${reel.code}/media/?size=l`} 
+                src={reel.img} 
                 alt={reel.title} 
                 className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500"
                 loading="lazy"
