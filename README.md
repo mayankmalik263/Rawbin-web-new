@@ -205,10 +205,6 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Copied `PL.M.25-26.00078.pdf` to the static public folder and wired up the "Compost Report" buttons in the Footer and Navbar dropdown to open the document statically in a new tab.
 *   [x] **Deep-Dive "Learn More" Resource Hub (Completed: June 26, 2026):**
     *   Developed a dedicated `/science` subpage detailing the chemical, biological, and structural science for all 12 FAQs. Added anchor-linked \"Learn More Science →\" buttons inside the expanded FAQ panels on the homepage for seamless direct navigation.
-*   [x] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Completed: June 26, 2026):**
-    *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
-*   [x] **High-Fidelity Interactivity (Completed: June 26, 2026):**
-    *   Integrated smooth Framer Motion interactions across all pages. Includes a solid lilac scroll progress bar, spring-physics-based whileHover and whileTap scaling/lifting on CTA buttons, cards, and checklists, and soft looping breathing glow shadows on primary actions.
 *   [x] **Dedicated "About Us" Page (Completed: June 26, 2026):**
     *   Migrated to a fully dedicated `/about-us` subpage, accessible via the Navbar's "More" dropdown and the Footer.
     *   Page features: founder story (Anu Khandelwal — from Twilio data scientist to sustainability entrepreneur), Rawbin's making journey rooted in Indian kitchens, prototyping timeline, product philosophy, and an interactive LinkedIn timeline showcasing real journey posts.
@@ -223,8 +219,13 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Three real press logo images (`NYTimes.png`, `redfm.png`, `ground-report.webp`) imported from the legacy codebase into `public/images/`.
     *   Each logo is a clickable `<Link>` pointing to the actual article or LinkedIn post for that press coverage.
     *   Card uses a warm cream background (`#F7F3EF`) so logos render in their original brand colors (black NY Times wordmark, red Red FM, green Ground Report) without inversion filters.
-*   [ ] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Newcycl Knowledge):**
-    *   Implement a secure Next.js API route integrating the Gemini 1.5 Flash API with a localized RAG knowledge base (`rawbin-knowledge.md`) containing product specifications and company (Newcycl) context.
+*   [x] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Completed: June 27, 2026):**
+    *   **Architecture**: Built a secure Next.js API route (`/api/chat`) that reads a localized product knowledge base (`rawbin-knowledge.md`) containing all verified specs, pricing tiers, composting guidelines, and company (Newcycl) context.
+    *   **Model**: Integrates **`llama-3.1-8b-instant`** hosted on Groq's high-speed inference engine.
+    *   **RAG Prompts**: Contextualizes the system prompt with the full knowledge base under a strict fact-grounding policy (temperature 0.3) to completely prevent AI hallucinations or competitor comparisons.
+    *   **Server-Side Cleaners**: Features regex filters that clean formatting markers (removes bold asterisks `**`, maps hyphens `- ` to bullet circles `•`), guaranteeing clean plain-text lists in the UI.
+    *   **Chatbot UI**: Updated `components/AskRawbin.jsx` to manage conversation history (passes last 20 messages for multi-turn context), disable inputs during active loading, show floating bubble states, and fall back to friendly offline messages if API keys are missing.
+    *   **Limits & Performance**: Uses native fetch to minimize packages. Operates under Groq's free tier limits (131,072 tokens per minute and 14,400 requests per minute).
 *   [x] **High-Fidelity Interactivity (Completed: June 26, 2026):**
     *   Ensure the site is packed with premium, fluid interactions: hover-based radial glow effects, scroll-triggered animations via Framer Motion, and micro-interactions on all primary action buttons.
 *   [x] **Interactive Product Views Gallery (Completed: June 27, 2026):**
