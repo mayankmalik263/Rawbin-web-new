@@ -147,14 +147,14 @@ export default function EverythingYouNeedToKnow() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="relative w-full h-full flex items-center justify-center"
+                    className="relative w-full h-full flex items-center justify-center rounded-2xl overflow-hidden"
                   >
                     <Image 
                       src={productImages[activeImageIndex].src} 
                       alt={productImages[activeImageIndex].alt} 
                       fill
                       priority
-                      className="object-contain p-2 rounded-2xl"
+                      className="object-contain rounded-2xl"
                     />
                   </motion.div>
                 </AnimatePresence>
