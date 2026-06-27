@@ -22,7 +22,7 @@ export default function Footer() {
               <Link href="/technology" className="hover:text-primary transition-colors">Technology</Link>
               <Link href="/about-us" className="hover:text-primary transition-colors">About Us</Link>
               <Link href="#faqs" className="hover:text-primary transition-colors">FAQs</Link>
-              <Link href="#" className="hover:text-primary transition-colors">Compost Report</Link>
+              <a href="/PL.M.25-26.00078.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Compost Report</a>
               <Link href="#contact" className="hover:text-primary transition-colors">Contact Us</Link>
               <Link href="#" className="hover:text-primary transition-colors">Blogs</Link>
             </div>

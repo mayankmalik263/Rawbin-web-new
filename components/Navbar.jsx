@@ -60,9 +60,9 @@ export default function Navbar() {
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <Link href="#" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
+                      <a href="/PL.M.25-26.00078.pdf" target="_blank" rel="noopener noreferrer" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
                         Compost Report
-                      </Link>
+                      </a>
                     )}
                   </Menu.Item>
 
