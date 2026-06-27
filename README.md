@@ -272,7 +272,7 @@ The following issues have been identified and are tracked for future resolution:
    - **Symptom:** Text links or navigation items labeled "Ask Rawbin" (e.g., in the Navbar or Footer) do not trigger the floating chatbot drawer to open.
 10. **Hero Image Responsiveness on Mobile/Tablet (Resolved):**
     - **Symptom:** On mobile/tablet viewports, the main hero image displayed in a large stacked block below the CTA buttons, breaking the premium storytelling flow.
-    - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, paired with a translucent light blend overlay (`bg-[#F9F5F3]/65 md:bg-[#F9F5F3]/55 lg:bg-transparent`) to blend the kitchen details softly behind the hero text and maintain high contrast readability.
+    - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, displaying the kitchen scene clearly behind the hero text.
 
 
 

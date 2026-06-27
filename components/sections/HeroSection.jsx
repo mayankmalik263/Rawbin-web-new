@@ -111,8 +111,7 @@ export default function HeroSection() {
             priority
             className="object-cover object-[75%_center] lg:object-[80%_center]"
           />
-          {/* Translucent overlay to blend the background image on mobile/tablet */}
-          <div className="absolute inset-0 bg-[#F9F5F3]/65 md:bg-[#F9F5F3]/55 lg:bg-transparent pointer-events-none" />
+
         </div>
       </section>
 
