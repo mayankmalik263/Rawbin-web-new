@@ -49,7 +49,7 @@ export default function HeroSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-text-muted font-medium mb-10 max-w-[550px]"
+              className="text-lg md:text-xl text-accent-brown dark:text-[#EAF3EC] font-bold mb-10 max-w-[550px]"
             >
               Transform food scraps into compost, effortlessly using Rawbin.
             </motion.p>
