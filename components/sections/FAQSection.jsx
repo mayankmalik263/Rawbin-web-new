@@ -69,7 +69,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faqs" className="bg-white py-24 border-b border-black/5">
+    <section id="faqs" className="bg-bg-main py-24 border-b border-black/5">
       <div className="max-w-[800px] mx-auto px-5">
         <div className="text-center mb-16">
           <motion.h2 
@@ -103,7 +103,7 @@ export default function FAQSection() {
               <Disclosure>
                 {({ open }) => (
                   <div className={`border ${open ? 'border-accent-lilac' : 'border-black/10'} rounded-2xl overflow-hidden transition-colors`}>
-                    <Disclosure.Button className={`w-full flex justify-between items-center p-6 text-left ${open ? 'bg-accent-lilac/5' : 'bg-white hover:bg-bg-alt'} transition-colors`}>
+                    <Disclosure.Button className={`w-full flex justify-between items-center p-6 text-left ${open ? 'bg-accent-lilac/5' : 'bg-bg-main hover:bg-bg-alt'} transition-colors`}>
                       <span className="font-bold text-lg text-nc-text pr-8">{faq.q}</span>
                       <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${open ? 'bg-accent-lilac text-white' : 'bg-bg-alt text-nc-text'}`}>
                         {open ? <Minus size={16} /> : <Plus size={16} />}

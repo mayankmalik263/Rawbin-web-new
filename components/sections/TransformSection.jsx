@@ -72,7 +72,7 @@ export default function TransformSection() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-sm relative overflow-hidden"
+            className="bg-bg-main rounded-3xl p-8 md:p-10 border border-black/5 shadow-sm relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-0"></div>
             
@@ -105,7 +105,7 @@ export default function TransformSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-sm relative overflow-hidden"
+            className="bg-bg-main rounded-3xl p-8 md:p-10 border border-black/5 shadow-sm relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full -z-0"></div>
             

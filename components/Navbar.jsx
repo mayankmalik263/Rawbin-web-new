@@ -8,11 +8,12 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30, restDelta: 0.001 });
 
   return (
-    <header className="bg-white py-4 sticky top-0 w-full z-[100] border-b border-black/5">
+    <header className="bg-bg-main py-4 sticky top-0 w-full z-[100] border-b border-black/5">
       <motion.div
         style={{ scaleX, transformOrigin: '0%' }}
         className="absolute bottom-0 left-0 right-0 h-[3px] bg-accent-lilac z-50 rounded-r-full"
@@ -42,7 +43,7 @@ export default function Navbar() {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Menu.Items className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-black/5 p-2 focus:outline-none flex flex-col gap-1">
+                <Menu.Items className="absolute right-0 mt-2 w-56 bg-bg-main rounded-xl shadow-lg border border-black/5 p-2 focus:outline-none flex flex-col gap-1">
                   <Menu.Item>
                     {({ active }) => (
                       <Link href="#how-it-works" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
@@ -104,7 +105,7 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white border-b border-black/5 p-5 flex flex-col gap-4 md:hidden shadow-lg">
+        <div className="absolute top-full left-0 w-full bg-bg-main border-b border-black/5 p-5 flex flex-col gap-4 md:hidden shadow-lg">
           <Link href="#why-rawbin" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Why Rawbin?</Link>
           <Link href="/technology" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Technology</Link>
           <Link href="#faqs" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>FAQs</Link>

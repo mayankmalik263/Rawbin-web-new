@@ -5,7 +5,7 @@ import { Check } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
-    <section id="order" className="bg-white py-24">
+    <section id="order" className="bg-bg-main py-24">
       <div className="max-w-[800px] mx-auto px-5 text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
