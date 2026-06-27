@@ -123,7 +123,7 @@ export default function AskRawbin() {
               {messages.map((msg) => (
                 <div 
                   key={msg.id}
-                  className={`p-3 rounded-xl shadow-xs text-sm font-medium max-w-[85%] leading-relaxed ${
+                  className={`p-3 rounded-xl shadow-xs text-sm font-medium max-w-[85%] leading-relaxed whitespace-pre-wrap ${
                     msg.sender === 'user'
                       ? 'bg-primary text-nc-text self-end rounded-tr-sm'
                       : 'bg-white border border-black/5 text-nc-text self-start rounded-tl-sm'
