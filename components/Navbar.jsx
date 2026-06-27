@@ -20,7 +20,7 @@ export default function Navbar() {
       />
       <div className="max-w-[1280px] mx-auto flex justify-between items-center px-5">
         <Link href="/" className="flex flex-col items-center no-underline">
-          <Image src="/images/logo.png" alt="Rawbin Logo" width={120} height={38} className="h-[38px] w-auto [image-rendering:-webkit-optimize-contrast]" />
+          <Image src="/images/logo.png" alt="Rawbin Logo" width={120} height={38} priority style={{ height: 'auto' }} className="h-[38px] w-auto [image-rendering:-webkit-optimize-contrast]" />
           <div className="text-[11px] font-medium text-nc-text tracking-[0.2px] mt-1">Cook Eat Compost</div>
         </Link>
         
