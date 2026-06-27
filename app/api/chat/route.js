@@ -86,14 +86,22 @@ export async function POST(request) {
     }
 
     const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content?.trim();
+    const rawReply = data.choices?.[0]?.message?.content?.trim();
 
-    if (!reply) {
+    if (!rawReply) {
       return NextResponse.json(
         { reply: "I couldn't generate a response. Please try asking your question differently!" },
         { status: 500 }
       );
     }
+
+    // Deterministically clean up any stray markdown characters
+    const reply = rawReply
+      .replace(/\*\*/g, '')          // Remove bold asterisks
+      .replace(/\* /g, '• ')         // Convert inline bullet asterisks
+      .replace(/^- /gm, '• ')        // Convert hyphens at line starts to bullet points
+      .replace(/`+/g, '')            // Remove backticks
+      .trim();
 
     return NextResponse.json({ reply });
 
