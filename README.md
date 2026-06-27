@@ -173,6 +173,10 @@ This section outlines the upcoming product redesign and feature additions reques
 ### 🏗️ 2. Section Restructuring & Clean-up
 *   [ ] **Merge "Everything You Need To Know" into "What is Rawbin" Section:**
     *   Combine the "Everything You Need To Know" specification details and the homepage "What is Rawbin" section (currently at the bottom of HeroSection.jsx) into a single, cohesive, premium storytelling layout.
+*   [x] **Premium Results Panel Dashboard (Completed: June 26, 2026):**
+    *   Refactored the old 4-column Impact Section in `HeroSection.jsx` into a premium 3-column dashboard highlighting the core metrics: **1,500kg** CO2 saved a year (Status Green), **90%** less waste by volume (Chocolate Brown), and **7 days** start-to-finished compost (Sterilising Lilac) with spring hover and custom glow shadows.
+*   [x] **Rawbin vs. Traditional Composting Section (Completed: June 26, 2026):**
+    *   Created a high-contrast comparison table component `ComparisonSection.jsx` comparing Rawbin vs. Traditional composting on **Speed**, **Smell**, **Effort**, and **Indoor Suitability**. Incorporating check/cross icons and styled states, registered under `WhyRawbin`.
 *   [x] **Enhance "Trusted Logos Strip" (Completed: June 26, 2026):**
     *   Re-positioned and styled the partner/trust logo carousel as a full infinite marquee strip. Increased logo sizes (`max-h-20`, `max-w-[240px]`) and reduced inter-logo gap to `3rem` for a denser, more premium display.
 *   [x] **Remove "Rawbin Community Impact" (Completed: June 26, 2026):**
@@ -199,12 +203,14 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Displays 3 real-world Reels (`DX60vemoTSt`, `DYZua7shjNJ`, `DZFYb2AM6gK`) with their actual video cover thumbnails (`reel1_image.png`, `reel2_image.png`, `reel3_image.png`), custom-themed gradients, play overlays, and official profile logo (`rawbin-instagram-pfp.jpg`) headers.
     *   Includes verified live metrics (likes, views, and comments) and real captions for each post.
     *   Added a prominent bottom CTA button ("Follow @rawbin.in on Instagram") redirecting to the official Rawbin Instagram handle.
+*   [x] **Product Image Corner Rounding & Overflow Fixes (Completed: June 27, 2026):**
+    *   Fixed double-corner nested frame mismatches, Safari overflow issues, and rounded all product images slider corners (`rounded-2xl`, `overflow-hidden`) for a clean, curved visual aesthetic.
 
 ### ⚡ 4. Copywriting & Interactive Components
 *   [x] **"Composting shouldn't feel like..." Section (Completed: June 26, 2026):**
     *   Implemented on the homepage as the "How It Works" section titled "Composting Shouldn't Feel Like Work", showcasing the 3 simple steps of the Rawbin cycle.
 *   [x] **Compost Report PDF Integration (Completed: June 27, 2026):**
-    *   Copied `PL.M.25-26.00078.pdf` to the static public folder and wired up the "Compost Report" buttons in the Footer and Navbar dropdown to open the document statically in a new tab.
+    *   Copied `PL.M.25-26.00078.pdf` into the Next.js `public/` directory so it is served statically and wired up the "Compost Report" buttons in the Footer and Navbar dropdown to open the document statically in a new tab.
 *   [x] **Deep-Dive "Learn More" Resource Hub (Completed: June 26, 2026):**
     *   Developed a dedicated `/science` subpage detailing the chemical, biological, and structural science for all 12 FAQs. Added anchor-linked \"Learn More Science →\" buttons inside the expanded FAQ panels on the homepage for seamless direct navigation.
 *   [x] **Dedicated "About Us" Page (Completed: June 26, 2026):**
