@@ -56,7 +56,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="bg-white py-24 border-b border-black/5">
+    <section id="how-it-works" className="bg-bg-main py-24 border-b border-black/5">
       <div className="max-w-[1280px] mx-auto px-5">
         <div className="text-center mb-16">
           <motion.div 
@@ -96,7 +96,7 @@ export default function HowItWorks() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -8, scale: 1.015, transition: { type: 'spring', stiffness: 350, damping: 20 } }}
-              className="bg-white rounded-3xl border border-black/5 shadow-sm hover:shadow-hover transition-shadow group overflow-hidden flex flex-col h-full cursor-default"
+              className="bg-bg-main rounded-3xl border border-black/5 shadow-sm hover:shadow-hover transition-shadow group overflow-hidden flex flex-col h-full cursor-default"
             >
               {/* Image Container */}
               <div className="relative w-full h-[260px] bg-bg-alt overflow-hidden">
@@ -111,10 +111,18 @@ export default function HowItWorks() {
               <div className="p-8 flex-grow flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start mb-6">
-                    <div className="text-4xl font-black text-black/20 group-hover:text-primary/20 transition-colors">
+                    <div className={`text-4xl font-black text-black/20 transition-colors ${
+                      i === 0 ? 'group-hover:text-primary/20' :
+                      i === 1 ? 'group-hover:text-accent-lilac/20' :
+                      'group-hover:text-accent-brown/25 dark:group-hover:text-accent-brown-soft/25'
+                    }`}>
                       {step.number}
                     </div>
-                    <div className="w-12 h-12 rounded-xl bg-bg-alt flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all border border-black/5 ${
+                      i === 0 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
+                      i === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
+                      'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
+                    }`}>
                       {step.icon}
                     </div>
                   </div>
@@ -143,7 +151,7 @@ export default function HowItWorks() {
             <motion.div 
               key={i} 
               whileHover={{ scale: 1.04, y: -2, transition: { type: 'spring', stiffness: 400, damping: 15 } }}
-              className="flex items-center gap-3 font-bold text-nc-text px-4 py-2.5 bg-white rounded-xl shadow-sm border border-black/5 border-l-2 border-l-accent-brown/40 cursor-default"
+              className="flex items-center gap-3 font-bold text-nc-text px-4 py-2.5 bg-bg-main rounded-xl shadow-sm border border-black/5 border-l-2 border-l-accent-brown/40 cursor-default"
             >
               <div className="text-[#1F5A3F] flex items-center justify-center">
                 {benefit.icon}

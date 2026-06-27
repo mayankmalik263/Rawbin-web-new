@@ -33,7 +33,7 @@ export default function WhyRawbin() {
   ];
 
   return (
-    <section id="why-rawbin" className="bg-white py-24 border-b border-black/5">
+    <section id="why-rawbin" className="bg-bg-main py-24 border-b border-black/5">
       <div className="max-w-[1280px] mx-auto px-5">
         <div className="text-center mb-16">
           <motion.h2 
@@ -61,7 +61,11 @@ export default function WhyRawbin() {
               whileHover={{ y: -6, scale: 1.03, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
               className="bg-bg-alt p-6 rounded-2xl border border-black/5 cursor-default"
             >
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm border border-black/5 ${i % 2 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'}`}>
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 shadow-sm border border-black/5 ${
+                i % 3 === 0 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
+                i % 3 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
+                'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
+              }`}>
                 {benefit.icon}
               </div>
               <h4 className="font-extrabold text-lg mb-2 text-nc-text">{benefit.title}</h4>

@@ -66,7 +66,9 @@ export default function CompostOutput() {
               className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors group cursor-default"
             >
               <div className={`w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform mb-6 border ${
-                i % 2 === 0 ? 'bg-white/10 text-white border-white/5' : 'bg-accent-lilac/20 text-accent-lilac-soft border-accent-lilac/20'
+                i % 3 === 0 ? 'bg-white/10 text-white border-white/5' : 
+                i % 3 === 1 ? 'bg-accent-lilac/20 text-accent-lilac-soft border-accent-lilac/20' :
+                'bg-accent-brown/20 text-accent-brown-soft border-accent-brown/20'
               }`}>
                 {card.icon}
               </div>

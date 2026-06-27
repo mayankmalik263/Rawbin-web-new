@@ -118,7 +118,11 @@ export default function EverythingYouNeedToKnow() {
                   <h4 className="font-extrabold text-lg mb-1.5 text-nc-text">{feature.title}</h4>
                   <p className="text-text-muted text-sm font-medium leading-relaxed">{feature.desc}</p>
                 </div>
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${i === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'}`}>
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${
+                  i === 0 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
+                  i === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
+                  'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
+                }`}>
                   {feature.icon}
                 </div>
               </motion.div>
@@ -130,12 +134,12 @@ export default function EverythingYouNeedToKnow() {
             {/* Circular Green Ring */}
             <div className="absolute w-[340px] h-[340px] lg:w-[440px] lg:h-[440px] border border-primary/20 rounded-full z-0 pointer-events-none top-[12px] lg:top-[38px]"></div>
             
-            <div className="relative w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-white rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden z-10 flex items-center justify-center">
+            <div className="relative w-[280px] h-[360px] lg:w-[320px] lg:h-[420px] bg-bg-main rounded-[2rem] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden z-10 flex items-center justify-center">
               {/* Outer glassmorphic frame */}
               <div className="absolute inset-0 border-[12px] border-white/40 rounded-[2rem] pointer-events-none z-30"></div>
               
               {/* Image Transition Slider */}
-              <div className="relative w-full h-full p-6 flex items-center justify-center bg-white z-10">
+              <div className="relative w-full h-full p-6 flex items-center justify-center bg-bg-main z-10">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeImageIndex}
@@ -184,7 +188,7 @@ export default function EverythingYouNeedToKnow() {
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`relative w-12 h-14 rounded-lg overflow-hidden border-2 transition-all bg-white ${
+                  className={`relative w-12 h-14 rounded-lg overflow-hidden border-2 transition-all bg-bg-main ${
                     activeImageIndex === idx ? 'border-primary shadow-xs scale-105' : 'border-black/5 hover:border-black/20 opacity-70 hover:opacity-100'
                   }`}
                 >
@@ -211,7 +215,11 @@ export default function EverythingYouNeedToKnow() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`flex items-center gap-4 text-left justify-between ${i === 1 ? 'lg:translate-x-8' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${i === 0 || i === 2 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'}`}>
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-black/5 ${
+                  i === 0 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
+                  i === 1 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
+                  'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
+                }`}>
                   {feature.icon}
                 </div>
                 <div className="flex-1">
@@ -234,10 +242,12 @@ export default function EverythingYouNeedToKnow() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -6, scale: 1.025, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
-              className="bg-white p-8 rounded-3xl border border-black/5 cursor-default"
+              className="bg-bg-main p-8 rounded-3xl border border-black/5 cursor-default"
             >
               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 border border-black/5 shadow-sm ${
-                i % 2 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' : 'bg-[#EAF3EC] text-[#1F5A3F]'
+                i % 3 === 0 ? 'bg-[#EAF3EC] text-[#1F5A3F]' :
+                i % 3 === 1 ? 'bg-accent-lilac-soft/25 text-accent-lilac' :
+                'bg-accent-brown-soft/20 text-accent-brown dark:text-accent-brown-soft border-accent-brown/10'
               }`}>
                 {item.icon}
               </div>
