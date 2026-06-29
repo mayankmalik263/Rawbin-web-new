@@ -249,61 +249,55 @@ The following issues have been identified and are tracked for future resolution:
 
 ### 🔴 Unresolved Issues (Pending)
 
-1. **AI Chatbot Modal Cannot Be Closed:**
-   - **Symptom:** Once the Rawbin AI Chatbot is opened, clicking the floating trigger button again, clicking outside the chatbot window, or clicking an overlay does not close the chat modal.
-2. **Broken Hash Navigation from Subpages:**
-   - **Symptom:** When on a subpage (e.g., `/technology` or `/about-us`), clicking hash links meant for the home page (e.g., `#why-rawbin`, `#how-it-works`) tries to navigate relative to the subpage (e.g., `http://localhost:3000/technology#why-rawbin`) instead of redirecting back to the home page with the hash (e.g., `/#why-rawbin`).
-   - **Scope:** Applies to header navbar and dropdown links. Note that `/roe-calculator` and `/science` are separate pages and work correctly.
-3. **"Why Should You Compost?" Button Inactive:**
-   - **Symptom:** The "Why Should You Compost?" CTA does not perform any action when clicked.
-   - **Suggested Connections:**
-     - Link to the `/science` subpage (Science of Composting) for deep educational value.
-     - Smooth-scroll to the newly extracted `ImpactSection` (One Small Habit. A Lasting Impact) or the `TransformSection` (YES/NO list) to show the direct benefits.
-     - Automatically open the Ask Rawbin AI Chatbot with a pre-filled prompt like *"Why should I compost?"*.
-4. **SVG Icon Enhancements:**
+1. **SVG Icon Enhancements:**
    - **Request:** Investigate higher quality or simpler, cleaner outline SVG icons that present a premium look.
-5. **"Watch How It Works" Button Inactive:**
+2. **"Watch How It Works" Button Inactive:**
    - **Symptom:** The watch video play button in the Hero section is not functional.
-6. **Inactive Purchasing CTAs:**
+3. **Inactive Purchasing CTAs:**
    - **Symptom:** Purchase triggers such as "I'm Ready to Compost" or "Order Now" are static and do not trigger any checkout/contact flows.
-7. **"Contact Us" Button Inactive:**
+4. **"Contact Us" Button Inactive:**
    - **Symptom:** The "Contact Us" trigger button in the footer or final sections does not open a contact form or email handler.
-8. **Missing Blog Links:**
+5. **Missing Blog Links:**
    - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
-9. **"Ask Rawbin" Text Links Do Not Trigger Chatbot:**
-   - **Symptom:** Text links or navigation items labeled "Ask Rawbin" (e.g., in the Navbar or Footer) do not trigger the floating chatbot drawer to open.
-10. **Remaining Image Optimization Console Warnings (SEO Issue):**
-    - **Symptom:** Development console shows warnings for missing `sizes` prop on step illustrations (`image1.png`, `image2.png`, `image3.png`) and product assets (`compost-gift.png`, `compost-balcony.png`, `compost-garden.png`). Also shows missing `height: auto` or `width: auto` style warnings for media partner logos (`redfm.png`, `ground-report.webp`, `NYTimes.png`).
-11. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
-    - **Symptom:** Local audits run in development mode (`npm run dev`) show a very high Largest Contentful Paint (LCP) score (~19.8s).
-    - **Action Plan:** Run production build (`npm run build` and `npm run start`) and test in Incognito mode to bypass compiler cold start overhead.
+6. **Remaining Image Optimization Console Warnings (SEO Issue):**
+   - **Symptom:** Development console shows warnings for missing `sizes` prop on step illustrations and product assets. Also shows missing auto sizing styles for media partner logos.
+7. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
+   - **Symptom:** Local audits run in development mode show high LCP scores. Runs in production mode function fine.
 
 ---
 
 ### 🟢 Resolved Issues (Completed)
 
-12. **Hero Image Responsiveness on Mobile/Tablet:**
+8. **AI Chatbot Dismissal and Toggling (Critical Presentation Fix — June 29, 2026):**
+   - **Why it was chosen:** Once the chatbot was opened, it was impossible to close it by clicking the floating button again or clicking outside it (the user had to find the small header `X` button). During the Co-founder presentation, this would easily lock up the screen space on mobile viewports and feel highly broken.
+   - **What was fixed:** The chatbot drawer toggle and click-outside dismissal behavior.
+   - **How it was fixed:** Modified `components/AskRawbin.jsx` to toggle `isOpen` on button click, implemented a React `useRef` click-outside document listener, and added a window event listener (`'open-rawbin-chat'`) for external triggers.
+9. **Broken Hash Navigation from Subpages (Critical Presentation Fix — June 29, 2026):**
+   - **Why it was chosen:** Clicking section anchors (like `#faqs` or `#why-rawbin`) from subpages like `/technology` or `/about-us` failed to redirect back to the home page (navigating to `/about-us#why-rawbin` instead), breaking core site routing.
+   - **What was fixed:** Subpage-to-homepage section anchor navigation.
+   - **How it was fixed:** Updated relative hashes to root-relative paths (e.g. `/#why-rawbin`) in `components/Navbar.jsx` and `components/Footer.jsx` so Next.js handles routing and smooth scrolling back to the home page.
+10. **Inactive "Why Should You Compost?" & "Ask Rawbin" Triggers (Critical Presentation Fix — June 29, 2026):**
+    - **Why it was chosen:** "Why Should You Compost?" is a key educational link, and "Ask Rawbin" is a prominent footer CTA. Having these be dead/non-functional links would make the site look incomplete and unpolished.
+    - **What was fixed:** Wired up the "Why Should You Compost?" navigation link to scroll to the existing Impact Section and enabled the footer text to trigger the chatbot drawer.
+    - **How it was fixed:** Assigned `id="why-compost"` to the `ImpactSection` wrapper and wired up the footer button to dispatch the custom event `'open-rawbin-chat'` to open the chatbot.
+11. **Hero Image Responsiveness on Mobile/Tablet:**
     - **Symptom:** On mobile/tablet viewports, the main hero image displayed in a large stacked block below the CTA buttons, breaking the premium storytelling flow.
     - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, displaying the kitchen scene clearly behind the hero text.
-13. **Merge Storytelling & Specifications Sections:**
+12. **Merge Storytelling & Specifications Sections:**
     - **Symptom:** Homepage felt fragmented with specs and storytelling split across the page, causing visual disconnect.
     - **Resolution:** Combined the "What is Rawbin?" storytelling narrative and "Everything You Need To Know" specifications slider/details side-by-side into a premium layout inside `EverythingYouNeedToKnow.jsx`. Extracted the results dashboard to a dedicated `ImpactSection` component placed directly below.
-14. **Missing Navigation Links in Mobile Hamburger Menu:**
+13. **Missing Navigation Links in Mobile Hamburger Menu:**
     - **Symptom:** Mobile navbar drawer was missing links like "Science of Composting", "Compost Report", and "Why Should You Compost?".
     - **Resolution:** Updated `Navbar.jsx` to render all missing desktop links inside the mobile hamburger menu drawer.
-15. **Next.js Logo and Slider Image Optimization Warnings:**
+14. **Next.js Logo and Slider Image Optimization Warnings:**
     - **Symptom:** Console warnings on load regarding preloading (LCP) the logo and slider images, and missing `sizes` attribute on the product view image container.
     - **Resolution:** Configured `priority` attributes and optimized `sizes` definitions in `Navbar.jsx` and `EverythingYouNeedToKnow.jsx`.
-16. **Fix Client-Side Page Titles:**
+15. **Fix Client-Side Page Titles:**
     - **Symptom:** `/science` and `/about-us` routes are client-side components and inherit duplicate home page metadata.
     - **Resolution:** Separated pages into server components (`page.js`) that export page-specific metadata blocks, and client components (`SciencePageClient` / `AboutUsPageClient`) that manage dynamic UI/animations.
-17. **Generate Dynamic Sitemap & Robots Configuration:**
+16. **Generate Dynamic Sitemap & Robots Configuration:**
     - **Symptom:** Missing `sitemap.xml` and `robots.txt` for crawlers.
     - **Resolution:** Implemented Next.js route generators (`sitemap.js` and `robots.js`) to dynamically serve sitemaps and configure crawler boundaries.
-18. **Inject JSON-LD Product & FAQ Schemas:**
+17. **Inject JSON-LD Product & FAQ Schemas:**
     - **Symptom:** Missing structured metadata markup for search engine rich results.
-    - **Resolution:** Injected custom JSON-LD schema blocks (Organization, Product, and FAQPage) directly into the root layout head for rich search snippet indexing.
-
-
-
 

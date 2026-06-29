@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -18,12 +19,12 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-nc-text mb-6">Quick Links</h4>
             <div className="flex flex-col gap-3 text-text-muted text-sm font-medium">
-              <Link href="#why-rawbin" className="hover:text-primary transition-colors">Why Rawbin</Link>
+              <Link href="/#why-rawbin" className="hover:text-primary transition-colors">Why Rawbin</Link>
               <Link href="/technology" className="hover:text-primary transition-colors">Technology</Link>
               <Link href="/about-us" className="hover:text-primary transition-colors">About Us</Link>
-              <Link href="#faqs" className="hover:text-primary transition-colors">FAQs</Link>
+              <Link href="/#faqs" className="hover:text-primary transition-colors">FAQs</Link>
               <a href="/PL.M.25-26.00078.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Compost Report</a>
-              <Link href="#contact" className="hover:text-primary transition-colors">Contact Us</Link>
+              <Link href="/#contact" className="hover:text-primary transition-colors">Contact Us</Link>
               <Link href="#" className="hover:text-primary transition-colors">Blogs</Link>
             </div>
           </div>
@@ -39,7 +40,12 @@ export default function Footer() {
             </div>
             
             <h4 className="font-bold text-nc-text mb-3">Need Help?</h4>
-            <button className="text-primary font-bold text-sm hover:underline">Ask Rawbin ↗</button>
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('open-rawbin-chat'))}
+              className="text-primary font-bold text-sm hover:underline"
+            >
+              Ask Rawbin ↗
+            </button>
           </div>
         </div>
         

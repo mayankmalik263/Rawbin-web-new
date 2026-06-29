@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function ImpactSection() {
   return (
-    <section className="relative bg-bg-secondary w-full py-16 md:py-24 border-t border-black/5 z-10">
+    <section id="why-compost" className="relative bg-bg-secondary w-full py-16 md:py-24 border-t border-black/5 z-10">
       <div className="max-w-[1280px] mx-auto px-5">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black mb-4 text-nc-text">One Small Habit. A Lasting Impact.</h2>

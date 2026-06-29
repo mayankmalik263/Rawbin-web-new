@@ -27,9 +27,9 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
           <nav className="flex items-center gap-8 text-[15px] font-semibold text-nc-text">
-            <Link href="#why-rawbin" className="hover:text-primary transition-colors">Why Rawbin?</Link>
+            <Link href="/#why-rawbin" className="hover:text-primary transition-colors">Why Rawbin?</Link>
             <Link href="/technology" className="hover:text-primary transition-colors">Technology</Link>
-            <Link href="#faqs" className="hover:text-primary transition-colors">FAQs</Link>
+            <Link href="/#faqs" className="hover:text-primary transition-colors">FAQs</Link>
             
             <Menu as="div" className="relative">
               <Menu.Button className="flex items-center gap-1 hover:text-primary transition-colors">
@@ -46,14 +46,14 @@ export default function Navbar() {
                 <Menu.Items className="absolute right-0 mt-2 w-56 bg-bg-main rounded-xl shadow-lg border border-black/5 p-2 focus:outline-none flex flex-col gap-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <Link href="#how-it-works" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
+                      <Link href="/#how-it-works" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
                         How It Works
                       </Link>
                     )}
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <Link href="#why-compost" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
+                      <Link href="/#why-compost" className={`${active ? 'bg-bg-alt text-primary' : 'text-nc-text'} px-4 py-2 rounded-lg text-sm transition-colors`}>
                         Why Should You Compost?
                       </Link>
                     )}
@@ -92,7 +92,7 @@ export default function Navbar() {
             </Menu>
           </nav>
           
-          <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-sm tracking-wide hover:shadow-hover hover:-translate-y-0.5 transition-all">
+          <Link href="/#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-sm tracking-wide hover:shadow-hover hover:-translate-y-0.5 transition-all">
             Order Now
           </Link>
         </div>
@@ -106,16 +106,16 @@ export default function Navbar() {
       {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-bg-main border-b border-black/5 p-5 flex flex-col gap-4 md:hidden shadow-lg">
-          <Link href="#why-rawbin" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Why Rawbin?</Link>
+          <Link href="/#why-rawbin" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Why Rawbin?</Link>
           <Link href="/technology" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Technology</Link>
-          <Link href="#faqs" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>FAQs</Link>
-          <Link href="#how-it-works" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
-          <Link href="#why-compost" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Why Should You Compost?</Link>
+          <Link href="/#faqs" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>FAQs</Link>
+          <Link href="/#how-it-works" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
+          <Link href="/#why-compost" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Why Should You Compost?</Link>
           <a href="/PL.M.25-26.00078.pdf" target="_blank" rel="noopener noreferrer" className="font-semibold text-lg py-2 border-b border-black/5 block" onClick={() => setMobileMenuOpen(false)}>Compost Report</a>
           <Link href="/roe-calculator" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>ROE Calculator</Link>
           <Link href="/science" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Science of Composting</Link>
           <Link href="/about-us" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <Link href="#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-center mt-2" onClick={() => setMobileMenuOpen(false)}>Order Now</Link>
+          <Link href="/#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-center mt-2" onClick={() => setMobileMenuOpen(false)}>Order Now</Link>
         </div>
       )}
     </header>
