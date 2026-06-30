@@ -1,11 +1,13 @@
 'use client';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { Play } from 'lucide-react';
+import { Play, X } from 'lucide-react';
 import { IndiaIcon } from '@/components/icons';
 
 export default function HeroSection() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <>
       <section className="relative bg-[#F9F5F3] w-full overflow-hidden">
@@ -90,6 +92,7 @@ export default function HeroSection() {
                 I&apos;M READY TO COMPOST
               </motion.a>
               <motion.button
+                onClick={() => setIsVideoOpen(true)}
                 whileHover={{ scale: 1.04, y: -3 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
@@ -117,6 +120,45 @@ export default function HeroSection() {
         </div>
       </section>
 
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsVideoOpen(false)}
+            className="fixed inset-0 bg-black/85 backdrop-blur-md z-[100] flex items-center justify-center p-4 md:p-10"
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-white/10 hover:bg-white/20 p-2.5 rounded-full z-10"
+              aria-label="Close video player"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Video Container */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: 'spring', duration: 0.5 }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-[900px] aspect-video bg-black rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            >
+              <iframe
+                src="https://www.youtube.com/embed/LyTpXQoIGho?autoplay=1"
+                title="Rawbin Product Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

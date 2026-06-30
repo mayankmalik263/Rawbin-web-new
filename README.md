@@ -251,13 +251,11 @@ The following issues have been identified and are tracked for future resolution:
 
 1. **SVG Icon Enhancements:**
    - **Request:** Investigate higher quality or simpler, cleaner outline SVG icons that present a premium look.
-2. **"Watch How It Works" Button Inactive:**
-   - **Symptom:** The watch video play button in the Hero section is not functional.
-3. **Missing Blog Links:**
+2. **Missing Blog Links:**
    - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
-4. **Remaining Image Optimization Console Warnings (SEO Issue):**
+3. **Remaining Image Optimization Console Warnings (SEO Issue):**
    - **Symptom:** Development console shows warnings for missing `sizes` prop on step illustrations and product assets. Also shows missing auto sizing styles for media partner logos.
-5. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
+4. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
    - **Symptom:** Local audits run in development mode show high LCP scores. Runs in production mode function fine.
 
 ---
@@ -302,4 +300,7 @@ The following issues have been identified and are tracked for future resolution:
 19. **Wired up Contact Us buttons to email (Completed: June 30, 2026):**
     - **Symptom:** The "Contact Us" trigger button in the footer or final sections did not open a contact form or email handler.
     - **Resolution:** Updated the "Contact Us" links in the footer and final CTA section to open a `mailto:` window pointing to `compost@rawbin.in`.
+20. **Wired up YouTube Video modal on Hero Section play button (Completed: June 30, 2026):**
+    - **Symptom:** The watch video play button in the Hero section was not functional.
+    - **Resolution:** Implemented a full-screen video lightbox modal that opens on clicking "Watch How It Works", displaying the YouTube embed player for `https://www.youtube.com/watch?v=LyTpXQoIGho` with smooth framer-motion transitions and responsive aspect ratio sizing.
 
