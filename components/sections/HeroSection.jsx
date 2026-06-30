@@ -62,7 +62,9 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.a
-                href="#order"
+                href="https://forms.gle/w8PioSB3WnWCgR8z8"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -3 }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center tracking-wide"

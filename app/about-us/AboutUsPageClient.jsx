@@ -285,9 +285,9 @@ export default function AboutUsPageClient() {
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               >
-                <Link href="/#order" className="block bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center">
+                <a href="https://forms.gle/w8PioSB3WnWCgR8z8" target="_blank" rel="noopener noreferrer" className="block bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center">
                   Pre-order Now
-                </Link>
+                </a>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.03, y: -1 }}

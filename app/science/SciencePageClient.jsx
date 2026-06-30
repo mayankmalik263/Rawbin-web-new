@@ -190,9 +190,9 @@ export default function SciencePageClient() {
             Eliminate methane, cut municipal logistics, and start nourishing your home plants with Rawbin.
           </p>
           <div className="flex justify-center gap-4 pt-2">
-            <Link href="/#order" className="bg-primary text-[#0D0F12] px-8 py-3.5 rounded-2xl font-bold hover:shadow-hover hover:-translate-y-0.5 transition-all text-sm">
+            <a href="https://forms.gle/w8PioSB3WnWCgR8z8" target="_blank" rel="noopener noreferrer" className="bg-primary text-[#0D0F12] px-8 py-3.5 rounded-2xl font-bold hover:shadow-hover hover:-translate-y-0.5 transition-all text-sm">
               Pre-order Rawbin Now
-            </Link>
+            </a>
             <Link href="/" className="bg-white/5 hover:bg-white/10 text-white px-8 py-3.5 rounded-2xl font-bold border border-white/10 transition-all text-sm">
               Back to Homepage
             </Link>

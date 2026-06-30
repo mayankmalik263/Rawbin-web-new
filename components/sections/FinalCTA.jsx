@@ -43,10 +43,13 @@ export default function FinalCTA() {
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row justify-center gap-4 mb-10"
         >
-          <motion.button
+          <motion.a
+            href="https://forms.gle/w8PioSB3WnWCgR8z8"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.04, y: -3 }}
             whileTap={{ scale: 0.97 }}
-            className="bg-primary text-nc-text px-10 py-5 rounded-full font-black text-lg tracking-wide"
+            className="bg-primary text-nc-text px-10 py-5 rounded-full font-black text-lg tracking-wide text-center"
             animate={{
               boxShadow: [
                 '0 10px 24px rgba(69,185,0,0.28)',
@@ -66,7 +69,7 @@ export default function FinalCTA() {
             }}
           >
             ORDER NOW
-          </motion.button>
+          </motion.a>
           <motion.div
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}

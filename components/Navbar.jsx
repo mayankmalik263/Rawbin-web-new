@@ -92,9 +92,9 @@ export default function Navbar() {
             </Menu>
           </nav>
           
-          <Link href="/#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-sm tracking-wide hover:shadow-hover hover:-translate-y-0.5 transition-all">
+          <a href="https://forms.gle/w8PioSB3WnWCgR8z8" target="_blank" rel="noopener noreferrer" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-sm tracking-wide hover:shadow-hover hover:-translate-y-0.5 transition-all">
             Order Now
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -115,7 +115,7 @@ export default function Navbar() {
           <Link href="/roe-calculator" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>ROE Calculator</Link>
           <Link href="/science" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>Science of Composting</Link>
           <Link href="/about-us" className="font-semibold text-lg py-2 border-b border-black/5" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <Link href="/#order" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-center mt-2" onClick={() => setMobileMenuOpen(false)}>Order Now</Link>
+          <a href="https://forms.gle/w8PioSB3WnWCgR8z8" target="_blank" rel="noopener noreferrer" className="bg-primary text-nc-text px-6 py-3 rounded-full font-medium text-center mt-2" onClick={() => setMobileMenuOpen(false)}>Order Now</a>
         </div>
       )}
     </header>
