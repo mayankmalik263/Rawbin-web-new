@@ -253,9 +253,7 @@ The following issues have been identified and are tracked for future resolution:
    - **Request:** Investigate higher quality or simpler, cleaner outline SVG icons that present a premium look.
 2. **Missing Blog Links:**
    - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
-3. **Remaining Image Optimization Console Warnings (SEO Issue):**
-   - **Symptom:** Development console shows warnings for missing `sizes` prop on step illustrations and product assets. Also shows missing auto sizing styles for media partner logos.
-4. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
+3. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
    - **Symptom:** Local audits run in development mode show high LCP scores. Runs in production mode function fine.
 
 ---
