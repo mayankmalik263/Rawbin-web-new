@@ -77,15 +77,8 @@ export const ThreeLeavesIcon = withIcon(ThermometerSun);
 // 10. Closed Loop
 export const FourArrowRecycleIcon = withIcon(InfinityIcon);
 
-// 11. Designed in India (Indian Flag PNG Image)
-export const IndiaIcon = ({ className = 'w-6 h-6', ...props }) => (
-  <img
-    src="/images/indian-flag.png"
-    alt="India Flag"
-    className={`${className} object-contain select-none`}
-    {...props}
-  />
-);
+// 11. Designed in India
+export const IndiaIcon = withIcon(MapPin);
 
 // 12. Miscellaneous Site Icons
 export const HomeIcon = withIcon(Home);
