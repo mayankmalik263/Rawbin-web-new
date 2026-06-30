@@ -251,10 +251,15 @@ The following issues have been identified and are tracked for future resolution:
 
 1. **SVG Icon Enhancements:**
    - **Request:** Investigate higher quality or simpler, cleaner outline SVG icons that present a premium look.
-2. **Missing Blog Links:**
-   - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
-3. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
+2. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
    - **Symptom:** Local audits run in development mode show high LCP scores. Runs in production mode function fine.
+
+---
+
+### 🟡 Deferred / On Hold (Pending Content)
+
+* **Missing Blog Links:**
+  - **Context:** We currently do not have blog content or related articles ready. The footer link remains a placeholder until content is prepared.
 
 ---
 
