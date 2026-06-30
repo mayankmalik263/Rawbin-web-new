@@ -64,9 +64,23 @@ export const WindIcon = withIcon(Wind);
 // 6. Technology
 export const CpuIcon = withIcon(Cpu);
 
-// 7. Sprout / Leaf
-export const SproutIcon = withIcon(Leaf);
-export const LeafIcon = withIcon(Leaf);
+// 7. Sprout / Leaf (Custom Brand Leaf)
+export const LeafIcon = ({ className = 'w-6 h-6', ...props }) => (
+  <svg
+    viewBox="0 0 1440 810"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M 719.953125 351.394531 C 719.953125 351.394531 643.925781 632.746094 370.160156 609.90625 C 370.160156 609.90625 354.988281 267.699219 704.78125 191.671875 C 704.78125 191.671875 1077.414062 176.5 1069.828125 617.492188 C 1069.828125 617.492188 849.25 647.917969 719.953125 351.394531 Z M 719.953125 351.394531"
+    />
+  </svg>
+);
+
+export const SproutIcon = LeafIcon;
 
 // 8. Sensors
 export const SensorIcon = withIcon(Gauge);
