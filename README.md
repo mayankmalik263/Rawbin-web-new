@@ -253,15 +253,13 @@ The following issues have been identified and are tracked for future resolution:
    - **Request:** Investigate higher quality or simpler, cleaner outline SVG icons that present a premium look.
 2. **"Watch How It Works" Button Inactive:**
    - **Symptom:** The watch video play button in the Hero section is not functional.
-3. **Inactive Purchasing CTAs:**
-   - **Symptom:** Purchase triggers such as "I'm Ready to Compost" or "Order Now" are static and do not trigger any checkout/contact flows.
-4. **"Contact Us" Button Inactive:**
+3. **"Contact Us" Button Inactive:**
    - **Symptom:** The "Contact Us" trigger button in the footer or final sections does not open a contact form or email handler.
-5. **Missing Blog Links:**
+4. **Missing Blog Links:**
    - **Symptom:** The "Blogs" link in the footer is a dead link/placeholder. Needs to point to an active blog resource.
-6. **Remaining Image Optimization Console Warnings (SEO Issue):**
+5. **Remaining Image Optimization Console Warnings (SEO Issue):**
    - **Symptom:** Development console shows warnings for missing `sizes` prop on step illustrations and product assets. Also shows missing auto sizing styles for media partner logos.
-7. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
+6. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
    - **Symptom:** Local audits run in development mode show high LCP scores. Runs in production mode function fine.
 
 ---
@@ -300,4 +298,7 @@ The following issues have been identified and are tracked for future resolution:
     - **Resolution:** Implemented Next.js route generators (`sitemap.js` and `robots.js`) to dynamically serve sitemaps and configure crawler boundaries.
 17. **Inject JSON-LD Product & FAQ Schemas:**
     - **Symptom:** Missing structured metadata markup for search engine rich results.
+18. **Wired up Purchasing & Waitlist CTAs (Completed: June 30, 2026):**
+    - **Symptom:** Purchase triggers such as "I'm Ready to Compost" or "Order Now" were static and did not trigger any checkout/contact flows.
+    - **Resolution:** Updated all buttons across the landing page, navigation header, mobile CTA bar, science page, and about-us page to link directly to the Google Form waitlist (`https://forms.gle/w8PioSB3WnWCgR8z8`) in a new tab.
 
