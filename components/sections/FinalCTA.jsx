@@ -75,9 +75,9 @@ export default function FinalCTA() {
             whileTap={{ scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
           >
-            <Link href="#contact" className="block bg-bg-alt text-nc-text border border-accent-brown/30 px-10 py-5 rounded-full font-bold text-lg tracking-wide hover:bg-black/5 hover:border-accent-brown/60 transition-all">
+            <a href="mailto:compost@rawbin.in" className="block bg-bg-alt text-nc-text border border-accent-brown/30 px-10 py-5 rounded-full font-bold text-lg tracking-wide hover:bg-black/5 hover:border-accent-brown/60 transition-all text-center">
               CONTACT US
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
 
