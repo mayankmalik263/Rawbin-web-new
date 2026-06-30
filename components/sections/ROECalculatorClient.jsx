@@ -177,6 +177,7 @@ export default function ROECalculatorClient() {
                     src={co2Values[familySize].image} 
                     alt={co2Values[familySize].label}
                     fill
+                    sizes="112px"
                     className="object-contain p-2"
                   />
                 </div>

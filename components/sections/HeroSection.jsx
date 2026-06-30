@@ -113,6 +113,7 @@ export default function HeroSection() {
             src="/images/new_hero_bg.png" 
             alt="Rawbin in modern kitchen" 
             fill
+            sizes="100vw"
             priority
             className="object-cover object-[75%_center] lg:object-[80%_center]"
           />

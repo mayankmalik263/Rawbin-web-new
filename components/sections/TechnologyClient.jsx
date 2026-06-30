@@ -101,6 +101,7 @@ export default function TechnologyClient() {
               src="/images/environment.svg" 
               alt="Rawbin ecological cycle mechanism diagram"
               fill
+              sizes="(max-width: 1024px) 100vw, 420px"
               className="object-contain"
             />
           </div>

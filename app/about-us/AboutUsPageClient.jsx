@@ -120,6 +120,7 @@ export default function AboutUsPageClient() {
                   src="/images/AnuMamLinkedinPfp.jpg" 
                   alt="Anu Khandelwal - Founder & CEO" 
                   fill
+                  sizes="192px"
                   className="object-cover"
                 />
               </div>
@@ -235,7 +236,7 @@ export default function AboutUsPageClient() {
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden border border-black/5">
-                    <Image src="/images/AnuMamLinkedinPfp.jpg" alt="Anu Khandelwal Profile" fill />
+                    <Image src="/images/AnuMamLinkedinPfp.jpg" alt="Anu Khandelwal Profile" fill sizes="48px" />
                   </div>
                   <div>
                     <h5 className="font-extrabold text-nc-text text-base">Anu Khandelwal</h5>

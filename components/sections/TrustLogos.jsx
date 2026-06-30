@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function TrustLogos() {
   const logos = [
@@ -49,11 +50,15 @@ export default function TrustLogos() {
               className="flex items-center justify-center h-20 w-64 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-300 ease-in-out select-none cursor-default"
             >
               {logo.src ? (
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-h-20 max-w-[240px] object-contain"
-                />
+                <div className="relative w-full h-12 max-w-[180px]">
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    fill
+                    sizes="180px"
+                    className="object-contain"
+                  />
+                </div>
               ) : (
                 <span className="font-sans text-base md:text-xl font-black tracking-tight text-neutral-800 text-center whitespace-nowrap">
                   QWEIN <span className="text-[12px] font-normal lowercase">by</span> Qualcomm
