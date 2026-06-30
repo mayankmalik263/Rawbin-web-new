@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <Link href="/" className="flex flex-col items-start no-underline mb-6">
-              <Image src="/images/Primary Logo Assets/Asset 3.svg" alt="Rawbin Logo" width={140} height={44} className="h-[44px] w-auto" />
+              <Image src="/images/logo.png" alt="Rawbin Logo" width={140} height={44} className="h-[44px] w-auto [image-rendering:-webkit-optimize-contrast]" />
             </Link>
             <p className="text-text-muted text-sm max-w-sm">
               Rawbin is an intelligent home composting system that transforms kitchen leftovers into nutrient-rich compost with minimal effort.
