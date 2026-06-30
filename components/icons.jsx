@@ -77,8 +77,32 @@ export const ThreeLeavesIcon = withIcon(ThermometerSun);
 // 10. Closed Loop
 export const FourArrowRecycleIcon = withIcon(InfinityIcon);
 
-// 11. Designed in India
-export const IndiaIcon = withIcon(MapPin);
+// 11. Designed in India (Indian Flag SVG with rounded corners)
+export const IndiaIcon = ({ className = 'w-6 h-6', ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} overflow-hidden rounded-xs`}
+    {...props}
+  >
+    {/* Saffron Stripe */}
+    <rect x="0" y="0" width="24" height="8" fill="#FF9933" />
+    {/* White Stripe */}
+    <rect x="0" y="8" width="24" height="8" fill="#FFFFFF" />
+    {/* Green Stripe */}
+    <rect x="0" y="16" width="24" height="8" fill="#138808" />
+    {/* Ashoka Chakra */}
+    <circle cx="12" cy="12" r="3.2" fill="none" stroke="#000080" strokeWidth="0.8" />
+    <circle cx="12" cy="12" r="0.8" fill="#000080" />
+    {/* Spokes */}
+    <path
+      d="M12 8.8v6.4M8.8 12h6.4M9.74 9.74l4.52 4.52M9.74 14.26l4.52-4.52M10.8 9.1l2.4 5.8M10.8 14.9l2.4-5.8M8.9 10.8l6.2 2.4M8.9 13.2l6.2-2.4"
+      stroke="#000080"
+      strokeWidth="0.4"
+    />
+  </svg>
+);
 
 // 12. Miscellaneous Site Icons
 export const HomeIcon = withIcon(Home);
