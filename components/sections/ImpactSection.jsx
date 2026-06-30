@@ -1,5 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { BarChart3 } from 'lucide-react';
 
 export default function ImpactSection() {
   return (
@@ -32,6 +34,21 @@ export default function ImpactSection() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex justify-center mt-12"
+        >
+          <Link 
+            href="/roe-calculator"
+            className="bg-primary hover:bg-[#153D2A] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 inline-flex items-center gap-2"
+          >
+            <BarChart3 className="w-5 h-5" /> Calculate Your Impact
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

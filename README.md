@@ -142,6 +142,8 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Removed the non-functional "Read our Composting Guides & Blogs →" button from the bottom of `SocialProof.jsx` — it had no `href`/`onClick` and was already duplicated in the Footer's Quick Links section. Cleaned up the unused `ArrowRight` import as well.
 *   [x] **Highlight Cards Styling Clean-up (Completed: June 27, 2026):**
     *   Removed the colored top border lines (green, purple, brown) from the Innovation Highlights cards in the "Everything You Need To Know" section for a cleaner, uniform, and minimalist look.
+*   [x] **Impact Section ROE Calculator Link (Completed: July 1, 2026):**
+    *   Add a centered brand-primary CTA button in the Impact Section that links to the ROE Calculator page so users can dynamically compute their carbon savings.
 
 ### 📸 3. New Content & Community Visuals
 *   [x] **New Hero Section BG & Photo (Completed: June 26, 2026 / Updated: June 27, 2026):**
