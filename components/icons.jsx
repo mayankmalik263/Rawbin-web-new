@@ -77,19 +77,15 @@ export const ThreeLeavesIcon = withIcon(ThermometerSun);
 // 10. Closed Loop
 export const FourArrowRecycleIcon = withIcon(InfinityIcon);
 
-// 11. Designed in India (Native Indian Flag Emoji)
-export const IndiaIcon = ({ className = 'w-6 h-6', ...props }) => {
-  const isLarge = className.includes('w-10') || className.includes('h-10');
-  return (
-    <span 
-      className={`${className} inline-flex items-center justify-center select-none`} 
-      style={{ fontSize: isLarge ? '2.5rem' : '1rem', lineHeight: 1 }}
-      {...props}
-    >
-      🇮🇳
-    </span>
-  );
-};
+// 11. Designed in India (Indian Flag PNG Image)
+export const IndiaIcon = ({ className = 'w-6 h-6', ...props }) => (
+  <img
+    src="/images/indian-flag.png"
+    alt="India Flag"
+    className={`${className} object-contain select-none`}
+    {...props}
+  />
+);
 
 // 12. Miscellaneous Site Icons
 export const HomeIcon = withIcon(Home);
