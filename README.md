@@ -126,10 +126,12 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Mapped Tailwind configuration colors to dynamic CSS variables and defined Light/Dark mode classes in global styles.
     *   Injected a theme restoration head script in the layout root to prevent light-mode flashes by reading from localStorage before render.
     *   Swapped container background elements to use theme-aware colors (e.g. `bg-bg-main`, `text-nc-text`) so that pages transition cleanly.
+*   [x] **Standardized Lucide Icon Upgrades (Completed: July 1, 2026):**
+    *   Standardized and replaced 38 custom inline SVGs in `components/icons.jsx` with official, ultra-clean Lucide icons (wrapped in our common `withIcon` HOC helper) for absolute styling consistency.
+*   [x] **Primary Brand Leaf Integration (Completed: July 1, 2026):**
+    *   Updated `SproutIcon` and `LeafIcon` in `components/icons.jsx` to render the custom leaf SVG path from the brand's `Primary Logo Assets` folder, dynamically inheriting theme colors.
 
 ### 🏗️ 2. Section Restructuring & Clean-up
-*   [x] **Merge "Everything You Need To Know" into "What is Rawbin" Section (Completed: June 28, 2026):**
-    *   Combine the "Everything You Need To Know" specification details and the homepage "What is Rawbin" section (currently at the bottom of HeroSection.jsx) into a single, cohesive, premium storytelling layout.
 *   [x] **Premium Results Panel Dashboard (Completed: June 26, 2026):**
     *   Refactored the old 4-column Impact Section in `HeroSection.jsx` into a premium 3-column dashboard highlighting the core metrics: **1,500kg** CO2 saved a year (Status Green), **90%** less waste by volume (Chocolate Brown), and **7 days** start-to-finished compost (Sterilising Lilac) with spring hover and custom glow shadows.
 *   [x] **Rawbin vs. Traditional Composting Section (Completed: June 26, 2026):**
@@ -142,21 +144,23 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Removed the non-functional "Read our Composting Guides & Blogs →" button from the bottom of `SocialProof.jsx` — it had no `href`/`onClick` and was already duplicated in the Footer's Quick Links section. Cleaned up the unused `ArrowRight` import as well.
 *   [x] **Highlight Cards Styling Clean-up (Completed: June 27, 2026):**
     *   Removed the colored top border lines (green, purple, brown) from the Innovation Highlights cards in the "Everything You Need To Know" section for a cleaner, uniform, and minimalist look.
+*   [x] **Merge "Everything You Need To Know" into "What is Rawbin" Section (Completed: June 28, 2026):**
+    *   Combine the "Everything You Need To Know" specification details and the homepage "What is Rawbin" section (currently at the bottom of HeroSection.jsx) into a single, cohesive, premium storytelling layout.
 *   [x] **Impact Section ROE Calculator Link (Completed: July 1, 2026):**
     *   Add a centered brand-primary CTA button in the Impact Section that links to the ROE Calculator page so users can dynamically compute their carbon savings.
 
 ### 📸 3. New Content & Community Visuals
-*   [x] **New Hero Section BG & Photo (Completed: June 26, 2026 / Updated: June 27, 2026):**
-    *   Replaced the background image with a high-quality photo of Rawbin (`new_hero_bg.png`) set in a modern Indian kitchen.
-    *   Refined the desktop layout with a premium seamless glassmorphic frosted pane (`backdrop-blur-[10px] bg-white/10` with custom linear-gradient mask) on the left side to show the blurred kitchen details behind the text.
-    *   Implemented a stacked card layout for mobile and tablet viewports to prevent device clipping and text overlap.
-    *   Aligned the top announcement bar background color to `#F0EAE1` to match the brand sand-beige color palette.
 *   [x] **Custom AI-Generated Step Illustrations (Completed: June 26, 2026):**
     *   Replaced the three generic placeholder images in the **"How It Works"** section with custom AI-generated illustrations accurately depicting the Rawbin device:
         *   **Step 1 (`image1.png`):** Indian woman in a kurti adding kitchen scraps to the Rawbin in a warm, modern Indian kitchen.
         *   **Step 2 (`image2.png`):** Rawbin composting automatically with leaf/swirl motion graphics showing silent, effortless processing.
         *   **Step 3 (`image3.png`):** Harvesting rich compost on an Indian apartment balcony with the Rawbin visible in the background.
     *   Card image container height increased from `220px` to `260px` to better showcase the wider illustrations.
+*   [x] **New Hero Section BG & Photo (Completed: June 26, 2026 / Updated: June 27, 2026):**
+    *   Replaced the background image with a high-quality photo of Rawbin (`new_hero_bg.png`) set in a modern Indian kitchen.
+    *   Refined the desktop layout with a premium seamless glassmorphic frosted pane (`backdrop-blur-[10px] bg-white/10` with custom linear-gradient mask) on the left side to show the blurred kitchen details behind the text.
+    *   Implemented a stacked card layout for mobile and tablet viewports to prevent device clipping and text overlap.
+    *   Aligned the top announcement bar background color to `#F0EAE1` to match the brand sand-beige color palette.
 *   [x] **"Insta Grid: See what community is doing with the compost" Section (Completed: June 27, 2026):**
     *   Implemented an interactive, premium 3-column Instagram Reels Grid ("What's Going On in the Rawbin Community") directly below the Compost Use Cases on the landing page.
     *   Displays 3 real-world Reels (`DX60vemoTSt`, `DYZua7shjNJ`, `DZFYb2AM6gK`) with their actual video cover thumbnails (`reel1_image.png`, `reel2_image.png`, `reel3_image.png`), custom-themed gradients, play overlays, and official profile logo (`rawbin-instagram-pfp.jpg`) headers.
@@ -168,15 +172,11 @@ This section outlines the upcoming product redesign and feature additions reques
 ### ⚡ 4. Copywriting & Interactive Components
 *   [x] **"Composting shouldn't feel like..." Section (Completed: June 26, 2026):**
     *   Implemented on the homepage as the "How It Works" section titled "Composting Shouldn't Feel Like Work", showcasing the 3 simple steps of the Rawbin cycle.
-*   [x] **Compost Report PDF Integration (Completed: June 27, 2026):**
-    *   Copied `PL.M.25-26.00078.pdf` into the Next.js `public/` directory so it is served statically and wired up the "Compost Report" buttons in the Footer and Navbar dropdown to open the document statically in a new tab.
 *   [x] **Deep-Dive "Learn More" Resource Hub (Completed: June 26, 2026):**
     *   Developed a dedicated `/science` subpage detailing the chemical, biological, and structural science for all 12 FAQs. Added anchor-linked \"Learn More Science →\" buttons inside the expanded FAQ panels on the homepage for seamless direct navigation.
 *   [x] **Dedicated "About Us" Page (Completed: June 26, 2026):**
     *   Migrated to a fully dedicated `/about-us` subpage, accessible via the Navbar's "More" dropdown and the Footer.
     *   Page features: founder story (Anu Khandelwal — from Twilio data scientist to sustainability entrepreneur), Rawbin's making journey rooted in Indian kitchens, prototyping timeline, product philosophy, and an interactive LinkedIn timeline showcasing real journey posts.
-    *   Instagram Reels section removed from this page (scope moved to a future dedicated social section).
-    *   Hero section background replaced with a premium dark solid color, removing the previous visually poor gradient.
 *   [x] **"Wall of 💚" Testimonials Redesign (Completed: June 26, 2026):**
     *   Replaced the old static testimonial layout in `SocialProof.jsx` with a **premium dark-themed draggable infinite carousel**.
     *   Integrated all **17 real customer testimonials** migrated from the legacy `WallOfLove.js` component of the previous codebase.
@@ -186,6 +186,10 @@ This section outlines the upcoming product redesign and feature additions reques
     *   Three real press logo images (`NYTimes.png`, `redfm.png`, `ground-report.webp`) imported from the legacy codebase into `public/images/`.
     *   Each logo is a clickable `<Link>` pointing to the actual article or LinkedIn post for that press coverage.
     *   Card uses a warm cream background (`#F7F3EF`) so logos render in their original brand colors (black NY Times wordmark, red Red FM, green Ground Report) without inversion filters.
+*   [x] **High-Fidelity Interactivity (Completed: June 26, 2026):**
+    *   Ensure the site is packed with premium, fluid interactions: hover-based radial glow effects, scroll-triggered animations via Framer Motion, and micro-interactions on all primary action buttons.
+*   [x] **Compost Report PDF Integration (Completed: June 27, 2026):**
+    *   Copied `PL.M.25-26.00078.pdf` into the Next.js `public/` directory so it is served statically and wired up the "Compost Report" buttons in the Footer and Navbar dropdown to open the document statically in a new tab.
 *   [x] **Interactive "Ask Rawbin" AI Chatbot with Custom RAG (Completed: June 27, 2026):**
     *   **Architecture**: Built a secure Next.js API route (`/api/chat`) that reads a localized product knowledge base (`rawbin-knowledge.md`) containing all verified specs, pricing tiers, composting guidelines, and company (Newcycl) context.
     *   **Model**: Integrates **`llama-3.1-8b-instant`** hosted on Groq's high-speed inference engine.
@@ -193,16 +197,22 @@ This section outlines the upcoming product redesign and feature additions reques
     *   **Server-Side Cleaners**: Features regex filters that clean formatting markers (removes bold asterisks `**`, maps hyphens `- ` to bullet circles `•`), guaranteeing clean plain-text lists in the UI.
     *   **Chatbot UI**: Updated `components/AskRawbin.jsx` to manage conversation history (passes last 20 messages for multi-turn context), disable inputs during active loading, show floating bubble states, and fall back to friendly offline messages if API keys are missing.
     *   **Limits & Performance**: Uses native fetch to minimize packages. Operates under Groq's free tier limits (131,072 tokens per minute and 14,400 requests per minute).
-*   [x] **High-Fidelity Interactivity (Completed: June 26, 2026):**
-    *   Ensure the site is packed with premium, fluid interactions: hover-based radial glow effects, scroll-triggered animations via Framer Motion, and micro-interactions on all primary action buttons.
 *   [x] **Interactive Product Views Gallery (Completed: June 27, 2026):**
     *   Replaced the static "Product View" card in the center of the "Everything You Need To Know" section with an interactive, Amazon-style image carousel and thumbnail selector. Added 5 different real product angles/views (Front View, Home Setting, Side View, Back View, and Top-Down View) with smooth Framer Motion transitions.
+*   [x] **Wired up Purchasing & Waitlist CTAs (Completed: June 30, 2026):**
+    *   Updated all buttons across the landing page, navigation header, mobile CTA bar, science page, and about-us page to link directly to the Google Form waitlist (`https://forms.gle/w8PioSB3WnWCgR8z8`) in a new tab.
+*   [x] **Wired up Contact Us buttons to email (Completed: June 30, 2026):**
+    *   Updated the "Contact Us" links in the footer and final CTA section to open a `mailto:` window pointing to `compost@rawbin.in`.
+*   [x] **Wired up YouTube Video modal on Hero Section play button (Completed: June 30, 2026):**
+    *   Implemented a full-screen video lightbox modal that opens on clicking "Watch How It Works", displaying the YouTube embed player for `https://www.youtube.com/watch?v=LyTpXQoIGho` with smooth framer-motion transitions and responsive aspect ratio sizing.
 
 ### 📱 5. Responsive Design & Multi-Platform Compatibility
 *   [x] **Cross-Device Fluidity (Completed: June 27, 2026):** Ensure all layout grids, typography, and images scale dynamically across standard breakpoints.
     *   **Mobile (320px - 480px):** Optimized vertical single-column layout, tap-friendly interaction targets (minimum 48px), and bottom-docked sticky `MobileCTA` button.
     *   **Tablet (768px - 1024px):** Responsive dual-column grids, readable font sizing, stacked card representations for media, and compact navigation headers.
     *   **Laptop & Desktop (1200px - 1920px+):** Ultra-premium wide grids, high-definition responsive media (with full-bleed background images and seamless glassmorphic blending), hover-based micro-interactions, and large immersive storytelling components.
+*   [x] **Next.js Image Sizing & Layout Optimization (Completed: June 30, 2026):**
+    *   Added explicit, responsive `sizes` attributes to `<Image>` components across the landing page, technology page, ROE calculator, and about us page. Converted standard `<img>` tags in `TrustLogos.jsx` to optimized Next.js `<Image>` components with proper constraints to remove all dev mode warnings.
 
 ### 🌟 6. Design Reference & Luxury Aesthetics (Eight Sleep Style)
 *   [x] **Eight Sleep Inspiration (Completed: June 27, 2026):** Draw design principles from the premium, high-tech aesthetic of [Eight Sleep](https://www.eightsleep.com/):
@@ -242,6 +252,8 @@ This section outlines the upcoming product redesign and feature additions reques
     *   **Implementation Plan:** 
         *   Injected these terms naturally in landing page titles, header tags (`<h1>`, `<h2>`), image alt text, and meta descriptions.
         *   Page structure optimized to win "Featured Snippets" (e.g., clear, bulleted answers for questions like "What can you compost in a smart kitchen bin?").
+*   [x] **Search Crawl Optimization (Completed: June 30, 2026):**
+    *   Added a `Disallow: /api/` rule to the static robots file to prevent search engine indexers from crawling backend endpoints, optimizing overall crawl budget.
 
 ---
 
@@ -264,54 +276,54 @@ The following issues have been identified and are tracked for future resolution:
 
 ### 🟢 Resolved Issues (Completed)
 
-8. **AI Chatbot Dismissal and Toggling (Critical Presentation Fix — June 29, 2026):**
+1. **Hero Image Responsiveness on Mobile/Tablet (Completed: June 26, 2026):**
+   - **Symptom:** On mobile/tablet viewports, the main hero image displayed in a large stacked block below the CTA buttons, breaking the premium storytelling flow.
+   - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, displaying the kitchen scene clearly behind the hero text.
+2. **Merge Storytelling & Specifications Sections (Completed: June 26, 2026):**
+   - **Symptom:** Homepage felt fragmented with specs and storytelling split across the page, causing visual disconnect.
+   - **Resolution:** Combined the "What is Rawbin?" storytelling narrative and "Everything You Need To Know" specifications slider/details side-by-side into a premium layout inside `EverythingYouNeedToKnow.jsx`. Extracted the results dashboard to a dedicated `ImpactSection` component placed directly below.
+3. **Fix Client-Side Page Titles (Completed: June 26, 2026):**
+   - **Symptom:** `/science` and `/about-us` routes are client-side components and inherit duplicate home page metadata.
+   - **Resolution:** Separated pages into server components (`page.js`) that export page-specific metadata blocks, and client components (`SciencePageClient` / `AboutUsPageClient`) that manage dynamic UI/animations.
+4. **Generate Dynamic Sitemap & Robots Configuration (Completed: June 26, 2026):**
+   - **Symptom:** Missing `sitemap.xml` and `robots.txt` for crawlers.
+   - **Resolution:** Implemented Next.js route generators (`sitemap.js` and `robots.js`) to dynamically serve sitemaps and configure crawler boundaries.
+5. **Inject JSON-LD Product & FAQ Schemas (Completed: June 26, 2026):**
+   - **Symptom:** Missing structured metadata markup for search engine rich results.
+   - **Resolution:** Generated and injected product FAQ structural schemas on the index route to enhance search presence.
+6. **Missing Navigation Links in Mobile Hamburger Menu (Completed: June 27, 2026):**
+   - **Symptom:** Mobile navbar drawer was missing links like "Science of Composting", "Compost Report", and "Why Should You Compost?".
+   - **Resolution:** Updated `Navbar.jsx` to render all missing desktop links inside the mobile hamburger menu drawer.
+7. **Next.js Logo and Slider Image Optimization Warnings (Completed: June 27, 2026):**
+   - **Symptom:** Console warnings on load regarding preloading (LCP) the logo and slider images, and missing `sizes` attribute on the product view image container.
+   - **Resolution:** Configured `priority` attributes and optimized `sizes` definitions in `Navbar.jsx` and `EverythingYouNeedToKnow.jsx`.
+8. **AI Chatbot Dismissal and Toggling (Completed: June 29, 2026):**
    - **Why it was chosen:** Once the chatbot was opened, it was impossible to close it by clicking the floating button again or clicking outside it (the user had to find the small header `X` button). During the Co-founder presentation, this would easily lock up the screen space on mobile viewports and feel highly broken.
    - **What was fixed:** The chatbot drawer toggle and click-outside dismissal behavior.
    - **How it was fixed:** Modified `components/AskRawbin.jsx` to toggle `isOpen` on button click, implemented a React `useRef` click-outside document listener, and added a window event listener (`'open-rawbin-chat'`) for external triggers.
-9. **Broken Hash Navigation from Subpages (Critical Presentation Fix — June 29, 2026):**
-   - **Why it was chosen:** Clicking section anchors (like `#faqs` or `#why-rawbin`) from subpages like `/technology` or `/about-us` failed to redirect back to the home page (navigating to `/about-us#why-rawbin` instead), breaking core site routing.
-   - **What was fixed:** Subpage-to-homepage section anchor navigation.
-   - **How it was fixed:** Updated relative hashes to root-relative paths (e.g. `/#why-rawbin`) in `components/Navbar.jsx` and `components/Footer.jsx` so Next.js handles routing and smooth scrolling back to the home page.
-10. **Inactive "Why Should You Compost?" & "Ask Rawbin" Triggers (Critical Presentation Fix — June 29, 2026):**
+9. **Broken Hash Navigation from Subpages (Completed: June 29, 2026):**
+    - **Why it was chosen:** Clicking section anchors (like `#faqs` or `#why-rawbin`) from subpages like `/technology` or `/about-us` failed to redirect back to the home page (navigating to `/about-us#why-rawbin` instead), breaking core site routing.
+    - **What was fixed:** Subpage-to-homepage section anchor navigation.
+    - **How it was fixed:** Updated relative hashes to root-relative paths (e.g. `/#why-rawbin`) in `components/Navbar.jsx` and `components/Footer.jsx` so Next.js handles routing and smooth scrolling back to the home page.
+10. **Inactive "Why Should You Compost?" & "Ask Rawbin" Triggers (Completed: June 29, 2026):**
     - **Why it was chosen:** "Why Should You Compost?" is a key educational link, and "Ask Rawbin" is a prominent footer CTA. Having these be dead/non-functional links would make the site look incomplete and unpolished.
     - **What was fixed:** Wired up the "Why Should You Compost?" navigation link to scroll to the existing Impact Section and enabled the footer text to trigger the chatbot drawer.
     - **How it was fixed:** Assigned `id="why-compost"` to the `ImpactSection` wrapper and wired up the footer button to dispatch the custom event `'open-rawbin-chat'` to open the chatbot.
-11. **Hero Image Responsiveness on Mobile/Tablet:**
-    - **Symptom:** On mobile/tablet viewports, the main hero image displayed in a large stacked block below the CTA buttons, breaking the premium storytelling flow.
-    - **Resolution:** Configured the background image to be a full-bleed absolute background across all viewport sizes, displaying the kitchen scene clearly behind the hero text.
-12. **Merge Storytelling & Specifications Sections:**
-    - **Symptom:** Homepage felt fragmented with specs and storytelling split across the page, causing visual disconnect.
-    - **Resolution:** Combined the "What is Rawbin?" storytelling narrative and "Everything You Need To Know" specifications slider/details side-by-side into a premium layout inside `EverythingYouNeedToKnow.jsx`. Extracted the results dashboard to a dedicated `ImpactSection` component placed directly below.
-13. **Missing Navigation Links in Mobile Hamburger Menu:**
-    - **Symptom:** Mobile navbar drawer was missing links like "Science of Composting", "Compost Report", and "Why Should You Compost?".
-    - **Resolution:** Updated `Navbar.jsx` to render all missing desktop links inside the mobile hamburger menu drawer.
-14. **Next.js Logo and Slider Image Optimization Warnings:**
-    - **Symptom:** Console warnings on load regarding preloading (LCP) the logo and slider images, and missing `sizes` attribute on the product view image container.
-    - **Resolution:** Configured `priority` attributes and optimized `sizes` definitions in `Navbar.jsx` and `EverythingYouNeedToKnow.jsx`.
-15. **Fix Client-Side Page Titles:**
-    - **Symptom:** `/science` and `/about-us` routes are client-side components and inherit duplicate home page metadata.
-    - **Resolution:** Separated pages into server components (`page.js`) that export page-specific metadata blocks, and client components (`SciencePageClient` / `AboutUsPageClient`) that manage dynamic UI/animations.
-16. **Generate Dynamic Sitemap & Robots Configuration:**
-    - **Symptom:** Missing `sitemap.xml` and `robots.txt` for crawlers.
-    - **Resolution:** Implemented Next.js route generators (`sitemap.js` and `robots.js`) to dynamically serve sitemaps and configure crawler boundaries.
-17. **Inject JSON-LD Product & FAQ Schemas:**
-    - **Symptom:** Missing structured metadata markup for search engine rich results.
-18. **Wired up Purchasing & Waitlist CTAs (Completed: June 30, 2026):**
+11. **Wired up Purchasing & Waitlist CTAs (Completed: June 30, 2026):**
     - **Symptom:** Purchase triggers such as "I'm Ready to Compost" or "Order Now" were static and did not trigger any checkout/contact flows.
     - **Resolution:** Updated all buttons across the landing page, navigation header, mobile CTA bar, science page, and about-us page to link directly to the Google Form waitlist (`https://forms.gle/w8PioSB3WnWCgR8z8`) in a new tab.
-19. **Wired up Contact Us buttons to email (Completed: June 30, 2026):**
+12. **Wired up Contact Us buttons to email (Completed: June 30, 2026):**
     - **Symptom:** The "Contact Us" trigger button in the footer or final sections did not open a contact form or email handler.
     - **Resolution:** Updated the "Contact Us" links in the footer and final CTA section to open a `mailto:` window pointing to `compost@rawbin.in`.
-20. **Wired up YouTube Video modal on Hero Section play button (Completed: June 30, 2026):**
+13. **Wired up YouTube Video modal on Hero Section play button (Completed: June 30, 2026):**
     - **Symptom:** The watch video play button in the Hero section was not functional.
     - **Resolution:** Implemented a full-screen video lightbox modal that opens on clicking "Watch How It Works", displaying the YouTube embed player for `https://www.youtube.com/watch?v=LyTpXQoIGho` with smooth framer-motion transitions and responsive aspect ratio sizing.
-21. **Remaining Image Optimization Console Warnings (Completed: June 30, 2026):**
+14. **Remaining Image Optimization Console Warnings (Completed: June 30, 2026):**
     - **Symptom:** Next.js throws console warnings in development due to missing sizes attributes on step illustrations and product gallery assets, and missing auto-sizing styles for media partner logos.
     - **Resolution:** Added explicit, responsive `sizes` attributes to `<Image>` components across the landing page, technology page, ROE calculator, and about us page. Converted standard `<img>` tags in `TrustLogos.jsx` to optimized Next.js `<Image>` components with proper constraints.
-22. **SVG Icon Enhancements (Completed: July 1, 2026):**
+15. **SVG Icon Enhancements (Completed: July 1, 2026):**
     - **Symptom:** The custom inline SVGs in `components/icons.jsx` were inconsistent in stroke styling and dimensions.
     - **Resolution:** Standardized and replaced 38 custom inline SVGs in `components/icons.jsx` with official, ultra-clean Lucide icons, ensuring absolute styling consistency, stroke weight uniformity, and clean hover transitions.
-23. **Lighthouse Performance Audit LCP Discrepancy (Completed: July 1, 2026):**
+16. **Lighthouse Performance Audit LCP Discrepancy (Completed: July 1, 2026):**
     - **Symptom:** Local Lighthouse audits in development mode (`npm run dev`) showed high LCP/FID scores.
     - **Resolution:** Verified that production builds (`npm run build && npm start`) compile and bundle all scripts, optimize images, and result in highly performant LCP metrics. Documented in the developer guidelines that local performance audits must always be executed on production builds rather than hot-reloading development instances.
-
