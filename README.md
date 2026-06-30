@@ -249,9 +249,7 @@ The following issues have been identified and are tracked for future resolution:
 
 ### 🔴 Unresolved Issues (Pending)
 
-1. **SVG Icon Enhancements:**
-   - **Request:** Investigate higher quality or simpler, cleaner outline SVG icons that present a premium look.
-2. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
+1. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
    - **Symptom:** Local audits run in development mode show high LCP scores. Runs in production mode function fine.
 
 ---
@@ -306,4 +304,10 @@ The following issues have been identified and are tracked for future resolution:
 20. **Wired up YouTube Video modal on Hero Section play button (Completed: June 30, 2026):**
     - **Symptom:** The watch video play button in the Hero section was not functional.
     - **Resolution:** Implemented a full-screen video lightbox modal that opens on clicking "Watch How It Works", displaying the YouTube embed player for `https://www.youtube.com/watch?v=LyTpXQoIGho` with smooth framer-motion transitions and responsive aspect ratio sizing.
+21. **Remaining Image Optimization Console Warnings (Completed: June 30, 2026):**
+    - **Symptom:** Next.js throws console warnings in development due to missing sizes attributes on step illustrations and product gallery assets, and missing auto-sizing styles for media partner logos.
+    - **Resolution:** Added explicit, responsive `sizes` attributes to `<Image>` components across the landing page, technology page, ROE calculator, and about us page. Converted standard `<img>` tags in `TrustLogos.jsx` to optimized Next.js `<Image>` components with proper constraints.
+22. **SVG Icon Enhancements (Completed: July 1, 2026):**
+    - **Symptom:** The custom inline SVGs in `components/icons.jsx` were inconsistent in stroke styling and dimensions.
+    - **Resolution:** Standardized and replaced 38 custom inline SVGs in `components/icons.jsx` with official, ultra-clean Lucide icons, ensuring absolute styling consistency, stroke weight uniformity, and clean hover transitions.
 
