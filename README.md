@@ -249,8 +249,7 @@ The following issues have been identified and are tracked for future resolution:
 
 ### 🔴 Unresolved Issues (Pending)
 
-1. **Lighthouse Performance Audit LCP Discrepancy (SEO/Dev Issue):**
-   - **Symptom:** Local audits run in development mode show high LCP scores. Runs in production mode function fine.
+*(No unresolved issues pending).*
 
 ---
 
@@ -310,4 +309,7 @@ The following issues have been identified and are tracked for future resolution:
 22. **SVG Icon Enhancements (Completed: July 1, 2026):**
     - **Symptom:** The custom inline SVGs in `components/icons.jsx` were inconsistent in stroke styling and dimensions.
     - **Resolution:** Standardized and replaced 38 custom inline SVGs in `components/icons.jsx` with official, ultra-clean Lucide icons, ensuring absolute styling consistency, stroke weight uniformity, and clean hover transitions.
+23. **Lighthouse Performance Audit LCP Discrepancy (Completed: July 1, 2026):**
+    - **Symptom:** Local Lighthouse audits in development mode (`npm run dev`) showed high LCP/FID scores.
+    - **Resolution:** Verified that production builds (`npm run build && npm start`) compile and bundle all scripts, optimize images, and result in highly performant LCP metrics. Documented in the developer guidelines that local performance audits must always be executed on production builds rather than hot-reloading development instances.
 
