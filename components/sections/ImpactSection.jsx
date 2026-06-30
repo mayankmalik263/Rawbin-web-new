@@ -42,11 +42,32 @@ export default function ImpactSection() {
           transition={{ delay: 0.3 }}
           className="flex justify-center mt-12"
         >
-          <Link 
-            href="/roe-calculator"
-            className="bg-primary hover:bg-[#153D2A] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 inline-flex items-center gap-2"
-          >
-            <BarChart3 className="w-5 h-5" /> Calculate Your Impact
+          <Link href="/roe-calculator" passHref legacyBehavior>
+            <motion.a
+              whileHover={{ scale: 1.04, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              className="bg-primary text-nc-text px-8 py-4 rounded-2xl font-bold text-center tracking-wide inline-flex items-center gap-2 cursor-pointer"
+              style={{ boxShadow: '0 4px 14px rgba(69,185,0,0.35)' }}
+              animate={{
+                boxShadow: [
+                  '0 4px 14px rgba(69,185,0,0.30)',
+                  '0 8px 28px rgba(69,185,0,0.55)',
+                  '0 4px 14px rgba(69,185,0,0.30)',
+                ]
+              }}
+              transition={{
+                boxShadow: {
+                  duration: 2.4,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                },
+                type: 'spring',
+                stiffness: 400,
+                damping: 20
+              }}
+            >
+              <BarChart3 className="w-5 h-5 text-nc-text" /> CALCULATE YOUR IMPACT
+            </motion.a>
           </Link>
         </motion.div>
       </div>
